@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_20_155511) do
+ActiveRecord::Schema.define(version: 2018_08_20_160818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2018_08_20_155511) do
   end
 
   create_table "groups", force: :cascade do |t|
-    t.bigint "user_id"
+    t.integer "leader_id"
     t.bigint "game_id"
     t.string "name"
     t.text "description"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2018_08_20_155511) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["game_id"], name: "index_groups_on_game_id"
-    t.index ["user_id"], name: "index_groups_on_user_id"
+    t.index ["leader_id"], name: "index_groups_on_leader_id"
   end
 
   create_table "memberships", force: :cascade do |t|
@@ -91,18 +91,18 @@ ActiveRecord::Schema.define(version: 2018_08_20_155511) do
     t.string "punch_line"
     t.string "language"
     t.date "birthdate"
-    t.string "interest1"
-    t.string "interest2"
-    t.string "interest3"
-    t.string "interest4"
-    t.string "interest5"
+    t.string "interest_pve_pvp"
+    t.string "interest_action_strat"
+    t.string "interest_gameplay_story"
+    t.string "interest_compet_chill"
+    t.string "interest_mmo_smallteam"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "events", "groups"
   add_foreign_key "groups", "games"
-  add_foreign_key "groups", "users"
+  add_foreign_key "groups", "users", column: "leader_id"
   add_foreign_key "memberships", "groups"
   add_foreign_key "memberships", "users"
   add_foreign_key "participations", "events"
