@@ -10,10 +10,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_20_145441) do
+ActiveRecord::Schema.define(version: 2018_08_20_155511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.bigint "group_id"
+    t.string "status"
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_events_on_group_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "name"
+    t.string "platform"
+    t.string "year"
+    t.string "genre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "photo"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "game_id"
+    t.string "name"
+    t.text "description"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_groups_on_game_id"
+    t.index ["user_id"], name: "index_groups_on_user_id"
+  end
+
+  create_table "memberships", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "group_id"
+    t.string "status"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_memberships_on_group_id"
+    t.index ["user_id"], name: "index_memberships_on_user_id"
+  end
+
+  create_table "participations", force: :cascade do |t|
+    t.string "presence"
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_participations_on_event_id"
+    t.index ["user_id"], name: "index_participations_on_user_id"
+  end
+
+  create_table "user_games", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_user_games_on_game_id"
+    t.index ["user_id"], name: "index_user_games_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +85,28 @@ ActiveRecord::Schema.define(version: 2018_08_20_145441) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "photo"
+    t.text "biography"
+    t.string "punch_line"
+    t.string "language"
+    t.date "birthdate"
+    t.string "interest1"
+    t.string "interest2"
+    t.string "interest3"
+    t.string "interest4"
+    t.string "interest5"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "events", "groups"
+  add_foreign_key "groups", "games"
+  add_foreign_key "groups", "users"
+  add_foreign_key "memberships", "groups"
+  add_foreign_key "memberships", "users"
+  add_foreign_key "participations", "events"
+  add_foreign_key "participations", "users"
+  add_foreign_key "user_games", "games"
+  add_foreign_key "user_games", "users"
 end
