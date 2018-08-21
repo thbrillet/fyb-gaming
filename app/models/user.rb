@@ -3,11 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
   has_many :user_games
   has_many :games, through: :user_games
   has_many :memberships
   has_many :groups, through: :memberships
   has_many :participations
+
+  mount_uploader :photo, PhotoUploader
 
   scope :matching_with, -> (user) do
     User.select("users.*, #{user.matching_percentage_calc} AS matching_percentage")

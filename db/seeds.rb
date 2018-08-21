@@ -444,5 +444,5 @@ user_membership_12 = Membership.new(
   status: "accepted",
   message: "C'est moi le leader"
 )
-user_membership_11.save!
+user_membership_12.save!
 puts "Seeds finished!"
