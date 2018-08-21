@@ -47,6 +47,7 @@
       <div class="col-xs-3">
         <h4>><strong><%= game.name %></strong> - <%= game.genre %></h4>
         <h5><strong><%= game.platform %></strong> - <%= game.year %></h5>
+        <%= cl_image_tag game.photo, height: 100 %>
       </div>
     <% end %>
   </div>
