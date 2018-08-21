@@ -1,0 +1,11 @@
+.diagonal-up{
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 50%, $background-color 50%);
+}
+
+.diagonal-down{
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(to right bottom, $background-color 50%, $main-color 50%);
+}
