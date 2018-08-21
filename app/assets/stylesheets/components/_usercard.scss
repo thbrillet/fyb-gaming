@@ -1,0 +1,54 @@
+.usercard {
+  height: 390px;
+  width: 390px;
+  background-color: $background-color;
+  position: relative;
+  transition: 0.2s;
+  .usercard-photo {
+    height: 185px;
+    width: 185px;
+    margin: auto;
+    position: relative;
+    bottom: 55px;
+    transition: 0.2s;
+  }
+  .usercard-flag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    .flag {
+      width: 60px;
+      height: 30px;
+      background-color: red;
+    }
+  }
+  .usercard-infos {
+    text-align: center;
+    margin-top: -25px;
+    h3 {
+      color: $main-color;
+      font-size: 36px;
+    }
+    #interline {
+      background-color: $main-color;
+      height: 5px;
+      width: 80px;
+      display: block;
+      margin: 0 auto 30px auto;
+    }
+    p {
+      color: white;
+      font-size: 20px;
+      font-weight: lighter;
+    }
+  }
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+  }
+  &:hover .usercard-photo {
+    bottom: 75px;
+    transform: scale(1.05);
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+  }
+}
