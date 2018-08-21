@@ -8,7 +8,11 @@
         <p>"<%= user.punch_line %>"</p>
       </div>
       <div class="usercard-flag">
-        <%= image_tag 'fr.svg', class: 'flag' %>
+        <% if user.language == 'fr' %>
+          <%= image_tag 'fr.svg', class: 'flag' %>
+        <% else %>
+          <%= image_tag 'gb.svg', class: 'flag' %>
+        <% end %>
       </div>
     </div>
   </div>
