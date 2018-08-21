@@ -1,13 +1,16 @@
-<div style="margin: 100px 400px; width: 100vw">
-  <div class="usercard">
-    <div class="usercard-photo" style="background: url('<%= cl_image_path user.photo, width: 185, height: 185, crop: :fit %>')"></div>
-    <div class="usercard-infos">
-      <h3>#<%= user.username %></h3>
-      <span id="interline"></span>
-      <p>"<%= user.punch_line %>"</p>
-    </div>
-    <div class="usercard-flag">
-      <%= image_tag 'fr.svg', class: 'flag' %>
+<div class="container" style="background: #EA2050">
+  <div style="margin: 100px 400px;">
+    <div class="usercard">
+      <div class="usercard-photo" style="background: url('<%= cl_image_path user.photo, width: 185, height: 185, crop: :fit %>')"></div>
+      <div class="usercard-infos">
+        <h3>#<%= user.username %></h3>
+        <span id="interline"></span>
+        <p>"<%= user.punch_line %>"</p>
+      </div>
+      <div class="usercard-flag">
+        <%= image_tag 'fr.svg', class: 'flag' %>
+      </div>
     </div>
   </div>
 </div>
+
