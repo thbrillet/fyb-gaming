@@ -248,12 +248,12 @@ user_game_11 = UserGame.new(
 user_game_11.save!
 user_game_12 = UserGame.new(
   user: thomas,
-  game: game_pc_gw2
+  game: game_pc_guildwars2
 )
 user_game_12.save!
 user_game_13 = UserGame.new(
   user: nico,
-  game: game_pc_gw2
+  game: game_pc_guildwars2
 )
 user_game_13.save!
 
@@ -281,7 +281,7 @@ group_3 = Group.create!(
   photo: File.open(Rails.root.join("db/fixtures/games/diablo3.jpg"))
 )
 group_4 = Group.create!(
-  game: game_pc_gw2,
+  game: game_pc_guildwars2,
   leader: nico,
   name: "On explore pepere",
   description: "Ramassez des pierres les gens pour le hall de guilde svp merci",
