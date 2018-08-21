@@ -14,11 +14,13 @@ class User < ApplicationRecord
       users.*,
       (
         100 * (
-          (CASE WHEN choice_one='#{user.choice_one}' THEN 1 ELSE 0 END) +
-          (CASE WHEN choice_two='#{user.choice_two}' THEN 1 ELSE 0 END) +
-          (CASE WHEN choice_three='#{user.choice_three}' THEN 1 ELSE 0 END)
+          (CASE WHEN interest_pve_pvp='#{user.interest_pve_pvp}' THEN 1 ELSE 0 END) +
+          (CASE WHEN interest_action_strat='#{user.interest_action_strat}' THEN 1 ELSE 0 END) +
+          (CASE WHEN interest_gameplay_story='#{user.interest_gameplay_story}' THEN 1 ELSE 0 END) +
+          (CASE WHEN interest_compet_chill='#{user.interest_compet_chill}' THEN 1 ELSE 0 END) +
+          (CASE WHEN interest_mmo_smallteam='#{user.interest_mmo_smallteam}' THEN 1 ELSE 0 END)
         )
-        / 3
+        / 5
       ) AS matching_percentage
     EOF
 
