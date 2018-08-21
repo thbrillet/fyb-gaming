@@ -8,4 +8,22 @@ class User < ApplicationRecord
   has_many :participations
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  scope :matchu_pitchu, -> (user) do
+    select = <<~EOF
+      users.*,
+      (
+        100 * (
+          (CASE WHEN choice_one='#{user.choice_one}' THEN 1 ELSE 0 END) +
+          (CASE WHEN choice_two='#{user.choice_two}' THEN 1 ELSE 0 END) +
+          (CASE WHEN choice_three='#{user.choice_three}' THEN 1 ELSE 0 END)
+        )
+        / 3
+      ) AS matching_percentage
+    EOF
+
+    User.select(select)
+      .where.not(id: user.id)
+      .order('matching_percentage DESC')
+  end
 end
