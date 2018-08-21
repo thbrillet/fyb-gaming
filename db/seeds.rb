@@ -165,46 +165,57 @@ user_game_1 = UserGame.new(
   user: fred,
   game: game_pc_warframe
 )
+user_game_1.save!
 user_game_2 = UserGame.new(
   user: fred,
   game: game_pc_guildwars2
 )
+user_game_2.save!
 user_game_3 = UserGame.new(
   user: fred,
   game: game_tablet_summonerswars
 )
+user_game_3.save!
 user_game_4 = UserGame.new(
   user: thibault,
   game: game_tablet_summonerswars
 )
+user_game_4.save!
 user_game_5 = UserGame.new(
   user: pierre,
   game: game_xboxone_halowars2
 )
+user_game_5.save!
 user_game_6 = UserGame.new(
   user: guillaume,
   game: game_xboxone_halowars2
 )
+user_game_6.save!
 user_game_7 = UserGame.new(
   user: thibault,
   game: game_xboxone_halowars2
 )
+user_game_7.save!
 user_game_8 = UserGame.new(
   user: pierre,
   game: game_pc_diablo3
 )
+user_game_8.save!
 user_game_9 = UserGame.new(
   user: guillaume,
   game: game_pc_diablo3
 )
+user_game_9.save!
 user_game_10 = UserGame.new(
   user: thibault,
   game: game_pc_diablo3
 )
+user_game_10.save!
 user_game_11 = UserGame.new(
   user: fred,
   game: game_pc_diablo3
 )
+user_game_11.save!
 
 puts "Creating groups..."
 
@@ -238,23 +249,26 @@ user_membership_1 = Membership.new(
   status: "pendding",
   message: "salut les gars, je suis bon, pls accept!"
 )
+user_membership_1.save!
 user_membership_2 = Membership.new(
   user: thibault,
   group: group_2,
   status: "pendding",
   message: "Je veux shooter moi aussi!"
 )
+user_membership_2.save!
 user_membership_3 = Membership.new(
   user: fred,
   group: group_3,
   status: "pendding",
   message: "Je veux farmer moi aussi!"
 )
+user_membership_3.save
 user_membership_4 = Membership.new(
   user: pierre,
   group: group_3,
   status: "pendding",
   message: "moi aussi j'ai besoin d'un meilleur stuff!"
 )
-
+user_membership_4.save!
 puts "Seeds finished!"
