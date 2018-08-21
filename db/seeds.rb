@@ -20,7 +20,7 @@ pierre = User.create!(
   biography: "J'aime les jeux d'acion et realiser de grosse performance en e-gaming",
   punch_line: "Go Go Go! on les degomme!",
   language: "fr",
-  birthdate: "1989-10-06",
+  birthdate: "1989-10-6",
   interest_pve_pvp: "PVP",
   interest_action_strat: "FPS",
   interest_gameplay_story: "Story",
@@ -77,6 +77,37 @@ guillaume = User.create!(
   email: "guillaume@gmail.com",
   password: "azerty"
 )
+thomas = User.create!(
+  username: "Leroutard",
+  photo: File.open(Rails.root.join("db/fixtures/users/thomas.jpg")),
+  biography: "J'aime explorer et taper des monstres",
+  punch_line: "On trace la route!",
+  language: "fr",
+  birthdate: "1998-2-7",
+  interest_pve_pvp: "PVP",
+  interest_action_strat: "FPS",
+  interest_gameplay_story: "Story",
+  interest_compet_chill: "Compet",
+  interest_mmo_smallteam: "SmallTeam",
+  email: "thomas@gmail.com",
+  password: "azerty"
+)
+nico = User.create!(
+  username: "bulbizarre",
+  photo: File.open(Rails.root.join("db/fixtures/users/nico.jpg")),
+  biography: "J'aime beaucoup explorer et capturer des monstres",
+  punch_line: "Vers l'infini...",
+  language: "fr",
+  birthdate: "1981-3-9",
+  interest_pve_pvp: "PVE",
+  interest_action_strat: "STR",
+  interest_gameplay_story: "Story",
+  interest_compet_chill: "Compet",
+  interest_mmo_smallteam: "MMO",
+  email: "nico@gmail.com",
+  password: "azerty"
+)
+
 
 puts "Creating default game..."
 
@@ -215,6 +246,16 @@ user_game_11 = UserGame.new(
   game: game_pc_diablo3
 )
 user_game_11.save!
+user_game_12 = UserGame.new(
+  user: thomas,
+  game: game_pc_gw2
+)
+user_game_12.save!
+user_game_13 = UserGame.new(
+  user: nico,
+  game: game_pc_gw2
+)
+user_game_13.save!
 
 puts "Creating groups..."
 
@@ -238,6 +279,13 @@ group_3 = Group.create!(
   name: "Sortie stuff high level",
   description: "on farm les derniers niveaux faites gaffes",
   photo: File.open(Rails.root.join("db/fixtures/games/diablo3.jpg"))
+)
+group_4 = Group.create!(
+  game: game_pc_gw2,
+  leader: nico,
+  name: "On explore pepere",
+  description: "Ramassez des pierres les gens pour le hall de guilde svp merci",
+  photo: File.open(Rails.root.join("db/fixtures/games/gw2.jpg"))
 )
 
 puts "Creating membership...."
@@ -270,4 +318,11 @@ user_membership_4 = Membership.new(
   message: "moi aussi j'ai besoin d'un meilleur stuff!"
 )
 user_membership_4.save!
+user_membership_5 = Membership.new(
+  user: thomas,
+  group: group_4,
+  status: "pendding",
+  message: "mon sac est vide, go exploration"
+)
+user_membership_5.save!
 puts "Seeds finished!"
