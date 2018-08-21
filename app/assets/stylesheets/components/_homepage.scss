@@ -1,0 +1,33 @@
+.container-banner-hp{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), url("https://cdn.wccftech.com/wp-content/uploads/2017/05/overwatch-tracer.jpg"));
+}
+
+.your-groups-hp-container{
+  background-color: $background-color;
+  h4{
+    margin: 0;
+    padding: 20px;
+    color: white;
+    font-size: 40px;
+    font-weight: 200;
+  }
+  a{
+    margin: 0;
+    padding: 0 20px;
+    color: #EA2050;
+    font-size: 40px;
+    font-weight: 200;
+    text-decoration: none;
+  }
+}
+
+.profiles-hp-container{
+  background: linear-gradient(to bottom, $main-color, #FF0F00);
+  h4{
+    margin: 0;
+  }
+}
