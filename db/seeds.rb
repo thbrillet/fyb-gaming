@@ -6,12 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning database..."
-User.destroy_all
-Game.destroy_all
-Group.destroy_all
-Membership.destroy_all
 UserGame.destroy_all
-
+Membership.destroy_all
+Group.destroy_all
+Game.destroy_all
+User.destroy_all
 
 puts "Creating default users..."
 
@@ -263,7 +262,7 @@ user_membership_3 = Membership.new(
   status: "pendding",
   message: "Je veux farmer moi aussi!"
 )
-user_membership_3.save
+user_membership_3.save!
 user_membership_4 = Membership.new(
   user: pierre,
   group: group_3,
