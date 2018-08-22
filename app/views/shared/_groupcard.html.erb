@@ -3,7 +3,7 @@
 
   <div class="box-groupcard" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
       url('<%= cl_image_path group.game.photo%>');" data-toggle="modal" data-target="#<%= group.id %>Modal">
-    <a href="#" class="link-btn"><span></span></a>
+    <div class="link-btn"><span></span></div>
     <h4><%= group.game.name %></h4>
     <h5><%= group.name %></h5>
     <% if group.game.platform == "XboxOne" %>

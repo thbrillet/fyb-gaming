@@ -16,15 +16,18 @@
 
 .title-hp{
   text-align: center;
+  img{
+    margin-top: 15vh;
+  }
   h1{
     color: $main-color;
-    font-size: 75px;
-    margin-top: 25vh;
+    font-size: 65px;
+    margin-top: 0px;
   }
   h2{
     color: white;
     font-weight: 400;
-    font-size: 50px;
+    font-size: 45px;
   }
 }
 
@@ -38,7 +41,7 @@
   background-color: white;
   box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
-  margin-bottom: 15vh;
+  margin-bottom: 10vh;
   width: 450px;
   font-style: italic;
   p{
@@ -53,15 +56,8 @@
     margin: 0;
     padding: 0 20px;
     color: $main-color;
-    font-size: 30px;
+    font-size: 25px;
     text-decoration: none;
-  }
-  p{
-    margin: 20px 0;
-    padding: 0 20px;
-    color: white;
-    font-size: 50px;
-    font-weight: 200;
   }
 }
 
