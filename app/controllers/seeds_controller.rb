@@ -10,6 +10,6 @@ class SeedsController < ApplicationController
   end
 
   def components
-    @user = User.first
+    @users = User.limit(6)
   end
 end

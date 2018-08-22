@@ -1,5 +1,5 @@
 <!-- CARD -->
-<div class="usercard" data-toggle="modal" data-target="#<%= user.username %>Modal">
+<div class="usercard" data-toggle="modal" data-target="#<%= user.username.delete(' ') %>Modal">
   <div class="usercard-photo" style="background: url('<%= cl_image_path user.photo, width: 185, height: 185, crop: :fit %>')"></div>
   <div class="usercard-infos">
     <h3>#<%= user.username %></h3>
@@ -15,11 +15,10 @@
   </div>
 </div>
 <!-- MODAL -->
-<div class="modal fade" id="<%= user.username %>Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="<%= user.username.delete(' ') %>Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
-    <div class="usermodal" data-toggle="modal" data-target="#<%= user.username %>Modal">
+    <div class="usermodal" data-toggle="modal" data-target="#<%= user.username.delete(' ') %>Modal">
 
-      <div class="usermodal">
         <div class="usermodal-platforms">
           <% user.platforms.each do |platform| %>
             <div class="box-for <%= platform %>"><%= platform %></div>
@@ -47,7 +46,7 @@
           <div class="tag"><%= user.interest_compet_chill.upcase %></div>
           <div class="tag"><%= user.interest_mmo_smallteam.upcase%></div>
         </div>
-      </div>
+
 
     </div>
   </div>
