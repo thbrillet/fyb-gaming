@@ -1,20 +1,56 @@
-<div class="container" style="background: #EA2050">
-  <div style="margin: 100px 400px;">
-    <div class="usercard">
-      <div class="usercard-photo" style="background: url('<%= cl_image_path user.photo, width: 185, height: 185, crop: :fit %>')"></div>
-      <div class="usercard-infos">
-        <h3>#<%= user.username %></h3>
-        <span id="interline"></span>
-        <p>"<%= user.punch_line %>"</p>
+<!-- CARD -->
+<div class="usercard" data-toggle="modal" data-target="#<%= user.username %>Modal">
+  <div class="usercard-photo" style="background: url('<%= cl_image_path user.photo, width: 185, height: 185, crop: :fit %>')"></div>
+  <div class="usercard-infos">
+    <h3>#<%= user.username %></h3>
+    <span class="interline"></span>
+    <p>"<%= user.punch_line %>"</p>
+  </div>
+  <div class="usercard-flag">
+    <% if user.language == 'fr' %>
+      <%= image_tag 'fr.svg', class: 'flag' %>
+    <% else %>
+      <%= image_tag 'gb.svg', class: 'flag' %>
+    <% end %>
+  </div>
+</div>
+<!-- MODAL -->
+<div class="modal fade" id="<%= user.username %>Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="usermodal" data-toggle="modal" data-target="#<%= user.username %>Modal">
+
+      <div class="usermodal">
+        <div class="usermodal-platforms">
+          <% user.platforms.each do |platform| %>
+            <div class="box-for <%= platform %>"><%= platform %></div>
+          <% end %>
+        </div>
+        <div class="usermodal-flag">
+          <div class="usercard-flag">
+            <% if user.language == 'fr' %>
+              <%= image_tag 'fr.svg', class: 'flag' %>
+            <% else %>
+              <%= image_tag 'gb.svg', class: 'flag' %>
+            <% end %>
+          </div>
+        </div>
+        <div class="usermodal-photo" style="background: url('<%= cl_image_path user.photo, width: 270, height: 270, crop: :fit %>')"></div>
+        <div class="usermodal-infos">
+          <h3>#<%= user.username %></h3>
+          <p>"<%= user.punch_line %>"</p>
+          <div class="usermodal-description"><%= user.biography %></div>
+        </div>
+        <div class="usermodal-tags">
+          <div class="tag"><%= user.interest_pve_pvp.upcase %></div>
+          <div class="tag"><%= user.interest_action_strat.upcase %></div>
+          <div class="tag"><%= user.interest_gameplay_story.upcase %></div>
+          <div class="tag"><%= user.interest_compet_chill.upcase %></div>
+          <div class="tag"><%= user.interest_mmo_smallteam.upcase%></div>
+        </div>
       </div>
-      <div class="usercard-flag">
-        <% if user.language == 'fr' %>
-          <%= image_tag 'fr.svg', class: 'flag' %>
-        <% else %>
-          <%= image_tag 'gb.svg', class: 'flag' %>
-        <% end %>
-      </div>
+
     </div>
   </div>
 </div>
+
 
