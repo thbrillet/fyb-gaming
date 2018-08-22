@@ -1,11 +1,20 @@
+<div class="navbar-absolute">
 <div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+  <!-- Useless Logo ... by fred -->
+  <%= link_to root_path, class: "navbar-icon" do %>
+    <%= image_tag "logofyb.jpg", height: 50 %>
+    <%= image_tag "pc2.jpg", height: 50 %>
+    <%= image_tag "ps4.png", height: 50 %>
+    <%= image_tag "xbox.jpg", height: 50 %>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+  <!-- Not finished ... by fred -->
+    <button class="navbar-button">Mesg</button>
+    <button class="navbar-button">Match</button>
+    <button class="navbar-button">Group</button>
 
     <% if user_signed_in? %>
 
@@ -55,4 +64,4 @@
     </div>
   </div>
 </div>
-
+</div>

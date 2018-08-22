@@ -12,6 +12,14 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <!-- necessaire pour utiliser devise -->
+    <% if notice %>
+      <p class="notice flash-notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert flash-alert"><%= alert %></p>
+    <% end %>
+
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
