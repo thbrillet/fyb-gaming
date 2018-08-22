@@ -22,7 +22,7 @@ pierre = User.create!(
   language: "fr",
   birthdate: "1989-10-6",
   interest_pve_pvp: "PVP",
-  interest_action_strat: "FPS",
+  interest_action_strat: "Action",
   interest_gameplay_story: "Story",
   interest_compet_chill: "Compet",
   interest_mmo_smallteam: "SmallTeam",
@@ -38,7 +38,7 @@ thibault = User.create!(
   language: "fr",
   birthdate: "1985-6-16",
   interest_pve_pvp: "PVE",
-  interest_action_strat: "STR",
+  interest_action_strat: "Strategy",
   interest_gameplay_story: "Gameplay",
   interest_compet_chill: "Chill",
   interest_mmo_smallteam: "MMO",
@@ -54,7 +54,7 @@ fred = User.create!(
   language: "fr",
   birthdate: "1979-8-7",
   interest_pve_pvp: "PVE",
-  interest_action_strat: "STR",
+  interest_action_strat: "Strategy",
   interest_gameplay_story: "Story",
   interest_compet_chill: "Chill",
   interest_mmo_smallteam: "SmallTeam",
@@ -64,13 +64,13 @@ fred = User.create!(
 guillaume = User.create!(
   username: "Piccolo",
   photo: File.open(Rails.root.join("db/fixtures/users/guillaume.jpg")),
-  biography:"Ceratins crois que je suis proffesseur mais que je suis un tueur in game/
+  biography:"Certains crois que je suis proffesseur mais que je suis un tueur in game/
   vous allez voir que c'est moi le meilleur",
   punch_line: "There can be only one!",
   language: "fr",
   birthdate: "1982-4-5",
   interest_pve_pvp: "PVP",
-  interest_action_strat: "STR",
+  interest_action_strat: "Strategy",
   interest_gameplay_story: "Gameplay",
   interest_compet_chill: "Chill",
   interest_mmo_smallteam: "MMO",
@@ -85,7 +85,7 @@ thomas = User.create!(
   language: "fr",
   birthdate: "1998-2-7",
   interest_pve_pvp: "PVP",
-  interest_action_strat: "FPS",
+  interest_action_strat: "Action",
   interest_gameplay_story: "Story",
   interest_compet_chill: "Compet",
   interest_mmo_smallteam: "SmallTeam",
@@ -100,7 +100,7 @@ nico = User.create!(
   language: "fr",
   birthdate: "1981-3-9",
   interest_pve_pvp: "PVE",
-  interest_action_strat: "STR",
+  interest_action_strat: "Strategy",
   interest_gameplay_story: "Story",
   interest_compet_chill: "Compet",
   interest_mmo_smallteam: "MMO",
@@ -115,14 +115,88 @@ cecile = User.create!(
   language: "fr",
   birthdate: "1981-3-9",
   interest_pve_pvp: "PVE",
-  interest_action_strat: "STR",
+  interest_action_strat: "Strategy",
   interest_gameplay_story: "Story",
   interest_compet_chill: "Compet",
   interest_mmo_smallteam: "MMO",
   email: "cecile@gmail.com",
   password: "azerty"
 )
-
+charlotte = User.create!(
+  username: "mimi16",
+  photo: File.open(Rails.root.join("db/fixtures/users/mimi16.jpg")),
+  biography: "Je suis une hardcore gameuse, venez me defier",
+  punch_line: "No one can dedeat me!",
+  language: "fr",
+  birthdate: "1998-6-14",
+  interest_pve_pvp: "PVP",
+  interest_action_strat: "Action",
+  interest_gameplay_story: "Gameplay",
+  interest_compet_chill: "Compet",
+  interest_mmo_smallteam: "SmallTeam",
+  email: "charlotte@gmail.com",
+  password: "azerty"
+)
+franck = User.create!(
+  username: "swirl",
+  photo: File.open(Rails.root.join("db/fixtures/users/swirl.png")),
+  biography: "Je suis la tete pensante des groupes, avec une grosse experience des jeux de strategy.",
+  punch_line: "Don't drop me",
+  language: "fr",
+  birthdate: "1996-2-25",
+  interest_pve_pvp: "PVE",
+  interest_action_strat: "Strategy",
+  interest_gameplay_story: "Gameplay",
+  interest_compet_chill: "Compet",
+  interest_mmo_smallteam: "MMO",
+  email: "franck@gmail.com",
+  password: "azerty"
+)
+anthony = User.create!(
+  username: "antho29",
+  photo: File.open(Rails.root.join("db/fixtures/users/anthon29.jpg")),
+  biography: "Je suis surtout connecté tard le soir, n'hesitez pas à me grouper ingame",
+  punch_line: "never sleep",
+  language: "fr",
+  birthdate: "1999-12-25",
+  interest_pve_pvp: "PVE",
+  interest_action_strat: "Strategy",
+  interest_gameplay_story: "Story",
+  interest_compet_chill: "Chill",
+  interest_mmo_smallteam: "MMO",
+  email: "anthony@gmail.com",
+  password: "azerty"
+)
+julien = User.create!(
+  username: "xl-julien",
+  photo: File.open(Rails.root.join("db/fixtures/users/xl-julien.jpg")),
+  biography: "Je suis sur de nombreux, mais à la recherche d'une bonne team ou d'une guilde",
+  punch_line: "I'll be back",
+  language: "fr",
+  birthdate: "1978-2-15",
+  interest_pve_pvp: "PVE",
+  interest_action_strat: "Action",
+  interest_gameplay_story: "Story",
+  interest_compet_chill: "Compet",
+  interest_mmo_smallteam: "MMO",
+  email: "julien@gmail.com",
+  password: "azerty"
+)
+kevin = User.create!(
+  username: "kevin91",
+  photo: File.open(Rails.root.join("db/fixtures/users/kevin91.jpg")),
+  biography: "Je suis surtout connecté tard le soir, n'hesitez pas à me grouper ingame",
+  punch_line: "never sleep",
+  language: "fr",
+  birthdate: "1999-12-25",
+  interest_pve_pvp: "PVP",
+  interest_action_strat: "Action",
+  interest_gameplay_story: "Story",
+  interest_compet_chill: "Chill",
+  interest_mmo_smallteam: "MMO",
+  email: "kevin@gmail.com",
+  password: "azerty"
+)
 
 puts "Creating default game..."
 
@@ -161,7 +235,6 @@ game_pc_dontstarve = Game.create!(
   genre: "Survival",
   photo: File.open(Rails.root.join("db/fixtures/games/dst.jpg"))
 )
-
 game_ps4_dontstarve = Game.create!(
   name: "Don't Starve: Together",
   platform: "PS4",
@@ -169,14 +242,12 @@ game_ps4_dontstarve = Game.create!(
   genre: "Survival",
   photo: File.open(Rails.root.join("db/fixtures/games/dst.jpg"))
 )
-
   game_xboxone_dontstarve = Game.create!(
   name: "Don't Starve: Together",
   platform: "Xbox One",
   year: "2016",
   genre: "Survival",
   photo: File.open(Rails.root.join("db/fixtures/games/dst.jpg"))
-
 )
 game_xboxone_divinity = Game.create!(
   name: "Divinity: Original Sin II",
@@ -321,6 +392,56 @@ user_game_18 = UserGame.new(
 )
 user_game_18.save!
 
+user_game_19 = UserGame.new(
+  user: charlotte,
+  game: game_xboxone_halo5
+)
+user_game_19.save!
+
+user_game_20 = UserGame.new(
+  user: franck,
+  game: game_xboxone_halo5
+)
+user_game_20.save!
+
+user_game_21 = UserGame.new(
+  user: kevin,
+  game: game_xboxone_halo5
+)
+user_game_21.save!
+
+user_game_22 = UserGame.new(
+  user: anthony,
+  game: game_xboxone_halo5
+)
+user_game_22.save!
+
+user_game_23 = UserGame.new(
+  user: julien,
+  game: game_xboxone_halo5
+)
+user_game_23.save!
+
+user_game_24 = UserGame.new(
+  user: julien,
+  game: game_pc_dontstarve
+)
+user_game_24.save!
+
+user_game_25 = UserGame.new(
+  user: thibault,
+  game: game_xboxone_halo5
+)
+user_game_25.save!
+
+user_game_26 = UserGame.new(
+  user: pierre,
+  game: game_xboxone_halo5
+)
+user_game_26.save!
+
+
+
 puts "Creating groups..."
 
 group_1 = Group.create!(
@@ -356,6 +477,21 @@ group_5 = Group.create!(
   leader: fred,
   name: "On passe l'hiver seulement",
   description: "camp au nord ouest du carrefour du portail",
+  photo: File.open(Rails.root.join("db/fixtures/games/dst.jpg"))
+)
+game_xboxone_halo5
+group_6 = Group.create!(
+  game: game_xboxone_halo5,
+  leader: anthony,
+  name: "Juste pour trasher tout le monde",
+  description: "On reste au bord de la map svp",
+  photo: File.open(Rails.root.join("db/fixtures/games/dst.jpg"))
+)
+group_7 = Group.create!(
+  game: game_xboxone_halo5,
+  leader: franck,
+  name: "On UP ce foutu classement",
+  description: "methode stealth et on trash si on est decouvert",
   photo: File.open(Rails.root.join("db/fixtures/games/dst.jpg"))
 )
 
@@ -438,6 +574,7 @@ user_membership_11 = Membership.new(
   message: "C'est moi le leader"
 )
 user_membership_11.save!
+
 user_membership_12 = Membership.new(
   user: fred,
   group: group_5,
@@ -445,4 +582,53 @@ user_membership_12 = Membership.new(
   message: "C'est moi le leader"
 )
 user_membership_12.save!
+
+user_membership_13 = Membership.new(
+  user: franck,
+  group: group_6,
+  status: "accepted",
+  message: "C'est moi le leader"
+)
+user_membership_13.save!
+
+user_membership_14 = Membership.new(
+  user: charlotte,
+  group: group_6,
+  status: "accepted",
+  message: "On va se les faire"
+)
+user_membership_14.save!
+
+user_membership_15 = Membership.new(
+  user: kevin,
+  group: group_6,
+  status: "accepted",
+  message: "on reste groupe svp"
+)
+user_membership_15.save!
+
+user_membership_16 = Membership.new(
+  user: julien,
+  group: group_6,
+  status: "accepted",
+  message: "C'est moi le leader"
+)
+user_membership_16.save!
+
+user_membership_17 = Membership.new(
+  user: pierre,
+  group: group_6,
+  status: "accepted",
+  message: "C'est moi le leader"
+)
+user_membership_17.save!
+
+user_membership_18 = Membership.new(
+  user: thibault,
+  group: group_6,
+  status: "accepted",
+  message: "C'est moi le leader"
+)
+user_membership_18.save!
+
 puts "Seeds finished!"
