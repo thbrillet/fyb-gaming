@@ -1,8 +1,5 @@
 <!-- BANNER -->
 <div class="container-banner-hp">
-  <video autoplay muted loop id="myVideo">
-    <source src="rain.mp4" type="vid  eo/mp4">
-  </video>
   <div class="container-title-hp">
     <div class="title-hp">
       <h1>#TEAM_UP</h1>
@@ -12,8 +9,7 @@
       </div>
     </div>
     <div class="discover-hp">
-      <a href="#" class="link-btn">#DISCOVER</a>
-      <p>OVERWATCH</p>
+      <a href="#" class="link-btn"><span></span>#DISCOVER_OVERWATCH</a>
     </div>
   </div>
 </div>
@@ -30,15 +26,9 @@
     <div class="relative-scroll">
       <div id="container-scroll">
         <div id="flex-scroll">
-          <div class="box">lalalala</div>
-          <div class="box"></div>
-          <div class="box"></div>
-
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-
-          <div class="box"></div>
+          <% @groups.each do |group| %>
+            <%= render "shared/groupcard", group: group %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -55,14 +45,13 @@
   </div>
   <div class="profile-hp-scroll">
     <div class="flex-container-hp">
-      <div class="player-card"></div>
-      <div class="player-card"></div>
-      <div class="player-card"></div>
-      <div class="player-card"></div>
+      <% @users.each do |user| %>
+        <%= render "shared/usercard", user: user %>
+      <% end %>
     </div>
   </div>
   <div class="profile-hp-all">
-    <a href="#" class="link-btn">#SEE_ALL_SELECTION</a>
+    <a href="#" class="link-btn"><span></span>#SEE_ALL_SELECTION</a>
   </div>
 </div>
 
@@ -78,15 +67,9 @@
     <div class="relative-scroll">
       <div id="container-scroll">
         <div id="flex-scroll">
-          <div class="box">lalalala</div>
-          <div class="box"></div>
-          <div class="box"></div>
-
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-
-          <div class="box"></div>
+          <% @groups.each do |group| %>
+            <%= render "shared/groupcard", group: group %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -103,15 +86,9 @@
     <div class="relative-scroll">
       <div id="container-scroll">
         <div id="flex-scroll">
-          <div class="box">lalalala</div>
-          <div class="box"></div>
-          <div class="box"></div>
-
-          <div class="box"></div>
-          <div class="box"></div>
-          <div class="box"></div>
-
-          <div class="box"></div>
+          <% @groups.each do |group| %>
+            <%= render "shared/groupcard", group: group %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -119,3 +96,7 @@
 </div>
 
 <div class="diagonal-down"></div>
+
+<% @groups.each do |group| %>
+  <%= render "shared/modals-groupcard", group: group %>
+<% end %>

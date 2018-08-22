@@ -1,0 +1,13 @@
+.group-event{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 40px;
+}
+
+.event-img{
+  width: 100px;
+  height: 100px;
+  background-color: $main-color;
+}

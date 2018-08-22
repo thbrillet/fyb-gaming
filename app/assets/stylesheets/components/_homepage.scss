@@ -1,11 +1,3 @@
-#myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-}
-
 .container-banner-hp{
   display: flex;
   justify-content: space-around;
@@ -65,10 +57,10 @@
     text-decoration: none;
   }
   p{
-    margin: 0;
+    margin: 20px 0;
     padding: 0 20px;
     color: white;
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 200;
   }
 }
@@ -120,7 +112,7 @@
 }
 
 .profile-hp-scroll{
-  height: 400px;
+  height: 600px;
   width: 100%;
   margin-top: 40px;
 }
