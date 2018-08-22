@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'seeds/index', to: "seeds#index"
+  get 'seeds', to: "seeds#index"
+  get 'components', to: "seeds#components"
   devise_for :users
   root to: 'pages#home'
 

@@ -19,6 +19,10 @@ class User < ApplicationRecord
       .order('matching_percentage DESC')
   end
 
+  def platforms
+    self.games.pluck(:platform).uniq
+  end
+
   def matching_percentage_calc
     <<~PLOP
       (
