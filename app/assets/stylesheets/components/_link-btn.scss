@@ -1,7 +1,8 @@
 #flex-scroll{
   position: relative;
-  a {
+  .link-btn {
     position: relative;
+    z-index: 20;
     margin: 0;
     color: white;
     /* line-height: 2; */
@@ -13,13 +14,13 @@
     /* 2. */
     padding-left: 0px;
     padding-top: 0;
-    padding-bottom: 220px;
+    padding-bottom: 280px;
     padding-right: 450px;
     /* padding-right: 5px; */
   }
 
-  a::before,
-  a::after,
+  .link-btn::before,
+  .link-btn::after,
   span::before,
   span::after {
     content: '';
@@ -31,13 +32,13 @@
     /* -webkit-mix-blend-mode: hue; */
   }
 
-  a::before {
+  .link-btn::before {
     top: -2px;
     left: -2px;
     border-top: 1px solid $main-color;
     border-left: 1px solid $main-color;
   }
-  a::after {
+  .link-btn::after {
     top: -2px;
     right: -2px;
     border-top: 1px solid $main-color;
@@ -60,10 +61,10 @@
   }
 
 
-  a:hover::before,
-  a:hover::after,
-  a:hover span::before,
-  a:hover span::after  {
+  .link-btn:hover::before,
+  .link-btn:hover::after,
+  .link-btn:hover span::before,
+  .link-btn:hover span::after  {
     width: calc( 500px / 2);
     height: calc( 300px / 2);
   }
