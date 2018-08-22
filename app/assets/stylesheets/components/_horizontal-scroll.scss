@@ -1,0 +1,37 @@
+.relative-scroll{
+  position: relative;
+}
+
+#container-scroll {
+  // center in parent
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100vw;
+
+  display: flex;
+  overflow: auto;
+}
+
+// inner parent allowed to stretch to fit children
+#flex-scroll {
+  // inside spacing
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.box {
+  width: 400px;
+  height: 250px;
+  margin-left: 60px;
+  box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.box:nth-child(3n-2) { background-color: #EF5350; }
+.box:nth-child(3n-1) { background-color: #2E7D32; }
+.box:nth-child(3n) { background-color: #03A9F4; }
