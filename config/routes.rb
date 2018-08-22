@@ -13,7 +13,7 @@ Rails.application.routes.draw do
         patch :decline
       end
     end
-    resources :events, only: [:new, :create, :edit, :update] do
+    resources :events, only: [:create, :edit, :update] do
       member do
         patch :confirm
         patch :cancel
