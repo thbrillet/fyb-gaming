@@ -4,6 +4,7 @@
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
+    z-index: -1;
 }
 
 .container-banner-hp{
@@ -27,7 +28,7 @@
   h1{
     color: $main-color;
     font-size: 75px;
-    margin-top: 25vh;
+    margin-top: 13vh;
   }
   h2{
     color: white;
