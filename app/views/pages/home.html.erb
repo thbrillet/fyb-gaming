@@ -11,7 +11,17 @@
             <h1>#TEAM_UP</h1>
             <h2>WITH THE PERFECT SQUAD</h2>
             <div class="container-input-hp">
-              <div class="input-hp"><p>What game do you wanna play?</p></div>
+              <div class="input-hp">
+                <%= form_tag root_path, method: :get do %>
+                  <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-control",
+                    placeholder: "What game do you want to play?",
+                    id: 'search'
+                  %>
+                <% end %>
+                <div id="results" class="list-group hidden"></div>
+              </div>
             </div>
           </div>
           <div class="discover-hp">
@@ -115,10 +125,9 @@
 <% @users.each do |user| %>
   <%= render "shared/modal-usercard", user: user %>
 <% end %>
-
-
-
-
+<input id="games_names" type="hidden" data-games='<%= @games_names.to_json %>'>
+<%= javascript_pack_tag 'search' %>
+<%= javascript_pack_tag 'search' %>
 
 
 
