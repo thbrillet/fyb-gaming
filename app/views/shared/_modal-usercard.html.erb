@@ -5,7 +5,7 @@
 
         <div class="usermodal-platforms">
           <% user.platforms.each do |platform| %>
-            <div class="box-for <%= platform %>"><%= platform %></div>
+            <div class="box-for <%= platform.delete(' ') %>"><%= platform.delete(' ') %></div>
           <% end %>
         </div>
         <div class="usermodal-flag">

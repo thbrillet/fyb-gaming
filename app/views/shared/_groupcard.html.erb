@@ -6,7 +6,7 @@
     <div class="link-btn"><span></span></div>
     <h4><%= group.game.name %></h4>
     <h5><%= group.name %></h5>
-    <% if group.game.platform == "XboxOne" %>
+    <% if group.game.platform.delete(' ') == "XboxOne" %>
       <p class="XboxOne"><%= group.game.platform %></p>
     <% elsif group.game.platform == "PC" %>
       <p class="PC"><%= group.game.platform %></p>

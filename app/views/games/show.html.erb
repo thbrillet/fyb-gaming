@@ -1,0 +1,143 @@
+<!-- BANNER -->
+
+<div class="container-main">
+  <div id="group1">
+    <%= render 'shared/navbar' %>
+    <div class="content-head">
+      <div class="main-head">
+        <div class="container-title-hp">
+          <div class="title-hp">
+            <%= image_tag "logo.png", height: 200 %>
+            <h1>#TEAM_UP</h1>
+            <h2>WITH THE PERFECT SQUAD</h2>
+          </div>
+          <div class="discover-hp">
+            <a href="#" class="link-btn"><span></span>#DISCOVER_OVERWATCH</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="background" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+    url('<%= cl_image_path @game.photo %>');"></div>
+    <div class="foreground margin-top">
+      <div class="diagonal-up"></div>
+
+      <!-- BROWSE YOUR GROUPS -->
+      <div class="your-groups-hp-container">
+        <div class="your-groups-hp-title">
+          <h4 class="animated fadeInRightBig">YOUR FRIENDS ARE PLAYING!</h4>
+          <a href="#" class="link-btn">#BROWSE_YOUR_GROUPS</a>
+        </div>
+        <div class="your-groups-hp-scroll">
+          <div class="relative-scroll">
+            <div id="container-scroll">
+              <div id="flex-scroll">
+                <% @groups.each do |group| %>
+                  <%= render "shared/groupcard", group: group %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="diagonal-down"></div>
+
+      <!-- MATCH WITH NEW BUDDIES -->
+      <div class="profile-hp-container">
+        <div class="profile-hp-title">
+          <a href="#" class="link-btn">#FIND_NEW_BUDDIES</a>
+          <h4>AND GROUP WITH THEM!</h4>
+        </div>
+        <div class="profile-hp-scroll">
+          <div class="flex-container-hp">
+            <% @users.each do |user| %>
+              <%= render "shared/usercard", user: user %>
+            <% end %>
+          </div>
+        </div>
+        <div class="profile-hp-all">
+          <a href="#" class="link-btn"><span></span>#SEE_ALL_SELECTION</a>
+        </div>
+      </div>
+
+      <div class="diagonal-up-orange"></div>
+
+      <!--MATCH WITH NEW GROUPS -->
+      <div class="groups-hp-container">
+        <div class="groups-hp-title">
+          <a href="#" class="link-btn">#THEY_ARE_PLAYING_YOUR_GAMES</a>
+          <h4>JOIN THEM!</h4>
+        </div>
+        <div class="groups-hp-scroll">
+          <div class="relative-scroll">
+            <div id="container-scroll">
+              <div id="flex-scroll">
+                <% @groups_without_user.each do |group| %>
+                  <%= render "shared/groupcard", group: group %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATCH WITH NEW GROUPS IN NEW GAMES -->
+      <div class="new-games-hp-container">
+        <div class="new-games-hp-title">
+          <a href="#" class="link-btn">#DISCOVER_NEW_GAMES</a>
+          <h4>WITH GAMERS YOU SHOULD LIKE!</h4>
+        </div>
+        <div class="new-games-hp-scroll">
+          <div class="relative-scroll">
+            <div id="container-scroll">
+              <div id="flex-scroll">
+                <% @other_games_groups.each do |group| %>
+                  <%= render "shared/groupcard", group: group %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="diagonal-down"></div>
+
+    </div>
+  </div>
+</div>
+
+<% @groups.each do |group| %>
+  <%= render "shared/modals-groupcard", group: group %>
+<% end %>
+<% @users.each do |user| %>
+  <%= render "shared/modal-usercard", user: user %>
+<% end %>
+<% @groups_without_user.each do |group| %>
+  <%= render "shared/modals-groupcard", group: group %>
+<% end %>
+<% @other_games_groups.each do |group| %>
+  <%= render "shared/modals-groupcard", group: group %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
