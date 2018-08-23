@@ -500,7 +500,7 @@ puts "Creating membership...."
 user_membership_1 = Membership.new(
   user: fred,
   group: group_1,
-  status: "pendding",
+  status: "pending",
   message: "salut les gars, je suis bon, pls accept!"
 )
 user_membership_1.save!
@@ -514,14 +514,14 @@ user_membership_2.save!
 user_membership_3 = Membership.new(
   user: fred,
   group: group_3,
-  status: "pendding",
+  status: "pending",
   message: "Je veux farmer moi aussi!"
 )
 user_membership_3.save!
 user_membership_4 = Membership.new(
   user: pierre,
   group: group_3,
-  status: "pendding",
+  status: "pending",
   message: "moi aussi j'ai besoin d'un meilleur stuff!"
 )
 user_membership_4.save!

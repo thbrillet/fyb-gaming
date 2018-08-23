@@ -1,54 +1,56 @@
-<h1>Seeds</h1>
-<div class="container-fluid" style="color: white">
-  <h2>Users</h2>
-  <div class="row">
-    <% @users.each do |user| %>
-      <div class="col-xs-4">
-        <h4 class="text-center"><%= user.username %></h4>
-        <h5 class="text-center"><%= user.punch_line %></h5>
-        <div class="row">
-          <div class="col-xs-offset-1 col-xs-5">
-            <ul>
-              <li><%= user.interest_pve_pvp %></li>
-              <li><%= user.interest_action_strat %></li>
-              <li><%= user.interest_gameplay_story %></li>
-              <li><%= user.interest_compet_chill %></li>
-              <li><%= user.interest_mmo_smallteam %></li>
-            </ul>
-        </div>
-          <div class="col-xs-5">
-            <ul>
-            <% user.games.each do |game| %>
-              <li><%= game.name %></li>
-            <% end %>
-            </ul>
+<div style="color: white">
+  <h1>Seeds</h1>
+  <div class="container-fluid">
+    <h2>Users</h2>
+    <div class="row">
+      <% @users.each do |user| %>
+        <div class="col-xs-4">
+          <h4 class="text-center"><%= user.username %> id: <%= user.id %></h4>
+          <h5 class="text-center"><%= user.punch_line %></h5>
+          <div class="row">
+            <div class="col-xs-offset-1 col-xs-5">
+              <ul>
+                <li><%= user.interest_pve_pvp %></li>
+                <li><%= user.interest_action_strat %></li>
+                <li><%= user.interest_gameplay_story %></li>
+                <li><%= user.interest_compet_chill %></li>
+                <li><%= user.interest_mmo_smallteam %></li>
+              </ul>
+          </div>
+            <div class="col-xs-5">
+              <ul>
+              <% user.games.each do |game| %>
+                <li><%= game.name %></li>
+              <% end %>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+        <% end %>
+    </div>
+    <h2>Groups</h2>
+    <div class="row">
+      <% @groups.each do |group| %>
+        <div class="col-xs-4">
+          <h4><strong><%= group.name %></strong> - <%= group.leader.username %> id: <%= group.id %></h4>
+          <h5><strong><%= group.game.name %></strong> - <%= group.game.platform %></h5>
+          <ul>
+            <% group.memberships.each do |membership| %>
+              <li><%= membership.user.username %> (<i><%= membership.status %></i>)</li>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
-  </div>
-  <h2>Groups</h2>
-  <div class="row">
-    <% @groups.each do |group| %>
-      <div class="col-xs-4">
-        <h4><strong><%= group.name %></strong> - <%= group.leader.username %></h4>
-        <h5><strong><%= group.game.name %></strong> - <%= group.game.platform %></h5>
-        <ul>
-          <% group.users.each do |user| %>
-            <li><%= user.username %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-  </div>
-  <h2>Games</h2>
-  <div class="row">
-    <% @games.each do |game| %>
-      <div class="col-xs-3">
-        <h4>><strong><%= game.name %></strong> - <%= game.genre %></h4>
-        <h5><strong><%= game.platform %></strong> - <%= game.year %></h5>
-        <%= cl_image_tag game.photo, height: 100 %>
-      </div>
-    <% end %>
+    </div>
+    <h2>Games</h2>
+    <div class="row">
+      <% @games.each do |game| %>
+        <div class="col-xs-3">
+          <h4><strong><%= game.name %></strong> - <%= game.genre %> id: <%= game.id %></h4>
+          <h5><strong><%= game.platform %></strong> - <%= game.year %></h5>
+          <%= cl_image_tag game.photo, height: 100 %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
