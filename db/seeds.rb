@@ -223,7 +223,7 @@ game_pc_summonerswars = Game.create!(
 )
 game_xboxone_halo5 = Game.create!(
   name: "Halo: Guardians",
-  platform: "Xbox One",
+  platform: "XboxOne",
   year: "2015",
   genre: "FPS",
   photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
@@ -244,14 +244,14 @@ game_ps4_dontstarve = Game.create!(
 )
   game_xboxone_dontstarve = Game.create!(
   name: "Don't Starve: Together",
-  platform: "Xbox One",
+  platform: "XboxOne",
   year: "2016",
   genre: "Survival",
   photo: File.open(Rails.root.join("db/fixtures/games/dst.jpg"))
 )
 game_xboxone_divinity = Game.create!(
   name: "Divinity: Original Sin II",
-  platform: "Xbox One",
+  platform: "XboxOne",
   year: "2017",
   genre: "RPG",
   photo: File.open(Rails.root.join("db/fixtures/games/divinity2.jpg"))
@@ -272,7 +272,7 @@ game_ps4_destiny = Game.create!(
 )
 game_xboxone_forzahorizon = Game.create!(
   name: "Forza Horizon 3",
-  platform: "Xbox One",
+  platform: "XboxOne",
   year: "2017",
   genre: "Racing",
   photo: File.open(Rails.root.join("db/fixtures/games/forza.jpg"))
