@@ -2,6 +2,9 @@ class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:home]
 
   def home
+    @users = User.all.limit(4)
+    @groups = Group.all.limit(7)
+    @membership = Membership.new
     @games_names = Game.pluck(:name).uniq
     @users = User.all.matching_with(current_user).limit(4)
     @user_groups = current_user.groups

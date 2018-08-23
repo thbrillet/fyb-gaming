@@ -3,19 +3,33 @@
     <div class="groupmodal-content" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
     url('<%= cl_image_path group.game.photo%>');">
       <button data-dismiss="modal" class="close groupmodal-close-btn">×</button>
+
+      <!--EVENTS-->
       <div class="group-infos">
         <h4><%= group.game.name %></h4>
         <h5><%= group.name %></h5>
         <p class="description-group"><%= group.description %></p>
         <p class="group-event-title">GROUP EVENTS (2 DISPLAYED, <%= group.events.length %> IN TOTAL) :</p>
         <div class="group-events">
-          <% group.events.each do |event| %>
+          <% group.events.first(2).each do |event| %>
+          <!--EVENT BAR-->
             <div class="group-event">
-              <%= event.title %>
+              <div class="group-event-img" style="background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
+              url('<%= cl_image_path event.photo, height: 80, width: 80, crop: :fill%>');"></div>
+              <h6><%= event.title %></h6>
+              <div class="completion">
+                COMPLETION: 33.3% [5/15]
+                <div class="meter">
+                  <span style="width: 25%"></span>
+                </div>
+              </div>
             </div>
+
           <% end %>
         </div>
       </div>
+
+      <!--PLATFORM-->
       <div class="platform">
         <% if group.game.platform.delete(' ') == "XboxOne" %>
           <p class="XboxOne"><%= group.game.platform %></p>
@@ -26,20 +40,29 @@
         <% end %>
       </div>
 
-      <div class="banner-pink">
+      <!--MEMBERS-->
+      <div class="banner-pink" style="bottom: -60vh;">
         <div class="diagonal-pink"></div>
         <div class="bg-pink">
           <div class="container-link-btns">
             <div class="container-link-btn-members">
               <button type="button" class="link-btn btngroupmembers"><span></span>#SEE_MEMBERS</button>
             </div>
+            <div class="req-form collapse">
+              <%= simple_form_for @membership, url: group_memberships_path(group) do |f| %>
+                <%= f.input :message, :label => false, wrapper_html: {class: "form-inline"} do %>
+                  <%= f.input_field :message, placeholder: "Say hi ! :)", :label => false %>
+                  <%= f.button :submit, "Apply", :class => "btn-primary" %>
+                <% end %>
+              <% end %>
+            </div>
             <div class="container-link-btn">
-              <button type="button" class="link-btn"><span></span>#SEND_REQUEST</button>
+              <button type="button" class="link-btn btnrequest" data-toggle="collapse" data-target=".req-form"><span></span>#SEND_REQUEST</button>
             </div>
           </div>
           <div class="container-cards">
             <% group.users.each do |user| %>
-              <div class="group-user" class="groupmembercard"> <%= render "shared/usercard", user: user %> </div>
+              <div class="group-user groupmembercard"> <%= render "shared/usercard", user: user %> </div>
             <% end %>
           </div>
         </div>
@@ -48,4 +71,3 @@
     </div>
   </div>
 </div>
-

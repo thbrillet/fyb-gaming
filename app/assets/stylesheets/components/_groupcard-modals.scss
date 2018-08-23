@@ -33,6 +33,14 @@
   .group-event-title{
     color: white;
   }
+  .group-event{
+    height: 100px;
+    padding: 10px;
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .group-users{
     position: absolute;
     left: 40px;
@@ -56,13 +64,6 @@
       padding: 10px 20px;
     }
   }
-  .banner-pink{
-    position: relative;
-    height: auto;
-    bottom: -70vh;
-    box-shadow: -4 0 5 rgba(0, 0, 0, 0.2);
-    transition: 1s;
-  }
   .diagonal-pink{
     height: 100px;
     width: 100%;
@@ -80,10 +81,51 @@
   }
   .container-cards{
     display: flex;
-    padding: 100px 40px;
+    padding: 150px 40px;
     overflow: scroll;
   }
+  .group-event-img{
+    width:80px;
+    height: 80px;
+    background-size: cover;
+    background-position: center;
+  }
+  h6{
+    font-weight: 400;
+    font-size: 22px;
+  }
+  .membership_message{
+    display: flex;
+    width: 50vw;
+    padding: 0 20px;
+    #membership_message{
+      width: 40vw;
+      background: none;
+      border: 1px solid white;
+      color: white;
+      text-align: center;
+      padding: 5px;
+    }
+    input{
+      border: none;
+      background: none;
+      color: white;
+      border-top: 1px solid white;
+      border-left: none;
+      border-bottom: 1px solid white;
+      border-right: 1px solid white;
+    }
+  }
 }
+.banner-pink{
+    position: relative;
+    height: auto;
+    box-shadow: -4 0 5 rgba(0, 0, 0, 0.2);
+    transition: 1s;
+  }
+  .collapse {
+    display: none;
+  }
 
 .modal-dialog-centered{
   width: 100% !important;

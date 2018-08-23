@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_22_155120) do
+ActiveRecord::Schema.define(version: 2018_08_23_153123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2018_08_22_155120) do
   create_table "memberships", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "group_id"
-    t.string "status"
+    t.string "status", default: "pending"
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
