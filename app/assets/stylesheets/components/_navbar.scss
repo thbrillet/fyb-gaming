@@ -1,6 +1,6 @@
 /* Main navbar */
 .navbar-wagon {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.0);
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
@@ -36,11 +36,11 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $main-color;
   text-decoration: none;
 }
 
