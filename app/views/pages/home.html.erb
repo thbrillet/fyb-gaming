@@ -11,7 +11,18 @@
             <h1>#TEAM_UP</h1>
             <h2>WITH THE PERFECT SQUAD</h2>
             <div class="container-input-hp">
-              <div class="input-hp"><p>What game do you wanna play?</p></div>
+              <div class="input-hp">
+                <%= form_tag root_path, method: :get do %>
+                  <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-control awesomplete",
+                    placeholder: "What game do you want to play?",
+                    id: 'search',
+                    "data-list" => @games_names.join(', ')
+                  %>
+                <% end %>
+                <div id="results" class="list-group hidden"></div>
+              </div>
             </div>
           </div>
           <div class="discover-hp">
@@ -34,7 +45,7 @@
           <div class="relative-scroll">
             <div id="container-scroll">
               <div id="flex-scroll">
-                <% @groups.each do |group| %>
+                <% @user_groups.each do |group| %>
                   <%= render "shared/groupcard", group: group %>
                 <% end %>
               </div>
@@ -75,7 +86,7 @@
           <div class="relative-scroll">
             <div id="container-scroll">
               <div id="flex-scroll">
-                <% @groups.each do |group| %>
+                <% @new_groups.each do |group| %>
                   <%= render "shared/groupcard", group: group %>
                 <% end %>
               </div>
@@ -94,7 +105,7 @@
           <div class="relative-scroll">
             <div id="container-scroll">
               <div id="flex-scroll">
-                <% @groups.each do |group| %>
+                <% @new_games.each do |group| %>
                   <%= render "shared/groupcard", group: group %>
                 <% end %>
               </div>
@@ -109,16 +120,20 @@
   </div>
 </div>
 
-<% @groups.each do |group| %>
+<% @user_groups.each do |group| %>
+  <%= render "shared/modals-groupcard", group: group %>
+<% end %>
+<% @new_groups.each do |group| %>
+  <%= render "shared/modals-groupcard", group: group %>
+<% end %>
+<% @new_games.each do |group| %>
   <%= render "shared/modals-groupcard", group: group %>
 <% end %>
 <% @users.each do |user| %>
   <%= render "shared/modal-usercard", user: user %>
 <% end %>
-
-
-
-
+<input id="games_names" type="hidden" data-games='<%= @games_names.to_json %>'>
+<%= javascript_pack_tag 'awesomplete' %>
 
 
 

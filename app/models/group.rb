@@ -3,7 +3,7 @@ class Group < ApplicationRecord
   belongs_to :game
   has_many :memberships
   has_many :users, through: :memberships
-  has_many :events
+  has_many :events, dependent: :destroy
 
   scope :matching_with, -> (user) do
     Group.select("groups.*, #{user.matching_percentage_calc} AS matching_percentage")

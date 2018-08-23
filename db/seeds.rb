@@ -197,6 +197,69 @@ kevin = User.create!(
   email: "kevin@gmail.com",
   password: "azerty"
 )
+jeff = User.create!(
+  username: "monster-j",
+  photo: File.open(Rails.root.join("db/fixtures/users/jeff.jpg")),
+  biography: "J'ai les meilleurs reflexes et c'est moi le plus rapide",
+  punch_line: "Flash Reflex",
+  language: "fr",
+  birthdate: "1985-2-5",
+  interest_pve_pvp: "PVE",
+  interest_action_strat: "Action",
+  interest_gameplay_story: "Story",
+  interest_compet_chill: "Chill",
+  interest_mmo_smallteam: "SmallTeam",
+  email: "jeff@gmail.com",
+  password: "azerty"
+)
+alicia = User.create!(
+  username: "bella",
+  photo: File.open(Rails.root.join("db/fixtures/users/alicia.png")),
+  biography: "J'aime les gens sympas et patients",
+  punch_line: "Je sais écouter moi!",
+  language: "fr",
+  birthdate: "2003-4-11",
+  interest_pve_pvp: "PVE",
+  interest_action_strat: "Strategy",
+  interest_gameplay_story: "Gameplay",
+  interest_compet_chill: "Chill",
+  interest_mmo_smallteam: "SmallTeam",
+  email: "alicia@gmail.com",
+  password: "azerty"
+)
+ david = User.create!(
+  username: "bella",
+  photo: File.open(Rails.root.join("db/fixtures/users/david.jpg")),
+  biography: "Je dois avoir participer à tout les mmo qui ont été mis en ligne, y compris ceux/
+  diffusé en corée. Alors vient pas me la raconter.",
+  punch_line: "Un conseil ou deux?",
+  language: "fr",
+  birthdate: "1997-11-2",
+  interest_pve_pvp: "PVE",
+  interest_action_strat: "Strategy",
+  interest_gameplay_story: "Gameplay",
+  interest_compet_chill: "Compet",
+  interest_mmo_smallteam: "MMO",
+  email: "david@gmail.com",
+  password: "azerty"
+)
+ kim = User.create!(
+  username: "bella",
+  photo: File.open(Rails.root.join("db/fixtures/users/kim.png")),
+  biography: "Je crois que je plait à tout le monde, je ne sais pas pourquoi",
+  punch_line: "Un conseil ou deux?",
+  language: "fr",
+  birthdate: "1984-1-7",
+  interest_pve_pvp: "PVP",
+  interest_action_strat: "Strategy",
+  interest_gameplay_story: "Gameplay",
+  interest_compet_chill: "Chill",
+  interest_mmo_smallteam: "SmallTeam",
+  email: "kim@gmail.com",
+  password: "azerty"
+)
+
+
 
 puts "Creating default game..."
 
@@ -223,7 +286,7 @@ game_pc_summonerswars = Game.create!(
 )
 game_xboxone_halo5 = Game.create!(
   name: "Halo: Guardians",
-  platform: "Xbox One",
+  platform: "XboxOne",
   year: "2015",
   genre: "FPS",
   photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
@@ -244,14 +307,14 @@ game_ps4_dontstarve = Game.create!(
 )
   game_xboxone_dontstarve = Game.create!(
   name: "Don't Starve: Together",
-  platform: "Xbox One",
+  platform: "XboxOne",
   year: "2016",
   genre: "Survival",
   photo: File.open(Rails.root.join("db/fixtures/games/dst.jpg"))
 )
 game_xboxone_divinity = Game.create!(
   name: "Divinity: Original Sin II",
-  platform: "Xbox One",
+  platform: "XboxOne",
   year: "2017",
   genre: "RPG",
   photo: File.open(Rails.root.join("db/fixtures/games/divinity2.jpg"))
@@ -272,7 +335,7 @@ game_ps4_destiny = Game.create!(
 )
 game_xboxone_forzahorizon = Game.create!(
   name: "Forza Horizon 3",
-  platform: "Xbox One",
+  platform: "XboxOne",
   year: "2017",
   genre: "Racing",
   photo: File.open(Rails.root.join("db/fixtures/games/forza.jpg"))
@@ -440,6 +503,155 @@ user_game_26 = UserGame.new(
 )
 user_game_26.save!
 
+user_game_27 = UserGame.new(
+  user: fred,
+  game: game_xboxone_halo5
+)
+user_game_27.save!
+
+user_game_28 = UserGame.new(
+  user: nico,
+  game: game_xboxone_halo5
+)
+user_game_28.save!
+
+user_game_29 = UserGame.new(
+  user: thomas,
+  game: game_xboxone_halo5
+)
+user_game_29.save!
+
+user_game_30 = UserGame.new(
+  user: guillaume,
+  game: game_xboxone_halo5
+)
+user_game_30.save!
+
+user_game_31 = UserGame.new(
+  user: jeff,
+  game: game_xboxone_halo5
+)
+user_game_31.save!
+
+user_game_32 = UserGame.new(
+  user: jeff,
+  game: game_pc_dontstarve
+)
+user_game_32.save!
+
+user_game_33 = UserGame.new(
+  user: jeff,
+  game: game_pc_summonerswars
+)
+user_game_33.save!
+
+user_game_34 = UserGame.new(
+  user: jeff,
+  game: game_pc_guildwars2
+)
+user_game_34.save!
+
+user_game_35 = UserGame.new(
+  user: jeff,
+  game: game_pc_summonerswars
+)
+user_game_35.save!
+
+user_game_36 = UserGame.new(
+  user: jeff,
+  game: game_xboxone_halowars2
+)
+user_game_36.save!
+
+user_game_37 = UserGame.new(
+  user: guillaume,
+  game: game_pc_summonerswars
+)
+user_game_37.save!
+
+user_game_38 = UserGame.new(
+  user: guillaume,
+  game: game_pc_guildwars2
+)
+user_game_38.save!
+
+user_game_39 = UserGame.new(
+  user: alicia,
+  game: game_pc_guildwars2
+)
+user_game_39.save!
+
+user_game_40 = UserGame.new(
+  user: alicia,
+  game: game_pc_summonerswars
+)
+user_game_40.save!
+
+user_game_41 = UserGame.new(
+  user: alicia,
+  game: game_xboxone_halowars2
+)
+user_game_41.save!
+
+user_game_42 = UserGame.new(
+  user: alicia,
+  game: game_pc_summonerswars
+)
+user_game_42.save!
+
+user_game_43 = UserGame.new(
+  user: alicia,
+  game: game_xboxone_halo5
+)
+user_game_43.save!
+
+user_game_44 = UserGame.new(
+  user: david,
+  game: game_pc_guildwars2
+)
+user_game_44.save!
+
+user_game_45 = UserGame.new(
+  user: david,
+  game: game_pc_summonerswars
+)
+user_game_45.save!
+
+user_game_46 = UserGame.new(
+  user: david,
+  game: game_xboxone_halowars2
+)
+user_game_46.save!
+
+user_game_47 = UserGame.new(
+  user: david,
+  game: game_pc_summonerswars
+)
+user_game_47.save!
+
+user_game_48 = UserGame.new(
+  user: david,
+  game: game_xboxone_halo5
+)
+user_game_48.save!
+
+user_game_49 = UserGame.new(
+  user: kim,
+  game: game_xboxone_halowars2
+)
+user_game_49.save!
+
+user_game_50 = UserGame.new(
+  user: kim,
+  game: game_pc_summonerswars
+)
+user_game_50.save!
+
+user_game_51 = UserGame.new(
+  user: kim,
+  game: game_xboxone_halo5
+)
+user_game_51.save!
 
 
 puts "Creating groups..."
@@ -492,6 +704,49 @@ group_7 = Group.create!(
   leader: franck,
   name: "On UP ce foutu classement",
   description: "methode stealth et on trash si on est decouvert",
+  photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
+)
+group_8 = Group.create!(
+  game: game_xboxone_halo5,
+  leader: jeff,
+  name: "Je suis in game depuis 5jours",
+  description: "LE PREMIER qui flanche je le degage!",
+  photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
+)
+group_9 = Group.create!(
+  game: game_xboxone_halo5,
+  leader: alicia,
+  name: "full pvp here",
+  description: "Le groupe est pret, rejoignez moi!",
+  photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
+)
+group_10 = Group.create!(
+  game: game_xboxone_halo5,
+  leader: david,
+  name: "juste pour tester",
+  description: "novice accepté",
+  photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
+)
+group_11 = Group.create!(
+  game: game_xboxone_halo5,
+  leader: kim,
+  name: "on fait de notre mieux ici",
+  description: "debutants acceptés",
+  photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
+)
+
+group_12 = Group.create!(
+  game: game_xboxone_halo5,
+  leader: fred,
+  name: "Taillons-les en piece",
+  description: "Pour les pros içi",
+  photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
+)
+group_13 = Group.create!(
+  game: game_xboxone_halo5,
+  leader: charlotte,
+  name: "Pour la victoire",
+  description: "On cherche des gens bons",
   photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
 )
 
@@ -630,6 +885,87 @@ user_membership_18 = Membership.new(
   message: "On va gagner"
 )
 user_membership_18.save!
+
+user_membership_19 = Membership.new(
+  user: jeff,
+  group: group_8,
+  status: "accepted",
+  message: "C'est moi le leader"
+)
+user_membership_19.save!
+
+user_membership_20 = Membership.new(
+  user: thibault,
+  group: group_8,
+  status: "accepted",
+  message: "ok j'y suis"
+)
+user_membership_20.save!
+
+user_membership_21 = Membership.new(
+  user: pierre,
+  group: group_8,
+  status: "accepted",
+  message: "ok j'y suis"
+)
+user_membership_21.save!
+
+user_membership_22 = Membership.new(
+  user: alicia,
+  group: group_9,
+  status: "accepted",
+  message: "je vous attends"
+)
+user_membership_22.save!
+
+user_membership_23 = Membership.new(
+  user: david,
+  group: group_10,
+  status: "accepted",
+  message: "C'est moi le leader"
+)
+user_membership_23.save!
+
+user_membership_24 = Membership.new(
+  user: kim,
+  group: group_11,
+  status: "accepted",
+  message: "C'est moi le leader"
+)
+user_membership_24.save!
+
+user_membership_25 = Membership.new(
+  user: pierre,
+  group: group_11,
+  status: "accepted",
+  message: "j'espere aider"
+)
+user_membership_25.save!
+
+user_membership_26 = Membership.new(
+  user: david,
+  group: group_11,
+  status: "accepted",
+  message: "essayons"
+)
+user_membership_26.save!
+
+user_membership_27 = Membership.new(
+  user: fred,
+  group: group_12,
+  status: "accepted",
+  message: "Je suis le leader"
+)
+user_membership_27.save!
+
+user_membership_28 = Membership.new(
+  user: charlotte,
+  group: group_13,
+  status: "accepted",
+  message: "Je suis le leader"
+)
+user_membership_28.save!
+
 
 puts "Creating events...."
 
