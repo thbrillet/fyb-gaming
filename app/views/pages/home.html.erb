@@ -2,7 +2,6 @@
 
 <div class="container-main">
   <div id="group1">
-    <%= render 'shared/navbar' %>
     <div class="content-head">
       <div class="main-head">
         <div class="container-title-hp">
@@ -46,7 +45,9 @@
             <div id="container-scroll">
               <div id="flex-scroll">
                 <% @user_groups.each do |group| %>
-                  <%= render "shared/groupcard", group: group %>
+                  <%= link_to group_path(group) do%>
+                    <%= render "shared/groupcard", group: group %>
+                  <% end %>
                 <% end %>
               </div>
             </div>
@@ -120,9 +121,9 @@
   </div>
 </div>
 
-<% @user_groups.each do |group| %>
-  <%= render "shared/modals-groupcard", group: group %>
-<% end %>
+<%# @user_groups.each do |group| %>
+  <%#= render "shared/modals-groupcard", group: group %>
+<%# end %>
 <% @new_groups.each do |group| %>
   <%= render "shared/modals-groupcard", group: group %>
 <% end %>
