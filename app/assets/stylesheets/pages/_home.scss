@@ -1,4 +1,130 @@
-// Specific CSS for your home-page
 body{
   background-color: $background-color;
+}
+
+.container-banner-hp{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80vh;
+  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+    url('https://www.geekgeneration.fr/wp-content/uploads/2016/03/Overwatch.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.container-title-hp{
+  width: 100%;
+}
+
+.title-hp{
+  text-align: center;
+  img{
+    margin-top: 15vh;
+  }
+  h1{
+    color: $main-color;
+    font-size: 65px;
+    margin-top: 0px;
+  }
+  h2{
+    color: white;
+    font-weight: 400;
+    font-size: 45px;
+  }
+}
+
+.container-input-hp{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.input-hp{
+  background-color: white;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  margin-bottom: 10vh;
+  width: 450px;
+  font-style: italic;
+  p{
+    padding: 10px 20px;
+  }
+}
+
+.discover-hp{
+  text-align: right;
+  padding: 20px;
+  a{
+    margin: 0;
+    padding: 0 20px;
+    color: $main-color;
+    font-size: 25px;
+    text-decoration: none;
+  }
+}
+
+.your-groups-hp-container, .groups-hp-container, .new-games-hp-container{
+  background-color: $background-color;
+  padding: 40px 0;
+  h4{
+    margin: 0;
+    padding: 0 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: 200;
+  }
+  a{
+    margin: 0;
+    padding: 0 40px;
+    color: $main-color;
+    font-size: 40px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+}
+
+.your-groups-hp-scroll, .groups-hp-scroll, .new-games-hp-scroll{
+  height: 400px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.profile-hp-container{
+  background: linear-gradient(to bottom, $main-color, $orange);
+  padding: 40px 0;
+  h4{
+    margin: 0;
+    padding: 0 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: 200;
+  }
+  a{
+    margin: 0;
+    padding: 0 40px;
+    color: $background-color;
+    font-size: 40px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+}
+
+.profile-hp-scroll{
+  height: 600px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.profile-hp-all {
+  text-align: right;
+  a{
+    margin: 0;
+    padding: 0 20px;
+    color: $background-color;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+  }
 }

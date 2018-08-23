@@ -1,18 +1,14 @@
 <!-- BANNER -->
-
-<div class="container-main">
+<div class="container-main-show">
   <div id="group1">
     <%= render 'shared/navbar' %>
     <div class="content-head">
       <div class="main-head">
         <div class="container-title-hp">
           <div class="title-hp">
-            <%= image_tag "logo.png", height: 200 %>
-            <h1>#TEAM_UP</h1>
-            <h2>WITH THE PERFECT SQUAD</h2>
-          </div>
-          <div class="discover-hp">
-            <a href="#" class="link-btn"><span></span>#DISCOVER_OVERWATCH</a>
+            <h1><%= @game.name.upcase %></h1>
+            <h2><span class="pink"><%= @game.groups.length %></span> GROUPS IN TOTAL</h2>
+            <h2>YOU TAKE ACTION IN <span class="pink"><%= current_user.groups.where(game_id: @game.id).length %></span> GROUPS</h2>
           </div>
         </div>
       </div>
