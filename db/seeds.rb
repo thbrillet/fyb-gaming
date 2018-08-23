@@ -462,7 +462,7 @@ group_3 = Group.create!(
   game: game_pc_diablo3,
   leader: guillaume,
   name: "Sortie stuff high level",
-  description: "on farm les derniers niveaux faites gaffes",
+  description: "Hey! Ici on farm surtout les failles sup (70-80 environ). l'objectif est de créer une équipe qui puisse farmer rapidement et efficacement, avec si possible des membres dispo relativement souvent (soirs et weekend). L'objectif utlime est de renforcer le stuff pour monter failles 90; voir atteidnre 100 si on est chaud :) Hésitez pas à rejoindre si vous êtes motivés !",
   photo: File.open(Rails.root.join("db/fixtures/games/diablo3.jpg"))
 )
 group_4 = Group.create!(
@@ -630,5 +630,28 @@ user_membership_18 = Membership.new(
   message: "On va gagner"
 )
 user_membership_18.save!
+
+puts "Creating events...."
+
+event_1 = Event.new(
+  group: group_3,
+  status: "pendding",
+  title: "truc",
+  description: "salut les gars, je suis bon, pls accept!",
+)
+
+event_2 = Event.new(
+  group: group_3,
+  status: "pendding",
+  title: "truc",
+  description: "salut les gars, je suis bon, pls accept!",
+)
+
+event_3 = Event.new(
+  group: group_3,
+  status: "pendding",
+  title: "truc",
+  description: "salut les gars, je suis bon, pls accept!",
+)
 
 puts "Seeds finished!"
