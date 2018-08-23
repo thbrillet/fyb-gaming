@@ -13,15 +13,32 @@ class MembershipsController < ApplicationController
     redirect_to group_path(params[:group_id])
   end
 
-  def create
+  def new
+    @membership = Membership.new
   end
 
-  def new
+  def create
+    if current_user.nil?
+      redirect_to new_user_session_path
+    else
+      group = Group.find(params[:group_id])
+      new_membership = Membership.new(membership_params)
+
+      new_membership.group_id = group.id
+      new_membership.user_id = current_user.id
+
+      new_membership.save
+      redirect_to root_path
+    end
   end
 
   private
 
   def set_membership
     @membership = Membership.find(params[:id])
+  end
+
+  def membership_params
+      params.require(:membership).permit(:message)
   end
 end

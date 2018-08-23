@@ -1,19 +1,19 @@
-console.log("test1");
-
 function ClickOnButton() {
   const btns = document.querySelectorAll(".btngroupmembers");
-  [].forEach.call(btns, function(btn) {
+  [].forEach.call(btns, (btn) => {
     btn.addEventListener('click', (event) => {
-      console.log("test2");
+      console.log('yep')
       let chartDiv = btn.parentElement.parentElement.parentElement.parentElement
-      if(chartDiv.style.bottom == '-70vh')
+      if(chartDiv.style.bottom == '-60vh') {
         chartDiv.style.bottom = '0vh';
-      else
-        chartDiv.style.bottom = '-70vh';
+        btn.innerHTML = "<span></span>#HIDE_MEMBERS";}
+      else {
+        console.log('else')
+        chartDiv.style.bottom = '-60vh';
+        btn.innerHTML = "<span></span>#SEE_MEMBERS";}
     });
   });
 };
 
 export { ClickOnButton };
-
 
