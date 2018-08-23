@@ -22,6 +22,14 @@
           <p>"<%= user.punch_line %>"</p>
           <div class="usermodal-description"><%= user.biography %></div>
         </div>
+
+        <div class="user-games">
+          <% user.games.each do |game| %>
+            <div class="game-img" style="background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+      url('<%= cl_image_path game.photo, width: 200, height: 100, crop: :fit %>')"><p> <%= game.name %> </p></div>
+          <% end %>
+        </div>
+
         <div class="usermodal-tags">
           <div class="tag"><%= user.interest_pve_pvp.upcase %></div>
           <div class="tag"><%= user.interest_action_strat.upcase %></div>
@@ -29,8 +37,6 @@
           <div class="tag"><%= user.interest_compet_chill.upcase %></div>
           <div class="tag"><%= user.interest_mmo_smallteam.upcase%></div>
         </div>
-
-
     </div>
   </div>
 </div>
