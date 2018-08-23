@@ -3,8 +3,10 @@ class PagesController < ApplicationController
 
   def home
     @games_names = Game.pluck(:name).uniq
-    @users = User.all.limit(4)
-    @groups = Group.all.limit(7)
+    @users = User.all.matching_with(current_user).limit(4)
+    @user_groups = current_user.groups
+    @new_groups = Group.where.not(id: @user_groups.pluck(:id)).where(game_id: current_user.games.pluck(:id)).matching_with(current_user)
+    @new_games = Group.where.not(id: @user_groups.pluck(:id)).where.not(game_id: current_user.games.pluck(:id)).matching_with(current_user)
     if params[:query].present?
       if Game.find_by(name: params[:query]).nil?
         flash.now[:alert] = 'This game does not exist!'
