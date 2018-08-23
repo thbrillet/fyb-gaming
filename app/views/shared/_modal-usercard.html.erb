@@ -1,8 +1,7 @@
 <!-- MODAL -->
 <div class="modal fade" id="<%= user.username.delete(' ') %>Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog" role="document" style="overflow-y: visible;">
     <div class="usermodal" data-toggle="modal" data-target="#<%= user.username.delete(' ') %>Modal">
-
         <div class="usermodal-platforms">
           <% user.platforms.each do |platform| %>
             <div class="box-for <%= platform.delete(' ') %>"><%= platform.delete(' ') %></div>
