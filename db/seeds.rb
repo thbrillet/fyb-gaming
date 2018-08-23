@@ -485,14 +485,14 @@ group_6 = Group.create!(
   leader: anthony,
   name: "Juste pour trasher tout le monde",
   description: "On reste au bord de la map svp",
-  photo: File.open(Rails.root.join("db/fixtures/games/dst.jpg"))
+  photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
 )
 group_7 = Group.create!(
   game: game_xboxone_halo5,
   leader: franck,
   name: "On UP ce foutu classement",
   description: "methode stealth et on trash si on est decouvert",
-  photo: File.open(Rails.root.join("db/fixtures/games/dst.jpg"))
+  photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
 )
 
 puts "Creating membership...."
@@ -609,7 +609,7 @@ user_membership_15.save!
 
 user_membership_16 = Membership.new(
   user: julien,
-  group: group_6,
+  group: group_7,
   status: "accepted",
   message: "C'est moi le leader"
 )
@@ -617,17 +617,17 @@ user_membership_16.save!
 
 user_membership_17 = Membership.new(
   user: pierre,
-  group: group_6,
+  group: group_7,
   status: "accepted",
-  message: "C'est moi le leader"
+  message: "on va tout dechirer"
 )
 user_membership_17.save!
 
 user_membership_18 = Membership.new(
   user: thibault,
-  group: group_6,
+  group: group_7,
   status: "accepted",
-  message: "C'est moi le leader"
+  message: "On va gagner"
 )
 user_membership_18.save!
 

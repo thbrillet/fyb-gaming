@@ -1,0 +1,72 @@
+.groupmodal-content{
+  height: 90vh;
+  width: 90vw;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  .group-infos{
+    width: 80%;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+  }
+  h4{
+    color: white;
+    font-size: 45px;
+    font-weight: 200;
+  }
+  h5{
+    color: white;
+    font-size: 45px;
+    font-weight: 400;
+  }
+  .description-group{
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .group-event{
+    color: white;
+  }
+  .group-users{
+    position: absolute;
+    left: 40px;
+    bottom: 0px;
+    display: flex;
+    width: 80%;
+    z-index: 2;
+  }
+  .group-user{
+    margin-right: 40px;
+  }
+  .platform{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 200px;
+    text-align: center;
+    padding: 20px 35px;
+  }
+  .banner-pink{
+    position: relative;
+    top: 70vh;
+    box-shadow: -4 0 5 rgba(0, 0, 0, 0.2);
+  }
+  .diagonal-pink{
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(to left bottom, rgba(0, 0, 0, 0) 50%, $main-color 50%);
+  }
+  .bg-pink{
+    background-color: $main-color;
+    height: 150px;
+    width: 100%;
+  }
+}
+
+.modal-dialog-centered{
+  width: 100% !important;
+  margin-left: 10vh;
+}
