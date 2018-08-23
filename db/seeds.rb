@@ -285,7 +285,7 @@ game_pc_summonerswars = Game.create!(
   photo: File.open(Rails.root.join("db/fixtures/games/sws.jpg"))
 )
 game_xboxone_halo5 = Game.create!(
-  name: "Halo: Guardians",
+  name: "Halo 5: Guardians",
   platform: "XboxOne",
   year: "2015",
   genre: "FPS",
