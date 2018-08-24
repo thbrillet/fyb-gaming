@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'seeds', to: "seeds#index"
   get 'components', to: "seeds#components"
+  get 'devshow/:id', to: "groups#devshow", as: 'devshow'
   devise_for :users
   root to: 'pages#home'
 
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
         patch :confirm
         patch :cancel
       end
-      resources :participations, only: [:create]
+      resources :participations, only: [:create, :update]
     end
   end
 end

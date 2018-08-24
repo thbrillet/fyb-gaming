@@ -29,7 +29,9 @@
             <div id="container-scroll">
               <div id="flex-scroll">
                 <% @groups.each do |group| %>
-                  <%= render "shared/groupcard", group: group %>
+                  <%= link_to group_path(group) do %>
+                    <%= render "shared/groupcard", group: group %>
+                  <% end %>
                 <% end %>
               </div>
             </div>
@@ -103,9 +105,6 @@
   </div>
 </div>
 
-<% @groups.each do |group| %>
-  <%= render "shared/modals-groupcard", group: group %>
-<% end %>
 <% @users.each do |user| %>
   <%= render "shared/modal-usercard", user: user %>
 <% end %>
