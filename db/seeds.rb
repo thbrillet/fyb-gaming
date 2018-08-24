@@ -284,7 +284,7 @@ greg = User.create!(
 )
 john = User.create!(
   username: "Indy",
-  photo: File.open(Rails.root.join("db/fixtures/users/john.jpg")),
+  photo: File.open(Rails.root.join("db/fixtures/users/john.png")),
   biography: "Je cogne dur et en face il deboite.",
   punch_line: "kick them all",
   language: "fr",
