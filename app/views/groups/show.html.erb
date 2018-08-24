@@ -37,7 +37,7 @@
       <div class="group-events">
         <% @events.each do |event| %>
           <div class="group-event">
-            <% if event.photo != nil %>
+            <% if event.photo.present? %>
               <div class="group-event-img" style="background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
               url('<%= cl_image_path event.photo, height: 70, width: 70, crop: :fill%>');"></div>
             <% end %>

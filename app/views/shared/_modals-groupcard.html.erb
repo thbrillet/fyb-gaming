@@ -18,8 +18,10 @@
           <% group.events.first(2).each do |event| %>
           <!--EVENT BAR-->
             <div class="group-event">
-              <div class="group-event-img" style="background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
-              url('<%= cl_image_path event.photo, height: 80, width: 80, crop: :fill%>');"></div>
+              <% if  event.photo.present? %>
+                <div class="group-event-img" style="background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
+                url('<%= cl_image_path event.photo, height: 80, width: 80, crop: :fill%>');"></div>
+              <% end %>
               <h6><%= event.title %></h6>
               <div class="completion">
                 COMPLETION: 33.3% [5/15]
