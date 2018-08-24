@@ -4,12 +4,12 @@ function ClickOnButton() {
     btn.addEventListener('click', (event) => {
       console.log('yep')
       let chartDiv = btn.parentElement.parentElement.parentElement.parentElement
-      if(chartDiv.style.bottom == '-60vh') {
+      if(chartDiv.style.bottom == '-65vh') {
         chartDiv.style.bottom = '0vh';
         btn.innerHTML = "<span></span>#HIDE_MEMBERS";}
       else {
         console.log('else')
-        chartDiv.style.bottom = '-60vh';
+        chartDiv.style.bottom = '-65vh';
         btn.innerHTML = "<span></span>#SEE_MEMBERS";}
     });
   });
