@@ -1,0 +1,51 @@
+.container-main-show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  perspective: 1.5px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  .main-head{
+    height: 100vh;
+  }
+
+  #group1 {
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+  }
+
+  .background {
+    transform: translateZ(-1px) scale(2);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+      url('https://www.geekgeneration.fr/wp-content/uploads/2016/03/Overwatch.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .foreground {
+    position: absolute;
+    top: 500px;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    padding-top: 0px;
+  }
+  .header {
+    z-index :1;
+  }
+
+  .margin-top{
+    margin-top: 35vh;
+    background-color: $background-color;
+  }
+}
+
+
+

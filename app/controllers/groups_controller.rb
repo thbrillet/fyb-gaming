@@ -7,6 +7,7 @@ class GroupsController < ApplicationController
     @event = Event.new
     @events = Event.where(group: @group)
     @participation = Participation.new
+
   end
 
   private

@@ -70,7 +70,7 @@
     background: linear-gradient(to left bottom, rgba(0, 0, 0, 0) 50%, $main-color 50%);
   }
   .bg-pink{
-    background-color: $main-color;
+    background: linear-gradient(to bottom, $main-color, $orange);
     width: 100%;
     height: 100vh;
   }
