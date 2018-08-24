@@ -1,0 +1,67 @@
+<div class="container-fluid" style="background: lighgray">
+
+  <div class="row" style="color: white;">
+    <div class="col-xs-6">
+      <h1>Game: <%= @group.game.name %></h1>
+      <h2><%= @group.name %></h2>
+      <h3>Leader: <%= @group.leader.username %></h3>
+      <p><%= @group.description %></p>
+
+
+      <!-- AFFICHER LES GROUPS REQUESTS SI LEADER -->
+      <% if @group.leader == current_user %>
+        <h4><%= pluralize @requests.count, 'Request' %> pending:</h4>
+        <ul>
+        <% @requests.each do |request| %>
+          <li>
+            <h5><%= request.user.username %></h5>
+            <p><%= request.message %></p>
+            <%= link_to 'accept', accept_group_membership_path(@group, request), method: :patch  %>
+            <%= link_to 'decline', decline_group_membership_path(@group, request), method: :patch  %>
+          </li>
+        <% end %>
+        </ul>
+      <% end %>
+    </div>
+      <!-- CREER UN EVENT SI LEADER -->
+      <div class="col-xs-6">
+      <% if @group.leader == current_user %>
+        <%= simple_form_for [@group, @event] do |f| %>
+          <%= f.input :title %>
+          <%= f.input :description %>
+          <%= f.input :date %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.button :submit %>
+        <% end %>
+      <% end %>
+      <h4><%= pluralize @events.count, 'Event' %>:</h4>
+
+
+
+        <!-- AFFICHER LES EVENTS -->
+    <ul>
+      <% @events.each do |event| %>
+        <li>
+
+          <h5><%= event.title %> <i>(<%= event.status %>)</i></h5>
+          <p><%= event.date.strftime('%d / %m / %y') %> - <%= event.description %></p>
+          <p><%= event.participations.where(presence: 'yes').count %> members said they'll be there</p>
+
+          <%= cl_image_tag event.photo, width: 150 if event.photo.present? %>
+
+          <% if @group.leader == current_user %>
+            <%= link_to 'confirm', confirm_group_event_path(@group, event), method: :patch  %>
+            <%= link_to 'cancel', cancel_group_event_path(@group, event), method: :patch  %>
+          <% end %>
+
+          <%= event_participation(event) %>
+
+        </li>
+      <% end %>
+    </ul>
+
+    </div>
+
+  </div>
+</div>

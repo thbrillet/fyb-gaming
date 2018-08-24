@@ -7,6 +7,12 @@ class ParticipationsController < ApplicationController
     redirect_to group_path(params[:group_id])
   end
 
+  def update
+    @participation = Participation.find(params[:id])
+    @participation.update(participation_params)
+    redirect_to group_path(@participation.event.group)
+  end
+
   private
 
   def participation_params
