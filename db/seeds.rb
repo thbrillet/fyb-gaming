@@ -1105,7 +1105,7 @@ user_membership_31 = Membership.new(
 user_membership_31.save!
 
 user_membership_32 = Membership.new(
-  user: charlotte,
+  user: denton,
   group: group_14,
   status: "accepted",
   message: "Va chier greg!"
