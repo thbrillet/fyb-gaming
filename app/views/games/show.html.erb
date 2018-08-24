@@ -1,7 +1,6 @@
 <!-- BANNER -->
 <div class="container-main-show">
   <div id="group1">
-    <%= render 'shared/navbar' %>
     <div class="content-head">
       <div class="main-head">
         <div class="container-title-hp">
@@ -42,8 +41,8 @@
       <!-- MATCH WITH NEW BUDDIES -->
       <div class="profile-hp-container">
         <div class="profile-hp-title">
-          <a href="#" class="link-btn">#FIND_NEW_BUDDIES</a>
-          <h4>AND GROUP WITH THEM!</h4>
+          <a href="#" class="link-btn">#THEY_ARE_PLAYING <span style="color: white;"> <%= @game.name.upcase %></span></a>
+          <h4>JOIN THEM!</h4>
         </div>
         <div class="profile-hp-scroll">
           <div class="flex-container-hp">
@@ -62,8 +61,8 @@
       <!--MATCH WITH NEW GROUPS -->
       <div class="groups-hp-container">
         <div class="groups-hp-title">
-          <a href="#" class="link-btn">#THEY_ARE_PLAYING_YOUR_GAMES</a>
-          <h4>JOIN THEM!</h4>
+          <a href="#" class="link-btn">#OTHER_GROUPS <span style="color: white;">ON <%= @game.name.upcase %></span> </a>
+          <h4>GROUP WITH THEM!</h4>
         </div>
         <div class="groups-hp-scroll">
           <div class="relative-scroll">
@@ -81,8 +80,8 @@
       <!-- MATCH WITH NEW GROUPS IN NEW GAMES -->
       <div class="new-games-hp-container">
         <div class="new-games-hp-title">
-          <a href="#" class="link-btn">#DISCOVER_NEW_GAMES</a>
-          <h4>WITH GAMERS YOU SHOULD LIKE!</h4>
+          <h4>YOU LOVE <%= @game.name.upcase %>?</h4>
+          <a href="#" class="link-btn"><span style="color: white;">YOU MAY </span>#ALSO_LIKE_THESE</a>
         </div>
         <div class="new-games-hp-scroll">
           <div class="relative-scroll">
