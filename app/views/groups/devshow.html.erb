@@ -51,23 +51,10 @@
           <%= cl_image_tag event.photo, width: 150 if event.photo.present? %>
 
           <% if @group.leader == current_user %>
-            <%= link_to 'confirm', accept_group_membership_path(@group, request), method: :patch  %>
-            <%= link_to 'cancel', decline_group_membership_path(@group, request), method: :patch  %>
+            <%= link_to 'confirm', confirm_group_event_path(@group, event), method: :patch  %>
+            <%= link_to 'cancel', cancel_group_event_path(@group, event), method: :patch  %>
           <% end %>
 
-          <!-- à mettre dans le helper participation_status -->
-          <% unless event.participations.map(&:user).include? current_user %>
-            <%= simple_form_for([@group, event, @participation]) do |f| %>
-              <input name="participation[presence]" type="hidden" value="yes">
-              <input type="submit" value="I'm in!" class="btn btn-success">
-            <% end %>
-
-            <%= simple_form_for([@group, event, @participation]) do |f| %>
-              <input name="participation[presence]" type="hidden" value="no">
-              <input type="submit" value="I'm out!" class="btn btn-danger">
-            <% end %>
-          <% else %>
-          <% end %>
           <%= event_participation(event) %>
 
         </li>

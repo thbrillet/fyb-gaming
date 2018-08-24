@@ -14,9 +14,17 @@ class EventsController < ApplicationController
   end
 
   def confirm
+    @event = Event.find(params[:id])
+    @event.status = 'confirmed'
+    @event.save
+    redirect_to group_path(params[:group_id])
   end
 
   def cancel
+    @event = Event.find(params[:id])
+    @event.status = 'canceled'
+    @event.save
+    redirect_to group_path(params[:group_id])
   end
 
   private

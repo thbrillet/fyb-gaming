@@ -1,3 +1,3 @@
 //= require_tree .
 //= require_tree
-//= require_rails-ujs
+//= require rails-ujs

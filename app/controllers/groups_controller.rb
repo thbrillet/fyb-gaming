@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
     @members = @group.memberships.where(status: 'accepted').map(&:user)
     @requests = @group.memberships.where(status: 'pending')
     @event = Event.new
-    @events = Event.where(group: @group)
+    @events = Event.where(group: @group).where.not(status: 'canceled')
     @participation = Participation.new
     redirect_to devshow_path(params[:id]) # A ENLEVER
   end
@@ -14,7 +14,7 @@ class GroupsController < ApplicationController
     @members = @group.memberships.where(status: 'accepted').map(&:user)
     @requests = @group.memberships.where(status: 'pending')
     @event = Event.new
-    @events = Event.where(group: @group)
+    @events = Event.where(group: @group).where.not(status: 'canceled')
     @participation = Participation.new
   end
 

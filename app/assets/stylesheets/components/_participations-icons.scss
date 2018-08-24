@@ -1,0 +1,70 @@
+.accept-icon-event{
+  opacity: 0;
+  font-size: 1px;
+  color: $green;
+  transition: .2s;
+}
+
+.cancel-icon-event{
+  opacity: 0;
+  font-size: 1px;
+  color: $red;
+  transition: .2s;
+}
+
+.pending-icon-event{
+  opacity: 1;
+  padding-right: 15px;
+  font-size: 25px;
+  color: $orange;
+  transition: .2s;
+}
+
+.validated-yes-icon-event {
+  opacity: 1;
+  padding-right: 15px;
+  font-size: 25px;
+  color: $green;
+  transition: .2s;
+}
+
+.validated-no-icon-event {
+  opacity: 1;
+  padding-right: 15px;
+  font-size: 25px;
+  color: $red;
+  transition: .2s;
+}
+
+.participation-icons {
+  &:hover .accept-icon-event{
+  opacity: 1;
+  font-size: 25px;
+  transition: .2s;
+  }
+  &:hover .cancel-icon-event{
+  opacity: 1;
+  font-size: 25px;
+  transition: .2s;
+  }
+  &:hover .pending-icon-event{
+  opacity: 0;
+  font-size: 1px;
+  transition: .2s;
+  }
+  &:hover .validated-yes-icon-event {
+  opacity: 0;
+  padding-right: 15px;
+  font-size: 25px;
+  color: $green;
+  transition: .2s;
+  }
+
+  &:hover .validated-no-icon-event {
+  opacity: 0;
+  padding-right: 15px;
+  font-size: 25px;
+  color: $red;
+  transition: .2s;
+  }
+}

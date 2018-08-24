@@ -9,11 +9,7 @@ class ParticipationsController < ApplicationController
 
   def update
     @participation = Participation.find(params[:id])
-    if @participation.presence == 'yes'
-      @participation.update(presence: 'no')
-    elsif @participation.presence == 'no'
-      @participation.update(presence: 'yes')
-    end
+    @participation.update(participation_params)
     redirect_to group_path(@participation.event.group)
   end
 
