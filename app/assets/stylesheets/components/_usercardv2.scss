@@ -1,0 +1,146 @@
+//COMPONENTS
+.uc{
+  background: linear-gradient(to bottom, $main-color, $orange);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+// CARD
+
+.usercardv2 {
+  height: 320px;
+  width: 320px;
+  padding: 0 20px;
+  background-color: $background-color;
+  position: relative;
+  transition: 0.2s;
+  box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.2);
+  .usercard-photo {
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    position: relative;
+    bottom: 55px;
+    transition: 0.2s;
+    border: solid 2px $main-color;
+  }
+  .usercard-infos {
+    text-align: center;
+    margin-top: -65px;
+    padding: 20px;
+    h3 {
+      color: $main-color;
+      font-size: 33px;
+    }
+    h4 {
+      color: white;
+      font-size: 18px;
+    }
+    .interline {
+      background-color: $main-color;
+      height: 5px;
+      width: 80px;
+      display: block;
+      margin: 10px auto 10px auto;
+    }
+    p {
+      color: white;
+      font-size: 16px;
+      margin-top: 20px;
+      font-weight: lighter;
+    }
+  }
+  .usercard-tags {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px 0;
+    .tag {
+      color: white;
+      border-radius: 0;
+      padding: 5px 10px;
+      margin: 5px 10px;
+      font-size: 16px;
+    }
+    .tag-same {
+      background-color: $main-color;
+    }
+    .tag-dif {
+      background-color: gray;
+    }
+  }
+  .usercard-btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &:hover a{
+      text-decoration: none;
+    }
+    .btn{
+      width: 160px;
+      height: 110px;
+      color: white;
+      background-color: $background-color;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      font-size: 25px;
+      transition: .5s;
+      &:hover{
+        color: white;
+        background-color: $main-color;
+        transition: .5s;
+      }
+    }
+  }
+  .usercard-bottom{
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 210px;
+    background-color: $background-color;
+    transition: .5s;
+  }
+  .usercard-top{
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $background-color;
+    width: 100%;
+    height: 320px;
+    transition: .5s;
+  }
+  .bio-full{
+    display:none;
+  }
+  &:hover .bio-truncate{
+    display: none;
+  }
+  &:hover .bio-full{
+    display: block;
+  }
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  &:hover .usercard-photo {
+    bottom: 75px;
+    transform: scale(1.05);
+    box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.3);
+  }
+  &:hover .usercard-bottom {
+    bottom: -210px;
+    transition: .5s;
+  }
+}

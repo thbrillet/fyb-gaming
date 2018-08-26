@@ -1,0 +1,56 @@
+<!-- CARD -->
+<div class="usercardv2">
+  <div class="usercard-top">
+    <div class="usercard-photo" style="background: url('<%= cl_image_path user.photo, width: 185, height: 185, crop: :fit %>')"></div>
+    <div class="usercard-infos">
+      <h3>#<%= user.username %></h3>
+      <h4>"<%= user.punch_line %>"</h4>
+      <p class="bio-truncate">
+        <% if user.biography.length > 100 %>
+          "<%= truncate(user.biography, :length => 100, :separator => ' ') %>"
+        <% else %>
+          "<%= user.biography %>"
+        <% end %>
+      </p>
+      <p class="bio-full">
+        "<%= user.biography %>"
+      </p>
+    </div>
+  </div>
+  <div class="usercard-bottom">
+    <div class="usercard-tags">
+      <% if user.interest_pve_pvp.upcase == current_user.interest_pve_pvp.upcase %>
+        <div class="tag tag-same"><%= user.interest_pve_pvp.upcase %></div>
+      <% else %>
+        <div class="tag tag-dif"><%= user.interest_pve_pvp.upcase %></div>
+      <% end %>
+      <% if user.interest_action_strat.upcase == current_user.interest_action_strat.upcase %>
+        <div class="tag tag-same"><%= user.interest_action_strat.upcase %></div>
+      <% else %>
+        <div class="tag tag-dif"><%= user.interest_action_strat.upcase %></div>
+      <% end %>
+      <% if user.interest_gameplay_story.upcase == current_user.interest_gameplay_story.upcase %>
+        <div class="tag tag-same"><%= user.interest_gameplay_story.upcase %></div>
+      <% else %>
+        <div class="tag tag-dif"><%= user.interest_gameplay_story.upcase %></div>
+      <% end %>
+      <% if user.interest_compet_chill.upcase == current_user.interest_compet_chill.upcase %>
+        <div class="tag tag-same"><%= user.interest_compet_chill.upcase %></div>
+      <% else %>
+        <div class="tag tag-dif"><%= user.interest_compet_chill.upcase %></div>
+      <% end %>
+      <% if user.interest_mmo_smallteam.upcase == current_user.interest_mmo_smallteam.upcase %>
+        <div class="tag tag-same"><%= user.interest_mmo_smallteam.upcase %></div>
+      <% else %>
+        <div class="tag tag-dif"><%= user.interest_mmo_smallteam.upcase %></div>
+      <% end %>
+    </div>
+    <div class="usercard-btns">
+      <a href="#"><div class="btn"><i class="far fa-comment"></i></div></a>
+      <a href="#"><div class="btn"><i class="fas fa-id-card"></i></div></a>
+    </div>
+  </div>
+</div>
+
+
+
