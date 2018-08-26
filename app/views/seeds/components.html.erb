@@ -1,8 +1,11 @@
 <div class="uc">
-  <% @users.first(2).each do |user| %>
+  <% @users.first(1).each do |user| %>
     <%= render "shared/usercard", user: user %>
   <% end %>
-  <% @users.first(2).each do |user| %>
+  <% @users.first(1).each do |user| %>
     <%= render "shared/usercardv2", user: user %>
+  <% end %>
+  <% @users.first(1).each do |user| %>
+    <%= render "shared/usercardv3", user: user %>
   <% end %>
 </div>
