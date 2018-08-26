@@ -1,11 +1,15 @@
 <div class="uc">
-  <% @users.first(1).each do |user| %>
-    <%= render "shared/usercard", user: user %>
-  <% end %>
-  <% @users.first(1).each do |user| %>
-    <%= render "shared/usercardv2", user: user %>
-  <% end %>
-  <% @users.first(1).each do |user| %>
-    <%= render "shared/usercardv3", user: user %>
-  <% end %>
+  <%# @users.first(1).each do |user| %>
+    <%#= render "shared/usercard", user: user %>
+  <%# end %>
+  <%# @users.first(1).each do |user| %>
+    <%#= render "shared/usercardv2", user: user %>
+  <%#end %>
+  <div class="row">
+    <% @users.first(4).each do |user| %>
+      <div class="col-xs-6">
+        <%= render "shared/usercardv3", user: user %>
+      </div>
+    <% end %>
+  </div>
 </div>

@@ -1,0 +1,16 @@
+<div class="usercardv3">
+  <div class="usercardv3-main">
+    <div class="usercardv3-photo" style="background: url('<%= cl_image_path user.photo, width: 130, height: 130, crop: :fill %>') no-repeat"></div>
+    <h3>#<%= user.username %></h3>
+    <h4>"<%= user.punch_line %>"</h4>
+    <div class="usercardv3-contact"></div>
+    <div class="usercardv3-profile"></div>
+  </div>
+  <div class="usercardv3-infos">
+    <div class="usercardv3-tags"></div>
+    <p class="usercardv3-biography"><%= user.biography %></p>
+    <div class="usercardv3-groups">
+      <h4></h4>
+    </div>
+  </div>
+</div>
