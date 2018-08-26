@@ -25,6 +25,15 @@
       <div class="col-sm-12 col-md-7">
         <div class="profile-groups">
           <h3>#YOUR_GROUPS</h3>
+            <div id="container-scroll-profile" style="transform: scale(0.5) !important;">
+              <div id="flex-scroll">
+                <% @user.groups.each do |group| %>
+                  <%= link_to group_path(group) do %>
+                    <%= render "shared/groupcard-profile", group: group %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
         </div>
         <div class="profile-games">
           <h3>#YOUR_GAMES</h3>

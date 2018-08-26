@@ -1,0 +1,30 @@
+<!-- CARD -->
+
+
+  <div class="box-groupcard" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+      url('<%= cl_image_path group.game.photo%>');" data-toggle="modal" data-target="#<%= group.id %>Modal">
+    <div class="link-btn"><span></span></div>
+    <h4><%= group.game.name %></h4>
+    <h5><%= group.name %></h5>
+    <% if group.game.platform.delete(' ') == "XboxOne" %>
+      <p class="XboxOne"><%= group.game.platform %></p>
+    <% elsif group.game.platform == "PC" %>
+      <p class="PC"><%= group.game.platform %></p>
+    <% else %>
+      <p class="PS4"><%= group.game.platform %></p>
+    <% end %>
+    <ul class="group-members">
+    <% group.memberships.each do |membership| %>
+      <% if membership.status == "accepted" %>
+        <div class="group-member" style="background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
+      url('<%= cl_image_path membership.user.photo%>');"></div>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
+
+
+
+
+
+
