@@ -1,0 +1,46 @@
+<div class="half-div-top"></div>
+<div class="profile-header">
+  <div class="profile-title">
+    <div data-toggle="modal" data-target="#photo"">
+      <%= cl_image_tag @user.photo, width: 60, height: 60, crop: :fit, class: 'small-photo' %>
+    </div>
+    <div class="modal fade" id="photo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div data-toggle="modal" data-target="#photo" class="text-center">
+          <%= cl_image_tag @user.photo, height: 600, crop: :fit, class: 'modal-photo'%>
+        </div>
+      </div>
+    </div>
+    <h1>#<%= @user.username.upcase %></h1>
+  </div>
+  <div class="half-div-bottom"></div>
+  <h2>"<%= @user.punch_line%>"</h2>
+  <div class="profile-biography">
+    <p><%= @user.biography %></p>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="profile-body">
+    <div class="row" style="margin-right: 50px">
+      <div class="col-sm-12 col-md-7">
+        <div class="profile-groups">
+          <h3>#YOUR_GROUPS</h3>
+        </div>
+        <div class="profile-games">
+          <h3>#YOUR_GAMES</h3>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-5">
+        <div class="profile-interests">
+          <h3>#PROFILE</h3>
+          <p>interest_1</p>
+          <p>interest_2</p>
+          <p>interest_3</p>
+          <p>interest_4</p>
+          <p>interest_5</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="half-div-footer"></div>
