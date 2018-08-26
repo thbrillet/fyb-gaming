@@ -10,6 +10,64 @@
 
 
 // CARD
+.usercard-color-top{
+  background-color: rgba(0 ,0, 0, 0.2);
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 320px;
+  height: 50px;
+  transition: .2s;
+  z-index: 1;
+}
+.usercard-color-bottom{
+  background-color: $background-color;
+  position: absolute;
+  top:70px;
+  left: 0;
+  width: 320px;
+  height: 70px;
+  transition: .2s;
+  z-index: 1;
+}
+.usercard-bgimg{
+  z-index: 1;
+  position: absolute;
+  background-size: 100% auto;
+  background-position: center;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 140px;
+}
+
+.usercard-body{
+  height:320px;
+  transition: .2s;
+  position:relative;
+  box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.2);
+  &:hover{
+    height: 530px;
+    transition: .2s;
+  }
+  &:hover .usercard-color-top{
+    height: 120px;
+    transition: .2s;
+  }
+  &:hover .diagonal-usercard{
+    top: 120px;
+    transition: .2s;
+  }
+  &:hover .usercard-color-bottom{
+    top: 140px;
+    height: 0px;
+    transition: .2s;
+  }
+  &:hover .usercard-photo {
+    bottom: 135px;
+    transition: 0.2s;
+  }
+}
 
 .usercardv2 {
   height: 320px;
@@ -18,10 +76,10 @@
   background-color: $background-color;
   position: relative;
   transition: 0.2s;
-  box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.2);
   .usercard-photo {
     height: 150px;
     width: 150px;
+    z-index: 3;
     margin: auto;
     position: relative;
     bottom: 55px;
@@ -30,7 +88,7 @@
   }
   .usercard-infos {
     text-align: center;
-    margin-top: -65px;
+    margin-top: -55px;
     padding: 20px;
     h3 {
       color: $main-color;
@@ -78,7 +136,11 @@
   .usercard-btns{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    width: 100%;
+    background-color: $background-color;
+    .link-btn{
+      padding: 0;
+    }
     &:hover a{
       text-decoration: none;
     }
@@ -92,11 +154,11 @@
       align-items: center;
       justify-content: space-around;
       font-size: 25px;
-      transition: .5s;
+      transition: .2s;
       &:hover{
         color: white;
         background-color: $main-color;
-        transition: .5s;
+        transition: .2s;
       }
     }
   }
@@ -108,7 +170,7 @@
     width: 100%;
     height: 210px;
     background-color: $background-color;
-    transition: .5s;
+    transition: .2s;
   }
   .usercard-top{
     z-index: 2;
@@ -118,7 +180,7 @@
     background-color: $background-color;
     width: 100%;
     height: 320px;
-    transition: .5s;
+    transition: .2s;
   }
   .bio-full{
     display:none;
@@ -129,18 +191,8 @@
   &:hover .bio-full{
     display: block;
   }
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-  }
-  &:hover .usercard-photo {
-    bottom: 75px;
-    transform: scale(1.05);
-    box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.3);
-  }
   &:hover .usercard-bottom {
     bottom: -210px;
-    transition: .5s;
+    transition: .2s;
   }
 }
