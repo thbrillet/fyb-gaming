@@ -1,13 +1,48 @@
 <div class="usercardv3">
   <div class="usercardv3-main">
     <div class="usercardv3-photo" style="background: url('<%= cl_image_path user.photo, width: 130, height: 130, crop: :fill %>') no-repeat"></div>
-    <h3>#<%= user.username %></h3>
-    <h4>"<%= user.punch_line %>"</h4>
-    <div class="usercardv3-contact"></div>
-    <div class="usercardv3-profile"></div>
+    <div class="main-left">
+      <h3>#<%= user.username %></h3>
+      <h4>"<%= user.punch_line %>"</h4>
+    </div>
+    <div class="main-right">
+      <div class="usercard-btns">
+        <a class="link-btn" href="#"><div class="btn"><i class="far fa-comment"></i></div></a>
+        <a class="link-btn" href="#"><div class="btn"><i class="fas fa-id-card"></i></div></a>
+      </div>
+    </div>
   </div>
+
   <div class="usercardv3-infos">
-    <div class="usercardv3-tags"></div>
+    <div class="usercardv3-tags">
+      <div class="usercard-tags">
+        <% if user.interest_pve_pvp.upcase == current_user.interest_pve_pvp.upcase %>
+          <div class="tag tag-same"><%= user.interest_pve_pvp.upcase %></div>
+        <% else %>
+          <div class="tag tag-dif"><%= user.interest_pve_pvp.upcase %></div>
+        <% end %>
+        <% if user.interest_action_strat.upcase == current_user.interest_action_strat.upcase %>
+          <div class="tag tag-same"><%= user.interest_action_strat.upcase %></div>
+        <% else %>
+          <div class="tag tag-dif"><%= user.interest_action_strat.upcase %></div>
+        <% end %>
+        <% if user.interest_gameplay_story.upcase == current_user.interest_gameplay_story.upcase %>
+          <div class="tag tag-same"><%= user.interest_gameplay_story.upcase %></div>
+        <% else %>
+          <div class="tag tag-dif"><%= user.interest_gameplay_story.upcase %></div>
+        <% end %>
+        <% if user.interest_compet_chill.upcase == current_user.interest_compet_chill.upcase %>
+          <div class="tag tag-same"><%= user.interest_compet_chill.upcase %></div>
+        <% else %>
+          <div class="tag tag-dif"><%= user.interest_compet_chill.upcase %></div>
+        <% end %>
+        <% if user.interest_mmo_smallteam.upcase == current_user.interest_mmo_smallteam.upcase %>
+          <div class="tag tag-same"><%= user.interest_mmo_smallteam.upcase %></div>
+        <% else %>
+          <div class="tag tag-dif"><%= user.interest_mmo_smallteam.upcase %></div>
+        <% end %>
+      </div>
+    </div>
     <p class="usercardv3-biography"><%= user.biography %></p>
     <div class="usercardv3-groups">
       <h4></h4>
