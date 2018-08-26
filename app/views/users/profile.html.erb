@@ -5,7 +5,7 @@
       <%= cl_image_tag @user.photo, width: 60, height: 60, crop: :fit, class: 'small-photo' %>
     </div>
     <div class="modal fade" id="photo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog" role="document" style="width: auto;">
         <div data-toggle="modal" data-target="#photo" class="text-center">
           <%= cl_image_tag @user.photo, height: 600, crop: :fit, class: 'modal-photo'%>
         </div>
