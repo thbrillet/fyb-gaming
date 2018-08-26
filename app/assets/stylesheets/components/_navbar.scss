@@ -16,14 +16,14 @@
   .navtext{
     opacity: 0;
     color: white;
-    font-size: 5px;
+    font-size: 0;
     transition: .5s;
   }
 }
 
 .navbar-side {
   height: 100%;
-  width: 4%;
+  width: 60px;
   position: fixed;
   top: 0;
   right: 0;
@@ -35,7 +35,7 @@
   z-index: 1000;
   transition: .5s;
   &:hover{
-    width: 15%;
+    width: 220px;
     transition: .5s;
     background-color: rgba(20, 20, 20, 0.8);
   }
@@ -71,18 +71,18 @@
     transition: .5s;
 }
 
- .navbar-side {
-    // other code omitted
-  -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  transform: translateX(100%);
-  -webkit-transition: 300ms ease;
-  transition: 300ms ease;
-}
- .reveal {
-  -webkit-transform: translateX(0%);
-  -ms-transform: translateX(0%);
-  transform: translateX(0%);
-  -webkit-transition: 300ms ease;
-  transition: 300ms ease;
-}
+//  .navbar-side {
+//     // other code omitted
+//   -webkit-transform: translateX(100%);
+//   -ms-transform: translateX(100%);
+//   transform: translateX(100%);
+//   -webkit-transition: 300ms ease;
+//   transition: 300ms ease;
+// }
+//  .reveal {
+//   -webkit-transform: translateX(0%);
+//   -ms-transform: translateX(0%);
+//   transform: translateX(0%);
+//   -webkit-transition: 300ms ease;
+//   transition: 300ms ease;
+// }

@@ -8,9 +8,11 @@
     font-weight: lighter;
     }
   .profile-title {
+    padding-top: 20px;
+    padding-right: 80px;
     background: linear-gradient(to bottom, $main-color, $orange);
     display: flex;
-    justify-content: start-flex;
+    justify-content: flex-end;
     align-items: center;
       h1 {
         margin-top: 0;
@@ -56,7 +58,7 @@
   background: linear-gradient(to left bottom, $background-color 50%, $main-color 50%);
 }
 .half-div-bottom {
-  height: 40px;
+  height: 30px;
   width: 100%;
   background: linear-gradient(to left bottom, $orange 50%, $background-color 50%);
 }
