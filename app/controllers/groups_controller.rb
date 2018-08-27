@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
     @event = Event.new
     @events = Event.where(group: @group).where.not(status: 'canceled')
     @participation = Participation.new
-    # redirect_to devshow_path(params[:id]) # A ENLEVER
+    @objective = Objective.new
   end
 
   def devshow

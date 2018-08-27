@@ -1,0 +1,161 @@
+.show-group-event{
+  width: 100%;
+  .show-group-tabs{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+      .border-bottom{
+        border-bottom: solid 2px $main-color;
+      }
+    button{
+      width: 33%;
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 60px;
+      border:none;
+      transition: .2s;
+      &:hover{
+        background-color: $main-color;
+        transition: .2s;
+      }
+    }
+    .tab{
+      color: white;
+    }
+  }
+  .show-group-events{
+    display: block;
+    animation: fadeIn 1s;
+    height: 52vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .show-group-pending{
+    display: none;
+    animation: fadeIn 1s;
+    height: 52vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .show-group-create{
+    display: none;
+    animation: fadeIn 1s;
+    height: 52vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .event-bottom{
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .group-event-bottom-description{
+    width: 100%;
+    padding: 20px;
+    .event-description{
+      width: 100%;
+    }
+    i{
+      font-size: 25px;
+    }
+  }
+}
+
+.event-participations{
+  width: 40px;
+  height: 40px;
+  position:relative;
+  bottom: 20px;
+  font-size: 22px;
+  .event-participations-in{
+    width: 40px;
+    height: 40px;
+    color: $green;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .event-participations-out{
+    width: 40px;
+    height: 40px;
+    color: $red;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+.event-validation{
+  display: flex;
+}
+
+.event-cancel{
+  color: $red;
+}
+.event-confirm{
+  color: $green;
+  margin-right: 10px;
+}
+
+.group-event{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 40px;
+}
+
+.event-img{
+  width: 100px;
+  height: 100px;
+  background-color: $main-color;
+}
+
+.event-description{
+  width: 350px;
+}
+
+#event-form{
+  padding-top: 20px;
+  .form-control{
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+  }
+  .div-datetime{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .event_date{
+      width: 45%;
+    }
+    .d-flex{
+      display: flex;
+    }
+    .event_time{
+      width: 45%;
+    }
+  }
+}
+
+.event-loader{
+  .event-loader-bg{
+    width: 250px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: $background-color;
+    margin-right: 20px;
+    position: relative;
+    .event-loader-color{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      height: 20px;
+      border-radius: 5px;
+      background-color: $main-color;
+    }
+  }
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}

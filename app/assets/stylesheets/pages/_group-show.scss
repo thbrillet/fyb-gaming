@@ -1,7 +1,7 @@
 .container-show-group{
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  // overflow: hidden;
   .show-group-left{
     padding: 40px;
     h1{
@@ -16,11 +16,6 @@
     background-color: rgba(0, 0, 0, 0.3);
     height: 80px;
     margin-top: 10px;
-    transition: .5s;
-    &:hover{
-      transform:scale(1.03);
-      transition: .5s;
-    }
   }
 
   .group-event-img{

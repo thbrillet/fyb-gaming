@@ -30,6 +30,7 @@ Rails.application.routes.draw do
         patch :cancel
       end
       resources :participations, only: [:create, :update]
+      resources :objectives, only: [:create, :update]
     end
   end
 
