@@ -25,9 +25,9 @@
 
       <!-- MESSAGES -->
       <ul>
-        <% @group.messages.order(:created_at).each do |message| %>
+        <% @group.messages.order(created_at: :desc).each do |message| %>
           <li>
-            <p><%= message.content %><br><small>posted on: <%= message.created_at.strftime('%d / %m / %y at %H:%M%S') %> by <%= link_to message.user.username, user_path(message.user) %></small></p>
+            <p><%= message.content %><br><small>posted on: <%= message.created_at.strftime('%d / %m / %y at %H:%M:%S') %> by <%= link_to message.user.username, user_path(message.user) %></small></p>
           </li>
         <% end %>
       </ul>
