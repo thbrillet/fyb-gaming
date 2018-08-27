@@ -2,6 +2,7 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :devshow]
 
   def show
+    @message = Message.new
     @members = @group.memberships.where(status: 'accepted').map(&:user)
     @requests = @group.memberships.where(status: 'pending')
     @event = Event.new
@@ -11,6 +12,7 @@ class GroupsController < ApplicationController
   end
 
   def devshow
+    @message = Message.new
     @members = @group.memberships.where(status: 'accepted').map(&:user)
     @requests = @group.memberships.where(status: 'pending')
     @event = Event.new
