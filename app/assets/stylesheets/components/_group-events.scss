@@ -1,0 +1,120 @@
+.show-group-event{
+  width: 100%;
+  .show-group-tabs{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+      .border-bottom{
+        border-bottom: solid 2px $main-color;
+      }
+    button{
+      width: 33%;
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 60px;
+      border:none;
+      transition: .2s;
+      &:hover{
+        background-color: $main-color;
+        transition: .2s;
+      }
+    }
+    .tab{
+      color: white;
+    }
+  }
+  .show-group-events{
+    display: block;
+    animation: fadeIn 1s;
+    height: 52vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .show-group-pending{
+    display: none;
+    animation: fadeIn 1s;
+    height: 52vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .show-group-create{
+    display: none;
+    animation: fadeIn 1s;
+    height: 52vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .event-bottom{
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .group-event-bottom-description{
+    width: 100%;
+    padding: 20px;
+    .event-description{
+      width: 100%;
+    }
+    i{
+      font-size: 25px;
+    }
+  }
+}
+
+.event-participations{
+  width: 40px;
+  height: 40px;
+  position:relative;
+  bottom: 20px;
+  font-size: 22px;
+  .event-participations-in{
+    width: 40px;
+    height: 40px;
+    color: $green;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .event-participations-out{
+    width: 40px;
+    height: 40px;
+    color: $red;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+.event-validation{
+  display: flex;
+}
+
+.event-cancel{
+  color: $red;
+}
+.event-confirm{
+  color: $green;
+  margin-right: 10px;
+}
+
+.group-event{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 40px;
+}
+
+.event-img{
+  width: 100px;
+  height: 100px;
+  background-color: $main-color;
+}
+
+.event-description{
+  width: 350px;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}

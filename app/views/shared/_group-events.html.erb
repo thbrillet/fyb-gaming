@@ -1,0 +1,120 @@
+<div class="show-group-event">
+  <div class="show-group-tabs">
+    <button class="btn-event-events border-bottom"><div class="tab">
+      <% events = [] %>
+      <% @events.each do |event| %>
+        <% events << event if event.status != "pending" %>
+      <% end %>
+      <%= pluralize events.length, 'Event' %>
+    </div></button>
+    <button class="btn-event-pending"><div class="tab">
+      <% pending = [] %>
+      <% @events.each do |event| %>
+        <% pending << event if event.status == "pending" %>
+      <% end %>
+      <%= pending.length %> Pending
+    </div></button>
+    <button class="btn-event-create"><div class="tab">
+      Create
+    </div></button>
+  </div>
+
+  <!--LIST EVENTS-->
+  <div class="show-group-events">
+    <div class="group-events">
+        <% @events.each do |event| %>
+          <% if event.status != 'pending' %>
+            <div class="group-event" data-toggle="collapse" href="#group-event-bottom-<%= event.id %>" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <% if event.photo.present? %>
+                <div class="group-event-img" style="background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
+                url('<%= cl_image_path event.photo, height: 70, width: 70, crop: :fill%>');"></div>
+              <% end %>
+              <h6 class="event-title"><%= event.title %></h6>
+            </div>
+            <div class="collapse" id="group-event-bottom-<%= event.id %>">
+              <div class="group-event-bottom-description">
+                <% if event.date == Date.today %>
+                  <p>Plan for : <%= event.date.strftime('%d/%m/%y') %> [<%= pluralize event.date - Date.today, 'day' %> remaining]</p>
+                <% elsif event.date < date.today %>
+                  <p>Plan for : <%= event.date.strftime('%d/%m/%y') %> [<%= pluralize event.date - Date.today, 'day' %> remaining]</p>
+                <% else %>
+                  <p>The event is now finished ! (Event will be automatically deleted after 24h)</p>
+                <% end %>
+                <p class="event-description"> <%= event.description %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+  </div>
+
+  <!--PENDING EVENTS-->
+  <div class="show-group-pending">
+    <div class="group-pending">
+        <% @events.each do |event| %>
+          <% if event.status == 'pending' %>
+            <div class="group-event" data-toggle="collapse" href="#group-event-bottom-<%= event.id %>" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <% if event.photo.present? %>
+                <div class="group-event-img" style="background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
+                url('<%= cl_image_path event.photo, height: 70, width: 70, crop: :fill%>');"></div>
+              <% end %>
+              <h6 class="event-title"><%= event.title %> <i>(<%= event.status %>)</i></h6>
+              <div class="event-participations">
+                <div class="event-participations-in">
+                  <% participations_in = [] %>
+                  <% event.participations.each do |participation| %>
+                    <% participations_in << participation if participation.presence == "yes" %>
+                  <% end %>
+                  <%= participations_in.length %>
+                </div>
+                <div class="event-participations-out">
+                  <% participations_in = [] %>
+                  <% event.participations.each do |participation| %>
+                    <% participations_in << participation if participation.presence == "no" %>
+                  <% end %>
+                  <%= participations_in.length %>
+                </div>
+              </div>
+            </div>
+            <div class="collapse event-bottom" id="group-event-bottom-<%= event.id %>">
+              <div class="group-event-bottom-description">
+                <p>Plan for : <%= event.date.strftime('%d/%m/%y') %></p>
+                <p class="event-description"> <%= event.description %></p>
+                <div class="event-validation">
+                  <% if @group.leader == current_user %>
+                    <%= link_to confirm_group_event_path(@group, event), method: :patch do %>
+                      <div class="event-confirm">
+                        <i class="confirm far fa-check-circle"></i>
+                      </div>
+                    <% end %>
+                    <%= link_to cancel_group_event_path(@group, event), method: :patch do %>
+                      <div class="event-cancel">
+                        <i class="cancel fas fa-ban"></i>
+                      </div>
+                    <% end %>
+                  <% else %>
+                    <p>Participation : <%= event_participation(event) %> </p>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+  </div>
+
+  <!--CREATE EVENT-->
+  <div class="show-group-create">
+    <div id="event-form">
+        <%= simple_form_for [@group, @event] do |f| %>
+          <%= f.input :title %>
+          <%= f.input :description %>
+          <%= f.input :date %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.button :submit %>
+        <% end %>
+    </div>
+  </div>
+</div>
+

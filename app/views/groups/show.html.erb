@@ -1,12 +1,21 @@
+
 <div class="container-show-group" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
     url('<%= cl_image_path @group.game.photo%>');">
 
   <div class="row" style="color: white;">
     <div class="col-xs-6 show-group-left">
       <!--INFOS-->
-      <h1><%= @group.game.name %></h1>
-      <h2><%= @group.name %></h2>
-      <p><%= @group.description %></p>
+      <div class="show-group-infos">
+        <h1><%= @group.game.name %></h1>
+        <h2><%= @group.name %></h2>
+        <p><%= @group.description %></p>
+      </div>
+
+      <!--EVENTS-->
+      <%= render "shared/group-events" %>
+
+    </div>
+    <div class="col-ws-6 show-group-right">
       <!--REQUESTS-->
       <%# if @group.leader == current_user %>
         <h4><%= pluralize @requests.count, 'Request' %> pending:</h4>
@@ -21,38 +30,8 @@
         <% end %>
         </ul>
       <%# end %>
-      <!--EVENTS-->
-      <h4><%= pluralize @events.count, 'Event' %>:</h4>
-      <button href="" >Create one!</button>
-      <div id="event-form">
-          <%= simple_form_for [@group, @event] do |f| %>
-            <%= f.input :title %>
-            <%= f.input :description %>
-            <%= f.input :date %>
-            <%= f.input :photo %>
-            <%= f.input :photo_cache, as: :hidden %>
-            <%= f.button :submit %>
-          <% end %>
-      </div>
-      <div class="group-events">
-        <% @events.each do |event| %>
-          <div class="group-event">
-            <% if event.photo.present? %>
-              <div class="group-event-img" style="background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
-              url('<%= cl_image_path event.photo, height: 70, width: 70, crop: :fill%>');"></div>
-            <% end %>
-            <h6><%= event.title %> <i>(<%= event.status %>)</i></h6>
-            <p><%= event.date.strftime('%d/%m/%y') %> </p>
-            <% if @group.leader == current_user %>
-              <%= link_to 'confirm', accept_group_membership_path(@group, request), method: :patch  %>
-              <%= link_to 'cancel', decline_group_membership_path(@group, request), method: :patch  %>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
 
-    </div>
-    <div class="col-ws-6">
+      <!--WALL-->
       <div>ceci est un wall</div>
     </div>
   </div>
