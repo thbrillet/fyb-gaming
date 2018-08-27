@@ -113,6 +113,47 @@
   width: 350px;
 }
 
+#event-form{
+  padding-top: 20px;
+  .form-control{
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+  }
+  .div-datetime{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .event_date{
+      width: 45%;
+    }
+    .d-flex{
+      display: flex;
+    }
+    .event_time{
+      width: 45%;
+    }
+  }
+}
+
+.event-loader{
+  .event-loader-bg{
+    width: 250px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: $background-color;
+    margin-right: 20px;
+    position: relative;
+    .event-loader-color{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      height: 20px;
+      border-radius: 5px;
+      background-color: $main-color;
+    }
+  }
+}
+
 
 @keyframes fadeIn {
     from { opacity: 0; }
