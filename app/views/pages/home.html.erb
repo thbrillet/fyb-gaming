@@ -113,12 +113,14 @@
           </div>
         </div>
       </div>
-
+      <div style="text-align: center">
+        <%= render 'shared/footer' %>
+      </div>
       <div class="diagonal-down"></div>
-
     </div>
   </div>
 </div>
+
 
 <%# @user_groups.each do |group| %>
   <%#= render "shared/modals-groupcard", group: group %>
@@ -134,6 +136,8 @@
 <% end %>
 <input id="games_names" type="hidden" data-games='<%= @games_names.to_json %>'>
 <%= javascript_pack_tag 'awesomplete' %>
+
+
 
 
 
