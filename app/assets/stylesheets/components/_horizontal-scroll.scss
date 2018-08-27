@@ -14,6 +14,15 @@
   display: flex;
   overflow: auto;
 }
+.container-scroll-profile {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 96%;
+  margin-left: 2%;
+  display: flex;
+  overflow: auto;
+}
 
 // inner parent allowed to stretch to fit children
 #flex-scroll {
@@ -24,4 +33,15 @@
   justify-content: center;
   flex-wrap: nowrap;
 }
-
+.flex-scroll-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.flex-scroll-profile:first-child {
+  margin-left: -30px !important;
+}
+.flex-scroll-profile:last-child {
+  margin-right: 225px !important;
+}
