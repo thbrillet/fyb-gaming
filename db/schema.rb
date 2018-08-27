@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_152726) do
+ActiveRecord::Schema.define(version: 2018_08_27_152815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2018_08_27_152726) do
     t.datetime "updated_at", null: false
     t.date "date"
     t.string "photo"
+    t.time "time"
     t.index ["group_id"], name: "index_events_on_group_id"
   end
 
@@ -60,6 +61,13 @@ ActiveRecord::Schema.define(version: 2018_08_27_152726) do
     t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
+  create_table "objectives", force: :cascade do |t|
+    t.string "name"
+    t.bigint "event_id"
+    t.string "status"
+    t.index ["event_id"], name: "index_objectives_on_event_id"
+  end
+  
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.bigint "group_id"
@@ -117,6 +125,7 @@ ActiveRecord::Schema.define(version: 2018_08_27_152726) do
   add_foreign_key "groups", "users", column: "leader_id"
   add_foreign_key "memberships", "groups"
   add_foreign_key "memberships", "users"
+  add_foreign_key "objectives", "events"
   add_foreign_key "messages", "groups"
   add_foreign_key "messages", "users"
   add_foreign_key "participations", "events"

@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   def create
+    # CREATE EVENT
     @event = Event.new(event_params)
     @group = Group.find(params[:group_id])
     @event.group = @group
@@ -10,6 +11,15 @@ class EventsController < ApplicationController
       @requests = @group.memberships.where(status: 'pending')
       @events = Event.where(group: @group)
       render 'groups/show'
+    end
+
+    # CREATE OBJECTIVES
+    params['event']['objectives'].each do |event|
+      @new_objective = Objective.new
+      @new_objective.name = event['name']
+      @new_objective.event_id = @event.id
+      @new_objective.status = 'pending'
+      @new_objective.save
     end
   end
 
@@ -30,6 +40,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :description, 'date(1i)', 'date(2i)', 'date(3i)', :photo)
+    params.require(:event).permit(:title, :description, :date, :time, :photo)
   end
 end
