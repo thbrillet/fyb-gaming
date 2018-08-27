@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'profile', to: "users#profile", as: "profile"
 
-  resources :users, only: :show do
+  resources :users, only: [:show, :update] do
   end
 
   resources :games, only: [:show]

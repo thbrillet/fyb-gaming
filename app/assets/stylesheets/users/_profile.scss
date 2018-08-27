@@ -40,21 +40,15 @@
   color: $main-color;
 }
 .profile-groups, .profile-games {
+  overflow: hidden;
+  position: relative;
   height: 30vh;
-  // background-color: red;
   transition: .4s;
-  &:hover { box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2) }
 }
 .profile-interests {
-  // background-color: lightgray;
-  &:hover { box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2) }
   h3 {
     color: $main-color;
   }
-}
-.profile-groups {
-  overflow: hidden;
-  position: relative;
 }
 .half-div-top {
   height: 40px;

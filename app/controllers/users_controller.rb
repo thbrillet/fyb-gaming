@@ -8,7 +8,15 @@ class UsersController < ApplicationController
   def show
   end
 
+  def update
+    raise
+  end
+
   private
+
+  def user_params
+    params.require(:user).permit(:interest_pve_pvp, :interest_mmo_smallteam, :interest_gameplay_story, :interest_compet_chill, :interest_action_strat)
+  end
 
   def set_user
     @user = User.find(params[:id])

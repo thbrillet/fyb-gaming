@@ -1,7 +1,7 @@
 <!-- CARD -->
 
 
-  <div class="box-groupcard" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+  <div class="box-groupcard-profile" style="background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
       url('<%= cl_image_path group.game.photo%>');" data-toggle="modal" data-target="#<%= group.id %>Modal">
     <div class="link-btn"><span></span></div>
     <h4><%= group.game.name %></h4>
@@ -13,10 +13,10 @@
     <% else %>
       <p class="PS4"><%= group.game.platform %></p>
     <% end %>
-    <ul class="group-members">
+    <ul class="group-members-profile">
     <% group.memberships.each do |membership| %>
       <% if membership.status == "accepted" %>
-        <div class="group-member" style="background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
+        <div class="group-member-profile" style="background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
       url('<%= cl_image_path membership.user.photo%>');"></div>
       <% end %>
     <% end %>

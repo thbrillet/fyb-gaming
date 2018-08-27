@@ -14,11 +14,12 @@
   display: flex;
   overflow: auto;
 }
-#container-scroll-profile {
+.container-scroll-profile {
   position: absolute;
-  top: -35px;
-  left: -370px;
-  width: 200%;
+  top: 30px;
+  left: 0;
+  width: 96%;
+  margin-left: 2%;
   display: flex;
   overflow: auto;
 }
@@ -32,4 +33,17 @@
   justify-content: center;
   flex-wrap: nowrap;
 }
-
+.flex-scroll-profile {
+  // inside spacing
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.flex-scroll-profile:first-child {
+  margin-left: -30px !important;
+}
+.flex-scroll-profile:last-child {
+  margin-right: 225px !important;
+}
