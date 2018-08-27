@@ -22,7 +22,22 @@
         <% end %>
         </ul>
       <% end %>
-    </div>
+
+      <!-- MESSAGES -->
+      <ul>
+        <% @group.messages.order(:created_at).each do |message| %>
+          <li>
+            <p><%= message.content %><br><small>posted on: <%= message.created_at.strftime('%d / %m / %y at %H:%M%S') %> by <%= link_to message.user.username, user_path(message.user) %></small></p>
+          </li>
+        <% end %>
+      </ul>
+      <%= simple_form_for [@group, @message] do |f| %>
+      <%=  f.input :content %>
+      <%= f.button :submit %>
+      <% end %>
+      </div>
+
+
       <!-- CREER UN EVENT SI LEADER -->
       <div class="col-xs-6">
       <% if @group.leader == current_user %>

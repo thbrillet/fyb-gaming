@@ -1,8 +1,9 @@
 puts "Cleaning database..."
-UserGame.destroy_all
-Membership.destroy_all
-Group.destroy_all
+Message.destroy_all
 Event.destroy_all
+Membership.destroy_all
+UserGame.destroy_all
+Group.destroy_all
 Game.destroy_all
 User.destroy_all
 
@@ -18,7 +19,7 @@ pierre = User.create!(
   interest_pve_pvp: "PVP",
   interest_action_strat: "Action",
   interest_gameplay_story: "Story",
-  interest_compet_chill: "Compet",
+  interest_compet_chill: "Competition",
   interest_mmo_smallteam: "SmallTeam",
   email: "pierre@gmail.com",
   password: "azerty"
@@ -81,7 +82,7 @@ thomas = User.create!(
   interest_pve_pvp: "PVP",
   interest_action_strat: "Action",
   interest_gameplay_story: "Story",
-  interest_compet_chill: "Compet",
+  interest_compet_chill: "Competition",
   interest_mmo_smallteam: "SmallTeam",
   email: "thomas@gmail.com",
   password: "azerty"
@@ -96,7 +97,7 @@ nico = User.create!(
   interest_pve_pvp: "PVE",
   interest_action_strat: "Strategy",
   interest_gameplay_story: "Story",
-  interest_compet_chill: "Compet",
+  interest_compet_chill: "Competition",
   interest_mmo_smallteam: "MMO",
   email: "nico@gmail.com",
   password: "azerty"
@@ -111,7 +112,7 @@ cecile = User.create!(
   interest_pve_pvp: "PVE",
   interest_action_strat: "Strategy",
   interest_gameplay_story: "Story",
-  interest_compet_chill: "Compet",
+  interest_compet_chill: "Competition",
   interest_mmo_smallteam: "MMO",
   email: "cecile@gmail.com",
   password: "azerty"
@@ -126,7 +127,7 @@ charlotte = User.create!(
   interest_pve_pvp: "PVP",
   interest_action_strat: "Action",
   interest_gameplay_story: "Gameplay",
-  interest_compet_chill: "Compet",
+  interest_compet_chill: "Competition",
   interest_mmo_smallteam: "SmallTeam",
   email: "charlotte@gmail.com",
   password: "azerty"
@@ -141,7 +142,7 @@ franck = User.create!(
   interest_pve_pvp: "PVE",
   interest_action_strat: "Strategy",
   interest_gameplay_story: "Gameplay",
-  interest_compet_chill: "Compet",
+  interest_compet_chill: "Competition",
   interest_mmo_smallteam: "MMO",
   email: "franck@gmail.com",
   password: "azerty"
@@ -171,7 +172,7 @@ julien = User.create!(
   interest_pve_pvp: "PVE",
   interest_action_strat: "Action",
   interest_gameplay_story: "Story",
-  interest_compet_chill: "Compet",
+  interest_compet_chill: "Competition",
   interest_mmo_smallteam: "MMO",
   email: "julien@gmail.com",
   password: "azerty"
@@ -232,7 +233,7 @@ alicia = User.create!(
   interest_pve_pvp: "PVE",
   interest_action_strat: "Strategy",
   interest_gameplay_story: "Gameplay",
-  interest_compet_chill: "Compet",
+  interest_compet_chill: "Competition",
   interest_mmo_smallteam: "MMO",
   email: "david@gmail.com",
   password: "azerty"

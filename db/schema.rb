@@ -67,6 +67,16 @@ ActiveRecord::Schema.define(version: 2018_08_27_152815) do
     t.string "status"
     t.index ["event_id"], name: "index_objectives_on_event_id"
   end
+  
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "group_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_messages_on_group_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
 
   create_table "participations", force: :cascade do |t|
     t.string "presence"
@@ -116,6 +126,8 @@ ActiveRecord::Schema.define(version: 2018_08_27_152815) do
   add_foreign_key "memberships", "groups"
   add_foreign_key "memberships", "users"
   add_foreign_key "objectives", "events"
+  add_foreign_key "messages", "groups"
+  add_foreign_key "messages", "users"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
   add_foreign_key "user_games", "games"

@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
+
+  #DEV ONLY, TO COMMENT IN PRODUCTION
   get 'seeds', to: "seeds#index"
   get 'components', to: "seeds#components"
   get 'devshow/:id', to: "groups#devshow", as: 'devshow'
-  devise_for :users
+
   root to: 'pages#home'
+
+  devise_for :users
+
+  get 'profile', to: "users#profile", as: "profile"
+
+  resources :users, only: [:show, :update] do
+  end
 
   resources :games, only: [:show]
 
@@ -14,6 +23,7 @@ Rails.application.routes.draw do
         patch :decline
       end
     end
+    resources :messages, only: :create
     resources :events, only: [:create, :edit, :update] do
       member do
         patch :confirm
@@ -23,4 +33,5 @@ Rails.application.routes.draw do
       resources :objectives, only: [:create, :update]
     end
   end
+
 end
