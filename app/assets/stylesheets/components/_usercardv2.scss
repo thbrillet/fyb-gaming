@@ -11,12 +11,12 @@
 
 // CARD
 .usercard-color-top{
-  background-color: rgba(0 ,0, 0, 0.2);
+  background-color: rgba(0 ,0, 0, 0.8);
   position: absolute;
   top:0;
   left: 0;
   width: 320px;
-  height: 50px;
+  height: 70px;
   transition: .2s;
   z-index: 1;
 }
@@ -51,10 +51,12 @@
     transition: .2s;
   }
   &:hover .usercard-color-top{
-    height: 120px;
+  background-color: rgba(0 ,0, 0, 0.2);
+    height: 140px;
     transition: .2s;
   }
   &:hover .diagonal-usercard{
+    background: linear-gradient(to left bottom, rgba(0, 0, 0, 0.2) 50%, $background-color 50%);
     top: 120px;
     transition: .2s;
   }
@@ -88,7 +90,7 @@
   }
   .usercard-infos {
     text-align: center;
-    margin-top: -55px;
+    margin-top: -50px;
     padding: 20px;
     h3 {
       color: $main-color;
