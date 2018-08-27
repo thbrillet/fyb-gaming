@@ -1,8 +1,9 @@
 puts "Cleaning database..."
-UserGame.destroy_all
-Membership.destroy_all
-Group.destroy_all
+Message.destroy_all
 Event.destroy_all
+Membership.destroy_all
+UserGame.destroy_all
+Group.destroy_all
 Game.destroy_all
 User.destroy_all
 
