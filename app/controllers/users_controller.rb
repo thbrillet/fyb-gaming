@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:interest_pve_pvp, :interest_mmo_smallteam, :interest_gameplay_story, :interest_compet_chill, :interest_action_strat)
+    params.require(:user).permit(:interest_pve_pvp, :interest_mmo_smallteam, :interest_gameplay_story, :interest_compet_chill, :interest_action_strat, :username)
   end
 
   def set_user
