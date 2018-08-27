@@ -23,6 +23,7 @@ Rails.application.routes.draw do
         patch :decline
       end
     end
+    resources :messages, only: :create
     resources :events, only: [:create, :edit, :update] do
       member do
         patch :confirm
@@ -31,4 +32,5 @@ Rails.application.routes.draw do
       resources :participations, only: [:create, :update]
     end
   end
+
 end
