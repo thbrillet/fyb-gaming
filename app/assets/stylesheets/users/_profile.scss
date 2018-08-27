@@ -1,53 +1,77 @@
 .profile-header {
-  & > * {
-    padding: 0 15px;
-  }
-  h2 {
-    margin-top: -10px;
-    color: white;
-    font-weight: lighter;
-    }
+  height: 100vh;
+  background-size: cover !important;
+  background-position: top;
+  background-repeat: no-repeat;
   .profile-title {
+    margin-bottom: 60px;
+    position: relative;
+    height: 20vh;
     padding-top: 20px;
     padding-right: 80px;
-    background: linear-gradient(to bottom, $main-color, $orange);
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-      h1 {
-        margin-top: 0;
-        color: rgba(0, 0, 0, 0.7);
-        font-size: 60px;
-        margin-left: 10px;
-      }
-      .small-photo {
-        margin-top: -20px;
-        cursor: pointer;
-        width: 60px;
-        border: 1px solid black;
-      }
+    h1 {
+      position: absolute;
+      top: 20px;
+      left: 150px;
+      margin-top: 0;
+      color: rgba(255, 255, 255, 0.8);
+      text-shadow: 1px 1px 100px black;
+      // color: $main-color;
+      font-size: 40px;
+      margin-left: 10px;
+    }
+    .small-photo {
+      position: absolute;
+      top: 20px;
+      cursor: pointer;
+      width: 150px;
+      border: 1px solid black;
+    }
+    & > * {
+      padding: 0 15px;
+    }
+    h2 {
+      position: absolute;
+      top: 60px;
+      left: 160px;
+      margin-top: 15px;
+      color: white;
+      font-size: 36px;
+      font-weight: lighter;
+    }
   }
   .profile-biography {
   p {
     width: 75%;
     color: rgba(255, 255, 255, 0.8);
-    font-size: 24px;
+    font-size: 20px;
     font-weight: lighter;
   }
 }
 }
-.profile-groups, .profile-games h3 {
-  color: $main-color;
-}
 .profile-groups, .profile-games {
+  width: 100%;
   overflow: hidden;
   position: relative;
-  height: 30vh;
+  height: 33vh;
   transition: .4s;
+  h3 {
+    opacity: 0.8;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+  }
+  a {
+    color: $main-color;
+    font-weight: lighter;
+    opacity: 0.8;
+  }
 }
 .profile-interests {
   h3 {
-    color: $main-color;
+    margin-left: 70px;
+    opacity: 0.8;
+    color: rgba(255, 255, 255, 0.8);
   }
 }
 .half-div-top {
@@ -68,3 +92,8 @@
   background: linear-gradient(to left bottom, $background-color 50%, $main-color 50%);
 }
 .modal-photo { border: 2px solid $main-color; }
+
+.form-btn {
+  margin: 0 auto;
+  display: block;
+}

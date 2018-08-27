@@ -16,7 +16,7 @@
 }
 .container-scroll-profile {
   position: absolute;
-  top: 30px;
+  top: 60px;
   left: 0;
   width: 96%;
   margin-left: 2%;
@@ -34,8 +34,6 @@
   flex-wrap: nowrap;
 }
 .flex-scroll-profile {
-  // inside spacing
-  padding: 40px 0;
   display: flex;
   align-items: center;
   justify-content: center;
