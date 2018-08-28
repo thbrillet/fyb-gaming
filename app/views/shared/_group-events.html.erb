@@ -29,7 +29,7 @@
                 <div class="group-event-img" style="background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
                 url('<%= cl_image_path event.photo, height: 70, width: 70, crop: :fill%>');"></div>
               <% end %>
-              <h6 class="event-title"><%= event.title %></h6>
+              <div class="event-title"><h6><%= event.title %></h6></div>
 
               <!--PROGRESS-BAR-->
               <div class="event-loader">
@@ -47,42 +47,56 @@
                 </div>
               </div>
             </div>
-            <div class="collapse" id="group-event-bottom-<%= event.id %>">
+            <div class="collapse group-event-bottom" id="group-event-bottom-<%= event.id %>">
               <div class="group-event-bottom-description">
                 <% if event.date == Date.today %>
                   <% event_time = (event.date.to_s + " " +event.time.to_s).to_datetime %>
                   <% current_time = Time.now.to_datetime %>
                   <% time_remaining = event_time - current_time %>
-                  <p>Plan for : <%= event.date.strftime('%d/%m/%y') %> - <%= event.time.strftime('%Hh%M') %></p>
-                  <p>[ Starting in <%= pluralize (time_remaining * 24).to_i, 'hour' %> and <%= pluralize (((time_remaining*24*60).to_i)-((time_remaining*24).to_i.to_s.to_i)*60), 'minute' %> ]</p>
+                  <p><i class="far fa-calendar-alt"></i> <%= event.date.strftime('%d/%m/%y') %> - <%= event.time.strftime('%Hh%M') %></p>
+                  <p><i class="fas fa-stopwatch"></i> in <%= pluralize (time_remaining * 24).to_i, 'hour' %> and <%= pluralize (((time_remaining*24*60).to_i)-((time_remaining*24).to_i.to_s.to_i)*60), 'minute' %></p>
                 <% elsif event.date > Date.today %>
-                  <p>Plan for : <%= event.date.strftime('%d/%m/%y') %> - <%= event.time.strftime('%Hh%M') %></p>
-                  <p>[ Starting in <%= pluralize (event.date - Date.today).to_i, 'day' %> ]</p>
+                  <p><i class="far fa-calendar-alt"></i> <%= event.date.strftime('%d/%m/%y') %> - <%= event.time.strftime('%Hh%M') %></p>
+                  <p><i class="fas fa-stopwatch"></i> in <%= pluralize (event.date - Date.today).to_i, 'day' %></p>
                 <% else %>
                   <p>The event is now finished !</p>
                   <p>[ Event will be automatically deleted after 24h ]</p>
                 <% end %>
                 <p class="event-description"> <%= event.description %></p>
                 <!-- OBJECTIVES -->
-                <ul>
                   <% event.objectives.each do |objective| %>
-                    <li><% if objective.status == 'pending' %>
+                    <div class="objectives-div">
+                      <% if objective.status == 'pending' %>
                         <%= link_to group_event_objective_path(@group, event, objective), method: :patch do %>
-                          <div class="event-cancel">
+                          <div class="objective-line-done">
                             <i class="far fa-square"></i> <%= objective.name %>
                           </div>
                         <% end %>
                       <% else %>
-                        <i class="far fa-check-square"></i><%= objective.name %></li>
+                      <div class="objective-line-notdone">
+                        <i class="far fa-check-square"></i><%= objective.name %>
+                      </div>
                       <% end %>
-                  <% end %>
-                </ul>
-                <% if @group.leader == current_user %>
-                  <%= link_to cancel_group_event_path(@group, event), method: :patch do %>
-                    <div class="event-cancel">
-                      <i class="cancel fas fa-ban"></i>
                     </div>
                   <% end %>
+
+                  <div class="event-users-in">
+                    <% if event.participations.first != nil %>
+                      <% event.participations.each do |participation| %>
+                        <% if participation.presence == "yes" %>
+                          <div class="event-user-in" style="background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
+                          url('<%= cl_image_path participation.user.photo, height: 50, width: 50, crop: :fill%>');"></div>
+                        <% end %>
+                      <% end %>
+                    <% end %>
+                  </div>
+
+                <% if @group.leader == current_user %>
+                  <div class="event-cancel">
+                    <%= link_to cancel_group_event_path(@group, event), method: :patch do %>
+                      <span class="delete-btn-event"> DELETE </span><i class="cancel fas fa-ban"></i>
+                    <% end %>
+                  </div>
                 <% end %>
               </div>
             </div>
@@ -101,7 +115,7 @@
                 <div class="group-event-img" style="background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
                 url('<%= cl_image_path event.photo, height: 70, width: 70, crop: :fill%>');"></div>
               <% end %>
-              <h6 class="event-title"><%= event.title %> <i>(<%= event.status %>)</i></h6>
+              <div class="event-title-pending"><h6><%= event.title %></h6></div>
               <div class="event-participations">
                 <div class="event-participations-in">
                   <% participations_in = [] %>
@@ -124,11 +138,11 @@
                 <p>Plan for : <%= event.date.strftime('%d/%m/%y') %></p>
                 <p class="event-description"> <%= event.description %></p>
                 <!-- OBJECTIVES -->
-                <ul>
+
                   <% event.objectives.each do |objective| %>
-                    <li><%= objective.name %></li>
+                    <div><%= objective.name %></div>
                   <% end %>
-                </ul>
+
                 <div class="event-validation">
                   <% if @group.leader == current_user %>
                     <%= link_to confirm_group_event_path(@group, event), method: :patch do %>
@@ -166,14 +180,15 @@
           <%= f.input :photo_cache, as: :hidden %>
           <%= f.simple_fields_for :objectives do |o| %>
             <div class="form-objectives-dynamic">
-              <%= o.input :name, input_html: { name: "event[objectives][][name]" } %>
-              <%= o.input :name, input_html: { name: "event[objectives][][name]" } %>
+              <div class="form-group string required event_objectives_name"></div>
             </div>
           <% end %>
-          <%= f.button :submit %>
+          <div class="create-event"><%= f.button :submit, 'Create event' %></div>
         <% end %>
     </div>
-    <button id="button-objectives-form"><i class="far fa-plus-square"></i></button>
+    <div class="add-objectives">
+      <button id="button-objectives-form"><i class="fas fa-list-ul"></i> Add objectives</button>
+    </div>
   </div>
 </div>
 
