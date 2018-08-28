@@ -1,99 +1,132 @@
-.profile-header {
+.profile-background {
+
   height: 100vh;
+  min-height: 720px;
+  width: 100vw;
+  background-position: center !important;
   background-size: cover !important;
-  background-position: top;
   background-repeat: no-repeat;
-  .profile-title {
-    margin-bottom: 60px;
-    position: relative;
-    height: 20vh;
-    padding-top: 20px;
-    padding-right: 80px;
-    h1 {
-      position: absolute;
-      top: 20px;
-      left: 150px;
-      margin-top: 0;
-      color: rgba(255, 255, 255, 0.8);
-      text-shadow: 1px 1px 100px black;
-      // color: $main-color;
-      font-size: 40px;
-      margin-left: 10px;
-    }
-    .small-photo {
-      position: absolute;
-      top: 20px;
-      cursor: pointer;
-      width: 150px;
-      border: 1px solid black;
-    }
-    & > * {
-      padding: 0 15px;
-    }
-    h2 {
-      position: absolute;
-      top: 60px;
-      left: 160px;
-      margin-top: 15px;
-      color: white;
-      font-size: 36px;
-      font-weight: lighter;
-    }
-  }
-  .profile-biography {
-  p {
-    width: 75%;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 20px;
-    font-weight: lighter;
-  }
-}
-}
-.profile-groups, .profile-games {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  height: 250px;
-  transition: .4s;
+  display: flex;
   h3 {
     opacity: 0.8;
-    margin-top: 15px;
+    color: white;
+    font-size: 32px;
+    margin: 0;
+  }
+}
+.profile-infos {
+  position: relative;
+  flex: 0 0 20%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  img {
+    display: block;
+    margin: 5vh auto 0 auto;
+    border: 1px solid $main-color;
+  }
+  h1 {
+    color: $main-color;
+    font-size: 24px;
+    text-align: center;
+  }
+  h2 {
+    font-weight: 300;
+    font-size: 24px;
+    text-align: center;
     color: rgba(255, 255, 255, 0.8);
-    display: inline-block;
+  }
+  p {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: lighter;
+    text-align: justify;
+    color: rgba(255, 255, 255, 0.6);
   }
   a {
-    color: $main-color;
-    font-weight: lighter;
     opacity: 0.8;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: $main-color;
+  }
+}
+.profile-games-groups {
+  overflow-y: scroll;
+  flex: 1 0 50%;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  .groups-tab {
+    padding: 50px 20px 0 20px;
+    animation: fadeIn 1s;
+  }
+  .games-tab {
+    animation: fadeIn 1s;
+    padding: 20px;
   }
 }
 .profile-interests {
-  h3 {
-    margin-left: 70px;
-    opacity: 0.8;
-    color: rgba(255, 255, 255, 0.8);
+  position: sticky;
+  top: 0;
+  flex: 0 0 30%;
+  .profile-tab-header {
+    margin-left: 60px !important;
+  }
+  .attributes-tab {
+    margin-top: 70px;
+    margin-left: -40px
   }
 }
-.half-div-top {
-  height: 40px;
+.profile-header {
   width: 100%;
-  background: linear-gradient(to left bottom, $background-color 50%, $main-color 50%);
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  cursor: pointer;
 }
-.half-div-bottom {
-  height: 30px;
-  width: 100%;
-  background: linear-gradient(to left bottom, $orange 50%, $background-color 50%);
+.profile-tab-header {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  margin: 0 !important;
+  &.active {
+    border-bottom: 2px solid $main-color;
+  }
 }
-.half-div-footer {
+.import-div {
   position: absolute;
-  bottom: 0;
-  height: 40px;
+  bottom: 60px;
   width: 100%;
-  background: linear-gradient(to left bottom, $background-color 50%, $main-color 50%);
+  // margin-top: 30px;
+  text-align: center;
+  h4 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 20px;
+  }
 }
-.modal-photo { border: 2px solid $main-color; }
-
-.form-btn {
-  margin: 0 auto;
-  display: block;
+.import-btn {
+  margin: 20px auto 0 auto;
+  width: 40%;
+  font-size: 30px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.8);
+  &:active {
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+.import-xbox {
+  background-color: #43bc43;
+}
+.import-steam {
+  background-color: #898989;
+}
+.import-ps {
+  background-color: #214ca8;
+}
+.import-modal {
+  height: 150px;
+  background-color: rgba(200, 200, 200, 1)
 }
