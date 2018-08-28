@@ -1,110 +1,125 @@
-<div class="profile-header" style="background: radial-gradient(at top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8) 80%), url(<%= asset_url 'bioshock.jpg' %>)">
+<div class="profile-background" style="background: radial-gradient(at top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8) 80%), url(<%= asset_url 'bioshock.jpg' %>)">
 
-
-
-  <div class="profile-title">
-    <div data-toggle="modal" data-target="#photo"">
-      <%= cl_image_tag @user.photo, width: 150, height: 150, crop: :fit, class: 'small-photo' %>
-    </div>
-    <div class="modal fade" id="photo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document" style="width: auto;">
-        <div data-toggle="modal" data-target="#photo" class="text-center">
-          <%= cl_image_tag @user.photo, height: 600, crop: :fit, class: 'modal-photo'%>
-        </div>
-      </div>
-    </div>
+  <div class="profile-infos">
+    <%= cl_image_tag @user.photo, width: 150, height: 150, crop: :fit %>
     <h1>#<%= @user.username.upcase %></h1>
     <h2>"<%= @user.punch_line %>"</h2>
-  </div>
-
-<div class="container-fluid">
-  <div class="profile-body">
-    <div class="row" style="margin-right: 50px">
-      <div class="col-sm-12 col-md-8">
-        <div class="profile-groups">
-          <h3>#YOUR_GROUPS</h3>
-          <div class="container-scroll-profile" >
-            <div class="flex-scroll-profile">
-              <% @user.groups.each do |group| %>
-                <%= link_to group_path(group) do %>
-                  <%= render "shared/groupcard-profile", group: group %>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <div class="profile-games">
-          <h3>#YOUR_GAMES</h3>
-          <%= link_to '+ Add a game', '#' %>
-          <div class="container-scroll-profile">
-            <div class="flex-scroll-profile">
-              <% @user.games.each do |game| %>
-                <%= link_to game_path(game) do %>
-                  <div class="box-groupcard-profile" style="background: url('<%= cl_image_path game.photo %>'">
-                    <h6><%= game.name %></h6>
-                  </div>
-                <% end %>
-              <% end %>
-            </div>
+    <p><%= @user.biography %></p>
+    <div class="import-div">
+      <h4>Import games from:</h4>
+      <div data-toggle="modal" data-target=".xbox-import-modal" class="import-btn import-xbox">
+        <i class="fab fa-xbox"></i>
+      </div>
+      <div class="modal fade xbox-import-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content import-modal">
+            <h5>Import games from you Xbox Live account</h5>
+              <div class="row">
+                <div class="col-xs-8 col-xs-offset-2">
+                  <%= form_tag nil, class: 'input-group' do %>
+                    <input type="text" class="form-control" placeholder="Type your gamertag">
+                    <span class="input-group-btn">
+                      <button class="btn btn-success" type="button">Go!</button>
+                    </span>
+                  <% end -%>
+                </div>
+              </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-4">
-        <div class="profile-interests">
-          <h3>#PROFILE</h3>
-
-          <%= form_for(@user) do %>
-
-            <div class="switch">
-              <input type="radio" class="switch-input" name="user[interest_pve_pvp]" value="PVE" id="PVE" <%= 'checked' if @user.interest_pve_pvp == 'PVE' %>>
-              <label for="PVE" class="switch-label switch-label-off">PVE</label>
-              <input type="radio" class="switch-input" name="user[interest_pve_pvp]" value="PVP" id="PVP" <%= 'checked' if @user.interest_pve_pvp == 'PVP' %>>
-              <label for="PVP" class="switch-label switch-label-on">PVP</label>
-              <span class="switch-selection"></span>
-            </div>
-
-            <div class="switch">
-              <input type="radio" class="switch-input" name="user[interest_action_strat]" value="Action" id="Action" <%= 'checked' if @user.interest_action_strat == 'Action' %>>
-              <label for="Action" class="switch-label switch-label-off">Action</label>
-              <input type="radio" class="switch-input" name="user[interest_action_strat]" value="Strategy" id="Strategy" <%= 'checked' if @user.interest_action_strat == 'Strategy' %>>
-              <label for="Strategy" class="switch-label switch-label-on">Strategy</label>
-              <span class="switch-selection"></span>
-            </div>
-
-            <div class="switch">
-              <input type="radio" class="switch-input" name="user[interest_gameplay_story]" value="Gameplay" id="Gameplay" <%= 'checked' if @user.interest_gameplay_story == 'Gameplay' %>>
-              <label for="Gameplay" class="switch-label switch-label-off">Gameplay</label>
-              <input type="radio" class="switch-input" name="user[interest_gameplay_story]" value="Story" id="Story" <%= 'checked' if @user.interest_gameplay_story == 'Story' %>>
-              <label for="Story" class="switch-label switch-label-on">Story</label>
-              <span class="switch-selection"></span>
-            </div>
-
-            <div class="switch">
-              <input type="radio" class="switch-input" name="user[interest_compet_chill]" value="Competition" id="Competition" <%= 'checked' if @user.interest_compet_chill == 'Competition' %>>
-              <label for="Competition" class="switch-label switch-label-off">Competition</label>
-              <input type="radio" class="switch-input" name="user[interest_compet_chill]" value="Chill" id="Chill" <%= 'checked' if @user.interest_compet_chill == 'Chill' %>>
-              <label for="Chill" class="switch-label switch-label-on">Chill</label>
-              <span class="switch-selection"></span>
-            </div>
-
-            <div class="switch">
-              <input type="radio" class="switch-input" name="user[interest_mmo_smallteam]" value="MMO" id="MMO" <%= 'checked' if @user.interest_mmo_smallteam == 'MMO' %>>
-              <label for="MMO" class="switch-label switch-label-off">MMO</label>
-              <input type="radio" class="switch-input" name="user[interest_mmo_smallteam]" value="SmallTeam" id="SmallTeam" <%= 'checked' if @user.interest_mmo_smallteam == 'SmallTeam' %>>
-              <label for="SmallTeam" class="switch-label switch-label-on">Small Team</label>
-              <span class="switch-selection"></span>
-            </div>
-
-            <input type="submit" value="Save my profile" class="form-btn">
-
-          <% end %>
-
-        </div>
+      <div class="import-btn import-ps">
+        <i class="fab fa-playstation"></i>
+      </div>
+      <div class="import-btn import-steam">
+        <i class="fab fa-steam"></i>
       </div>
     </div>
+    <%= link_to 'Edit infos', '#' %>
   </div>
-</div>
 
+  <div class="profile-games-groups">
+    <div class="profile-header">
+      <div id="groups-tab-header" class="profile-tab-header active">
+        <h3>#GROUPS</h3>
+      </div>
+      <div id="games-tab-header" class="profile-tab-header">
+        <h3>#GAMES</h3>
+      </div>
+    </div>
+    <div class="groups-tab">
+      <div class="row">
+        <% @user.groups.each do |group| %>
+          <div class="col-xs-12 col-sm-6">
+            <%= link_to group_path(group) do %>
+            <%= render "shared/groupcard-profile", group: group %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="games-tab hidden">
+      <% @user.games.each do |game| %>
+        <%= link_to game_path(game) do %>
+          <div class="box-groupcard-profile" style="background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)), url('<%= cl_image_path game.photo %>'">
+            <h6><%= game.name %></h6>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
+  <div class="profile-interests">
+    <div class="profile-header">
+      <div class="profile-tab-header">
+        <h3>#PROFILE</h3>
+      </div>
+    </div>
+    <div class="attributes-tab">
+      <%= form_for(@user) do %>
+
+        <div class="switch">
+          <input type="radio" class="switch-input" name="user[interest_pve_pvp]" value="PVE" id="PVE" <%= 'checked' if @user.interest_pve_pvp == 'PVE' %>>
+          <label for="PVE" class="switch-label switch-label-off">PVE</label>
+          <input type="radio" class="switch-input" name="user[interest_pve_pvp]" value="PVP" id="PVP" <%= 'checked' if @user.interest_pve_pvp == 'PVP' %>>
+          <label for="PVP" class="switch-label switch-label-on">PVP</label>
+          <span class="switch-selection"></span>
+        </div>
+
+        <div class="switch">
+          <input type="radio" class="switch-input" name="user[interest_action_strat]" value="Action" id="Action" <%= 'checked' if @user.interest_action_strat == 'Action' %>>
+          <label for="Action" class="switch-label switch-label-off">Action</label>
+          <input type="radio" class="switch-input" name="user[interest_action_strat]" value="Strategy" id="Strategy" <%= 'checked' if @user.interest_action_strat == 'Strategy' %>>
+          <label for="Strategy" class="switch-label switch-label-on">Strategy</label>
+          <span class="switch-selection"></span>
+        </div>
+
+        <div class="switch">
+          <input type="radio" class="switch-input" name="user[interest_gameplay_story]" value="Gameplay" id="Gameplay" <%= 'checked' if @user.interest_gameplay_story == 'Gameplay' %>>
+          <label for="Gameplay" class="switch-label switch-label-off">Gameplay</label>
+          <input type="radio" class="switch-input" name="user[interest_gameplay_story]" value="Story" id="Story" <%= 'checked' if @user.interest_gameplay_story == 'Story' %>>
+          <label for="Story" class="switch-label switch-label-on">Story</label>
+          <span class="switch-selection"></span>
+        </div>
+
+        <div class="switch">
+          <input type="radio" class="switch-input" name="user[interest_compet_chill]" value="Competition" id="Competition" <%= 'checked' if @user.interest_compet_chill == 'Competition' %>>
+          <label for="Competition" class="switch-label switch-label-off">Competition</label>
+          <input type="radio" class="switch-input" name="user[interest_compet_chill]" value="Chill" id="Chill" <%= 'checked' if @user.interest_compet_chill == 'Chill' %>>
+          <label for="Chill" class="switch-label switch-label-on">Chill</label>
+          <span class="switch-selection"></span>
+        </div>
+
+        <div class="switch">
+          <input type="radio" class="switch-input" name="user[interest_mmo_smallteam]" value="MMO" id="MMO" <%= 'checked' if @user.interest_mmo_smallteam == 'MMO' %>>
+          <label for="MMO" class="switch-label switch-label-off">MMO</label>
+          <input type="radio" class="switch-input" name="user[interest_mmo_smallteam]" value="SmallTeam" id="SmallTeam" <%= 'checked' if @user.interest_mmo_smallteam == 'SmallTeam' %>>
+          <label for="SmallTeam" class="switch-label switch-label-on">Small Team</label>
+          <span class="switch-selection"></span>
+        </div>
+
+        <input type="submit" value="Save my profile" class="form-btn">
+      <% end %>
+    </div>
+  </div>
 
 </div>
