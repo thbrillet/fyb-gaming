@@ -21,13 +21,13 @@ function ClickOnButtonShow() {
     btn.addEventListener('click', (event) => {
       console.log('yep')
       let chartDiv = btn.parentElement.parentElement.parentElement.parentElement
-      if(chartDiv.style.bottom == '-20vh') {
-        chartDiv.style.bottom = '60vh';
-        btn.innerHTML = "<span></span>#HIDE_MEMBERS";}
+      if(chartDiv.style.bottom == '0vh') {
+        chartDiv.style.bottom = '90vh';
+        btn.innerHTML = "#HIDE_MEMBERS";}
       else {
         console.log('else')
-        chartDiv.style.bottom = '-20vh';
-        btn.innerHTML = "<span></span>#SEE_MEMBERS";}
+        chartDiv.style.bottom = '0vh';
+        btn.innerHTML = "#SEE_MEMBER";}
     });
   });
 };

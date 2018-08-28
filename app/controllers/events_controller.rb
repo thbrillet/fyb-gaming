@@ -14,13 +14,13 @@ class EventsController < ApplicationController
     end
 
     # CREATE OBJECTIVES
-    params['event']['objectives'].each do |event|
-      @new_objective = Objective.new
-      @new_objective.name = event['name']
-      @new_objective.event_id = @event.id
-      @new_objective.status = 'pending'
-      @new_objective.save
-    end
+      params['event']['objectives'].each do |event|
+        @new_objective = Objective.new
+        @new_objective.name = event['name']
+        @new_objective.event_id = @event.id
+        @new_objective.status = 'pending'
+        @new_objective.save
+      end
   end
 
   def confirm

@@ -775,8 +775,8 @@ group_1 = Group.create!(
 group_2 = Group.create!(
   game: game_xboxone_halowars2,
   leader: pierre,
-  name: "Shoot them all",
-  description: "Pas de cheat içi, on couvre son voisin, ok?",
+  name: "Team pvp et training",
+  description: "Hey ! :) On est quelques potes à s'être retrouvés ici, on a prit l'habitude de jouer ensemble mais on recherche d'autres joueurs pour se faire des parties à la cool avec nous ! Pas de prise de tête, on joue et on rigole ;)",
   photo: File.open(Rails.root.join("db/fixtures/games/halowars2.jpg"))
 )
 group_3 = Group.create!(
