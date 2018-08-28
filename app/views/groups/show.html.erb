@@ -1,6 +1,6 @@
 
 <div class="container-show-group" style="background: radial-gradient(rgba(0,0,0,.3), rgba(0,0,0,1)),
-    url('<%= cl_image_path @group.game.photo%>');">
+    url('<%= cl_image_path @group.game.photo%>'); overflow: hidden">
 
   <div class="row" style="color: white;">
     <div class="col-xs-6 show-group-left">
@@ -15,42 +15,85 @@
       <%= render "shared/group-events" %>
 
     </div>
-    <div class="col-ws-6 show-group-right">
+    <div class="col-xs-6 show-group-right">
       <!--REQUESTS-->
-      <%# if @group.leader == current_user %>
-        <h4><%= pluralize @requests.count, 'Request' %> pending:</h4>
-        <ul>
-        <% @requests.each do |request| %>
-          <li>
-            <h5><%= request.user.username %></h5>
-            <p><%= request.message %></p>
-            <%= link_to 'accept', accept_group_membership_path(@group, request), method: :patch  %>
-            <%= link_to 'decline', decline_group_membership_path(@group, request), method: :patch  %>
-          </li>
-        <% end %>
-        </ul>
-      <%# end %>
+      <% if @requests.count > 0 %>
+        <a class="btn btn-primary" data-toggle="collapse" href="#group-requests-bottom" role="button" aria-expanded="false" aria-controls="collapseExample" id="button-collapse-requests">
+          <div class="group-requests">
+            <div class="group-requests-top">
+            <% if @group.leader == current_user %>
+              <div class="requests-number"><%= @requests.count %></div>
+              <div class="requests-number-text"> Request pending !</div>
+            <% end %>
+            </div>
+            <div class="collapse" id="group-requests-bottom">
+              <% if @group.leader == current_user %>
+                <% @requests.each do |request| %>
+                  <div class="bottom-top">
+                    <div class="usercard-photo" style="background: url('<%= cl_image_path request.user.photo, width: 70, height: 70, crop: :fit %>');"></div>
+                    <div class="bottom-top-userinfos">
+                      <div class="requests-top-usermessage">
+                        <%= request.message %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bottom-bottom">
+                    <h5 style="color:#ea2050;"><%= request.user.username %></h5>
+                    <%= link_to accept_group_membership_path(@group, request), method: :patch do %>
+                      <div class="bottom-accept">
+                        <i class="fas fa-check"></i>
+                      </div>
+                    <% end %>
+                    <%= link_to decline_group_membership_path(@group, request), method: :patch do %>
+                      <div class="bottom-decline">
+                        <i class="fas fa-times"></i>
+                      </div>
+                    <% end %>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </a>
+      </div>
+      <% else %>
+        <div class="group-requests-empty"></div>
+      <% end %>
 
       <!--WALL-->
-      <div>ceci est un wall</div>
+      <div class="group-wall">
+        <div class="group-wall-messages">
+          <% @group.messages.order(created_at: :desc).each do |message| %>
+            <div class="group-wall-message">
+              <div class="usercard-photo" style="background: url('<%= cl_image_path message.user.photo, width: 70, height: 70, crop: :fit %>');"></div>
+              <div class="message-text-infos">
+                <div class="message-text"><%= message.content %></div>
+                <div class="message-infos"><%= link_to message.user.username, user_path(message.user) %> <span style="color:rgba(250,250,250,0.5); font-size:14px;"> <%= message.created_at.strftime('%d/%m - %H:%M') %></span></div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="group-wall-input">
+          <%= simple_form_for [@group, @message] do |f| %>
+          <%=  f.input_field :content, label: false, placeholder: "Enter your message here..." %>
+          <%= f.button :submit, 'Send !' %>
+          <% end %>
+        </div>
+      </div>
+
     </div>
   </div>
 
 <!--USERCARDS-->
-  <div class="banner-pink" style="bottom: -20vh;">
+  <div class="banner-pink" style="bottom: 0vh;">
     <div class="diagonal-pink"></div>
     <div class="bg-pink">
       <div class="container-link-btns">
         <div class="link-btn-members">
-          <button type="button" class="link-btn btngroupshow"><span></span>#SEE_MEMBERS</button>
+          <button type="button" class="link-btn btngroupshow"><span class="btn-hidden"> #SEE_MEMBERS </span> <i class="fas fa-angle-double-up"></i></button>
         </div>
         <div class="container-cards">
           <% @members.each do |user| %>
-              <% if @group.leader == user %>
-                <%= render "shared/usercard", user: user %>
-              <% else %>
-                <%= render "shared/usercard", user: user %>
-              <% end %>
+            <%= render "shared/usercardv3", user: user %>
           <% end %>
         </div>
       </div>
