@@ -16,10 +16,10 @@
             <h5>Import games from you Xbox Live account</h5>
               <div class="row">
                 <div class="col-xs-8 col-xs-offset-2">
-                  <%= form_tag nil, class: 'input-group' do %>
-                    <input type="text" class="form-control" placeholder="Type your gamertag">
+                  <%= form_tag import_xbox_live_profile_user_path(@user), class: 'input-group' do %>
+                    <input name="gamertag" type="text" class="form-control" placeholder="Type your gamertag">
                     <span class="input-group-btn">
-                      <button class="btn btn-success" type="button">Go!</button>
+                      <button class="btn btn-main-color-modal" type="submit">Go!</button>
                     </span>
                   <% end -%>
                 </div>
