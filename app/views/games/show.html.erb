@@ -6,8 +6,8 @@
         <div class="container-title-hp">
           <div class="title-hp">
             <h1><%= @game.name.upcase %></h1>
-            <h2><span class="pink"><%= @game.groups.length %></span> GROUPS IN TOTAL</h2>
-            <h2>YOU TAKE ACTION IN <span class="pink"><%= current_user.groups.where(game_id: @game.id).length %></span> GROUPS</h2>
+            <h2>YOU MATCH WITH <span class="pink"><%= @groups_without_user.length %></span> GROUPS</h2>
+            <h2>YOU ARE IN <span class="pink"><%= current_user.groups.where(game_id: @game.id).length %></span> GROUPS</h2>
           </div>
         </div>
       </div>
@@ -20,8 +20,8 @@
       <!-- BROWSE YOUR GROUPS -->
       <div class="your-groups-hp-container">
         <div class="your-groups-hp-title">
-          <h4 class="animated fadeInRightBig">YOUR FRIENDS ARE PLAYING!</h4>
-          <a href="#" class="link-btn">#BROWSE_YOUR_GROUPS</a>
+          <a href="#" class="link-btn">#BROWSE</a>
+          <h4 class="animated fadeInRightBig">YOUR GROUPS</h4>
         </div>
         <div class="your-groups-hp-scroll">
           <div class="relative-scroll">
@@ -43,13 +43,13 @@
       <!-- MATCH WITH NEW BUDDIES -->
       <div class="profile-hp-container">
         <div class="profile-hp-title">
-          <a href="#" class="link-btn">#THEY_ARE_PLAYING <span style="color: white;"> <%= @game.name.upcase %></span></a>
-          <h4>JOIN THEM!</h4>
+          <a href="#" class="link-btn">#MATCH</a>
+          <h4>WITH NEW PLAYERS PLAYING <%= @game.name.upcase %></h4>
         </div>
         <div class="profile-hp-scroll">
           <div class="flex-container-hp">
             <% @users.each do |user| %>
-              <%= render "shared/usercard", user: user %>
+              <%= render "shared/usercardv3", user: user %>
             <% end %>
           </div>
         </div>
@@ -63,8 +63,8 @@
       <!--MATCH WITH NEW GROUPS -->
       <div class="groups-hp-container">
         <div class="groups-hp-title">
-          <a href="#" class="link-btn">#OTHER_GROUPS <span style="color: white;">ON <%= @game.name.upcase %></span> </a>
-          <h4>GROUP WITH THEM!</h4>
+          <a href="#" class="link-btn">#MATCH </a>
+          <h4>WITH NEW GROUPS PLAYING <%= @game.name.upcase %></h4>
         </div>
         <div class="groups-hp-scroll">
           <div class="relative-scroll">
@@ -82,8 +82,8 @@
       <!-- MATCH WITH NEW GROUPS IN NEW GAMES -->
       <div class="new-games-hp-container">
         <div class="new-games-hp-title">
-          <h4>YOU LOVE <%= @game.name.upcase %>?</h4>
-          <a href="#" class="link-btn"><span style="color: white;">YOU MAY </span>#ALSO_LIKE_THESE</a>
+          <a href="#" class="link-btn">#DISCOVER</a>
+          <h4>NEW GAMES SIMILAR TO <%= @game.name.upcase %></h4>
         </div>
         <div class="new-games-hp-scroll">
           <div class="relative-scroll">

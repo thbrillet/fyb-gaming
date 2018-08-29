@@ -3,12 +3,12 @@
     <div class="usercardv3-photo" style="background: url('<%= cl_image_path user.photo, width: 130, height: 130, crop: :fill %>') no-repeat"></div>
     <div class="main-left">
       <h3>#<%= user.username %></h3>
-      <h4>"<%= user.punch_line %>"</h4>
+      <h4 style="font-size: 22px;">"<%= user.punch_line %>"</h4>
     </div>
     <div class="main-right">
       <div class="usercard-btns">
-        <a class="link-btn" href="#"><div class="btn"><i class="far fa-comment"></i></div></a>
-        <a class="link-btn" href="#"><div class="btn"><i class="fas fa-id-card"></i></div></a>
+        <div class="btn"><i class="far fa-comment"></i></div>
+        <div class="btn"><i class="fas fa-id-card"></i></div>
       </div>
     </div>
   </div>

@@ -81,8 +81,8 @@
   }
   .container-cards{
     display: flex;
-    padding: 150px 40px;
-    overflow: scroll;
+    padding: 100px 40px;
+    overflow-y: scroll;
   }
   .group-event-img{
     width:80px;

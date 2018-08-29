@@ -244,6 +244,26 @@
   }
 }
 
+.launch-discord{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  bottom: 40px;
+  i{
+    color: #7289DA;
+    font-size: 45px !important;
+    transition: .2s;
+  }
+  &:hover i{
+    font-size: 50px !important;
+    transition: .2s;
+  }
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
       to { opacity: 1; }
