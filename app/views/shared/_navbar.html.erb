@@ -15,7 +15,12 @@
       <a href="#" class="side-link"><i class="fas fa-trophy"></i> <span class="navtext">Events</span></a>
     </li>
     <li class="navbar-side-item">
-      <a href="#" class="side-link"><i class="far fa-comment"></i> <span class="navtext">Messages [0]</span></a>
+      <a href="#" class="side-link"><i class="far fa-comment"></i> <span class="navtext">Messages</span></a>
+    </li>
+    <li class="navbar-side-item">
+      <%= link_to profile_path, class: "side-link" do %>
+        <i class="fas fa-user"></i> <span class="navtext">Profile</span>
+      <% end %>
     </li>
     <li class="navbar-side-item">
       <%= link_to destroy_user_session_path, method: :delete, class: "side-link" do %>

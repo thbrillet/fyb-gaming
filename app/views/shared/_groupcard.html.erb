@@ -7,11 +7,11 @@
     <h4><%= group.game.name %></h4>
     <h5><%= group.name %></h5>
     <% if group.game.platform.delete(' ') == "XboxOne" %>
-      <p class="XboxOne"><%= group.game.platform %></p>
+      <div class="XboxOne"><i class="fab fa-xbox"></i></div>
     <% elsif group.game.platform == "PC" %>
-      <p class="PC"><%= group.game.platform %></p>
+      <div class="PC"><%= group.game.platform %></div>
     <% else %>
-      <p class="PS4"><%= group.game.platform %></p>
+      <div class="PS4"><i class="fab fa-playstation"></i></div>
     <% end %>
     <ul class="group-members">
     <% group.memberships.each do |membership| %>
