@@ -303,6 +303,70 @@ john = User.create!(
   email: "john@gmail.com",
   password: "azerty"
 )
+jeanne = User.create!(
+  username: "misty",
+  photo: File.open(Rails.root.join("db/fixtures/users/misty.png")),
+  biography: "Mon premier coup de coeur c'est un MMO, alors si tu en as un à me proposer, je suis partante.",
+  punch_line: "Me and You = BOOM",
+  language: "fr",
+  birthdate: "1986-6-16",
+  interest_pve_pvp: "PVE",
+  interest_action_strat: "Strategy",
+  interest_gameplay_story: "Gameplay",
+  interest_compet_chill: "Chill",
+  interest_mmo_smallteam: "MMO",
+  email: "jeanne@gmail.com",
+  password: "azerty"
+)
+edouard = User.create!(
+  username: "o_Vador_o",
+  photo: File.open(Rails.root.join("db/fixtures/users/vador.png")),
+  biography: "La galaxie est tombée à mes pieds, je vais troller ta game si tu oses m'inviter ^",
+  punch_line: "Rejoins l'Empire!",
+  language: "fr",
+  birthdate: "1981-2-1",
+  interest_pve_pvp: "PVE",
+  interest_action_strat: "Strategy",
+  interest_gameplay_story: "Gameplay",
+  interest_compet_chill: "Chill",
+  interest_mmo_smallteam: "MMO",
+  email: "edouard@gmail.com",
+  password: "azerty"
+)
+claire = User.create!(
+  username: "Eclair-Azur",
+  photo: File.open(Rails.root.join("db/fixtures/users/tanya.png")),
+  biography: "j'aime aider les gens en instance de donjon dans des bon MMO/
+  je suis assez douée pour diriger un petit groupe et je suis à fond gameplay",
+  punch_line: "Suivez moi!",
+  language: "fr",
+  birthdate: "1983-7-16",
+  interest_pve_pvp: "PVE",
+  interest_action_strat: "Strategy",
+  interest_gameplay_story: "Gameplay",
+  interest_compet_chill: "Chill",
+  interest_mmo_smallteam: "MMO",
+  email: "claire@gmail.com",
+  password: "azerty"
+)
+
+mehdi = User.create!(
+  username: "El Bourrino",
+  photo: File.open(Rails.root.join("db/fixtures/users/bison.png")),
+  biography: "je ne suis pas très patient et j'en ai marre des stratégie qui dure 107ans/
+  bon maintenant j'ai rien contre la stratégie mais de la mesure svp.",
+  punch_line: "Fonce dans le tas!",
+  language: "fr",
+  birthdate: "1989-6-19",
+  interest_pve_pvp: "PVE",
+  interest_action_strat: "Strategy",
+  interest_gameplay_story: "Gameplay",
+  interest_compet_chill: "Chill",
+  interest_mmo_smallteam: "MMO",
+  email: "mehdi@gmail.com",
+  password: "azerty"
+)
+
 
 puts "Creating default game..."
 
@@ -418,6 +482,7 @@ game_pc_fornitebattleroyale = Game.create!(
   genre: "FPS",
   photo: File.open(Rails.root.join("db/fixtures/games/fornite-battle-royale.jpg"))
 )
+
 
 puts "Creating users / games links ..."
 
@@ -834,6 +899,27 @@ user_game_71 = UserGame.new(
 )
 user_game_71.save!
 
+user_game_72 = UserGame.new(
+  user: jeanne,
+  game: game_pc_fornitebattleroyale
+)
+user_game_72.save!
+user_game_73 = UserGame.new(
+  user: edouard,
+  game: game_pc_fornitebattleroyale
+)
+user_game_73.save!
+user_game_74 = UserGame.new(
+  user: claire,
+  game: game_pc_fornitebattleroyale
+)
+user_game_74.save!
+user_game_75 = UserGame.new(
+  user: mehdi,
+  game: game_pc_fornitebattleroyale
+)
+user_game_75.save!
+
 
 puts "Creating groups..."
 
@@ -964,6 +1050,15 @@ group_18 = Group.create!(
   description: "restez grouper",
   photo: File.open(Rails.root.join("db/fixtures/games/fornite-battle-royale.jpg"))
 )
+group_19 = Group.create!(
+  game: game_pc_fornitebattleroyale,
+  leader: jeanne,
+  name: "On es un bon groupe",
+  description: "Suivez les events svp",
+  photo: File.open(Rails.root.join("db/fixtures/games/fornite-battle-royale.jpg"))
+)
+
+
 
 puts "Creating membership...."
 
@@ -1254,7 +1349,7 @@ user_membership_40 = Membership.new(
 user_membership_40.save!
 
 user_membership_41 = Membership.new(
-  user: fred,
+  user: jeanne,
   group: group_18,
   status: "accepted",
   message: "C'est moi le leader"
@@ -1262,23 +1357,29 @@ user_membership_41 = Membership.new(
 user_membership_41.save!
 
 user_membership_42 = Membership.new(
-  user: pierre,
+  user: edouard,
   group: group_18,
   status: "accepted",
   message: "merci pour l'invit"
 )
 user_membership_42.save!
 
-user_membership_42 = Membership.new(
-  user: john,
-  group: group_14,
+user_membership_43 = Membership.new(
+  user: claire,
+  group: group_18,
+  status: "accepted",
+  message: "accept pls"
+)
+user_membership_43.save!
+
+user_membership_44 = Membership.new(
+  user: mehdi,
+  group: group_18,
   status: "pendding",
   message: "accept pls"
 )
-user_membership_42.save!
+user_membership_44.save!
 
-
-puts "Creating events...."
 
 
 puts "Creating events...."
