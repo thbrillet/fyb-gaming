@@ -1,51 +1,30 @@
 .show-group-event{
   width: 100%;
-  .show-group-tabs{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-      .border-bottom{
-        border-bottom: solid 2px $main-color;
-      }
-    button{
-      width: 33%;
-      background-color: rgba(0, 0, 0, 0.5);
-      height: 60px;
-      border:none;
-      transition: .2s;
-      &:hover{
-        background-color: $main-color;
-        transition: .2s;
-      }
-    }
-    .tab{
-      color: white;
-    }
-  }
+  overflow-y: scroll;
+  max-height: 100%;
   .show-group-events{
     display: block;
+    min-width: 0;
+    min-height: 0;
+    flex: 1;
     animation: fadeIn 1s;
-    height: 50vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    border-bottom: rgba(250, 250, 250, 0.5) solid 1px;
+    overflow: hidden;
   }
   .show-group-pending{
     display: none;
+    min-width: 0;
+    min-height: 0;
+    flex: 1;
     animation: fadeIn 1s;
-    height: 50vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    border-bottom: rgba(250, 250, 250, 0.5) solid 1px;
+    overflow: hidden;
   }
   .show-group-create{
     display: none;
+    min-width: 0;
+    min-height: 0;
+    flex: 1;
     animation: fadeIn 1s;
-    height: 50vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    border-bottom: rgba(250, 250, 250, 0.5) solid 1px;
+    overflow: hidden;
   }
   .event-bottom{
     background-color: rgba(0, 0, 0, 0.5);
@@ -68,6 +47,21 @@
     i{
       font-size: 25px;
     }
+  }
+  .group-event{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 80px;
+    margin-top: 10px;
+  }
+
+  .group-event-img{
+    width: 70px;
+    height: 70px;
+    background-color: $main-color;
   }
 }
 

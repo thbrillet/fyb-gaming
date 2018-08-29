@@ -1,18 +1,42 @@
-<div class="uc">
-  <% @users.first(1).each do |user| %>
-    <%= render "shared/usercard", user: user %>
-  <% end %>
-  <% @users.first(1).each do |user| %>
-    <%= render "shared/usercardv2", user: user %>
-  <% end %>
-  <% @users.first(1).each do |user| %>
-    <%= render "shared/usercardv3", user: user %>
-  <%end %>
-  <!-- <div class="row">
+<!-- <div class="uc">
+  <%# @users.first(1).each do |user| %>
+    <%#= render "shared/usercard", user: user %>
+  <%# end %>
+  <%# @users.first(1).each do |user| %>
+    <%#= render "shared/usercardv2", user: user %>
+  <%# end %>
+  <%# @users.first(1).each do |user| %>
+    <%#= render "shared/usercardv3", user: user %>
+  <%#end %>
+<div class="row">
     <%# @users.first(4).each do |user| %>
       <div class="col-xs-6">
         <%#= render "shared/usercardv3", user: user %>
       </div>
     <%# end %>
-  </div> -->
+  </div>
+</div> -->
+
+<div class="row container-page-full" style="background: radial-gradient(rgba(0,0,0,.3), rgba(0,0,0,1)),
+    url('<%= cl_image_path @group.game.photo%>'); overflow: hidden">
+  <div class="col-xs-6 container-page-left">
+    <div class="left-top">
+
+    </div>
+    <div class="left-middle">
+
+    </div>
+    <div class="left-bottom">
+
+    </div>
+  </div>
+
+  <div class="col-xs-6 container-page-right">
+    <div class="right-top">
+
+    </div>
+    <div class="right-bottom">
+
+    </div>
+  </div>
 </div>
