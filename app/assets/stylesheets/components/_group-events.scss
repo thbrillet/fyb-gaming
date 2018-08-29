@@ -264,6 +264,11 @@
   }
 }
 
+.participation-event-pending{
+  width: 100%;
+  display: flex;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
       to { opacity: 1; }

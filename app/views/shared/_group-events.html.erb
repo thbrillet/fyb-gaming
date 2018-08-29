@@ -110,11 +110,11 @@
                   <%= participations_in.length %>
                 </div>
                 <div class="event-participations-out">
-                  <% participations_in = [] %>
+                  <% participations_out = [] %>
                   <% event.participations.each do |participation| %>
-                    <% participations_in << participation if participation.presence == "no" %>
+                    <% participations_out << participation if participation.presence == "no" %>
                   <% end %>
-                  <%= participations_in.length %>
+                  <%= participations_out.length %>
                 </div>
               </div>
             </div>
@@ -141,9 +141,9 @@
                       </div>
                     <% end %>
                   <% else %>
-                    <p>Participation : <%= event_participation(event) %> </p>
                   <% end %>
                 </div>
+                  <div class="participation-event-pending">Participation : <%= event_participation(event) %> </div>
               </div>
             </div>
           <% end %>
