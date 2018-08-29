@@ -12,8 +12,8 @@ class User < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
-  scope :matching_with, -> (user) do
-    User.select("users.*, #{user.matching_percentage_calc} AS matching_percentage")
+  scope :matching_with, -> (user, users_scoped = User.all) do
+    users_scoped.select("users.*, #{user.matching_percentage_calc} AS matching_percentage")
       .where.not(id: user.id)
       .where("#{user.matching_percentage_calc} > 20")
       .order('matching_percentage DESC')

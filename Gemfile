@@ -21,6 +21,7 @@ gem 'webpacker'
 # Photo managment
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+gem 'xbox-api'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get 'profile', to: "users#profile", as: "profile"
 
   resources :users, only: [:show, :update] do
+    member do
+      post :import_xbox_live_profile
+    end
   end
 
   resources :games, only: [:show]
