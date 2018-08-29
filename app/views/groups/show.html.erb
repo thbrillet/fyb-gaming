@@ -107,7 +107,7 @@
           </div>
           <div class="group-wall-input">
             <%= simple_form_for [@group, @message] do |f| %>
-            <%=  f.input_field :content, label: false, placeholder: "Enter your message here..." %>
+            <%=  f.input_field :content, as: :string, label: false, placeholder: "Enter your message here (enter to send)" %>
             <%= f.button :submit, 'Send !' %>
             <% end %>
           </div>
