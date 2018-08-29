@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   def import_xbox_live_profile
     ImportXboxLiveProfileService.new(current_user, params[:gamertag]).call
-    binding.pry
+    redirect_to profile_path
   end
 
   private

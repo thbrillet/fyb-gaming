@@ -6,14 +6,14 @@
     <h2>"<%= @user.punch_line %>"</h2>
     <p><%= @user.biography %></p>
     <div class="import-div">
-      <h4>Import games from:</h4>
+      <h4>Link accounts</h4>
       <div data-toggle="modal" data-target=".xbox-import-modal" class="import-btn import-xbox">
         <i class="fab fa-xbox"></i>
       </div>
       <div class="modal fade xbox-import-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content import-modal">
-            <h5>Import games from you Xbox Live account</h5>
+            <h5>Link your Xbox Live account</h5>
               <div class="row">
                 <div class="col-xs-8 col-xs-offset-2">
                   <%= form_tag import_xbox_live_profile_user_path(@user), class: 'input-group' do %>
@@ -60,7 +60,13 @@
     <div class="games-tab hidden">
       <% @user.games.each do |game| %>
         <%= link_to game_path(game) do %>
-          <div class="box-groupcard-profile" style="background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)), url('<%= cl_image_path game.photo %>'">
+          <% if  game.photo.present? %>
+            <div class="box-groupcard-profile" style="background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)), url('<%= cl_image_path game.photo %>')">
+          <% else %>
+            <div class="box-groupcard-profile no-game-card" style="background-color: lightgray">
+              <%= image_tag('logo.png') %>
+              <p>We're are fetching data ...</p>
+          <% end %>
             <h6><%= game.name %></h6>
           </div>
         <% end %>

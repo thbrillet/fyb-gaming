@@ -23,6 +23,6 @@ class ImportXboxLiveProfileService
   end
 
   def save_games_for_user
-    SaveUserGamesService.new(@user, @games).call
+    SaveUserXboxGamesService.new(@user, @games).call
   end
 end
