@@ -321,7 +321,7 @@ jeanne = User.create!(
 edouard = User.create!(
   username: "o_Vador_o",
   photo: File.open(Rails.root.join("db/fixtures/users/vador.png")),
-  biography: "La galaxy est tombé à mes pieds, je vais troller ta game si tu oses m'inviter ^",
+  biography: "La galaxie est tombée à mes pieds, je vais troller ta game si tu oses m'inviter ^",
   punch_line: "Rejoins l'Empire!",
   language: "fr",
   birthdate: "1981-2-1",
@@ -337,7 +337,7 @@ claire = User.create!(
   username: "Eclair-Azur",
   photo: File.open(Rails.root.join("db/fixtures/users/tanya.png")),
   biography: "j'aime aider les gens en instance de donjon dans des bon MMO/
-  je suis assez douer douer pour diriger un petit groupe et je suis à fond gameplay",
+  je suis assez douée pour diriger un petit groupe et je suis à fond gameplay",
   punch_line: "Suivez moi!",
   language: "fr",
   birthdate: "1983-7-16",
@@ -355,7 +355,7 @@ mehdi = User.create!(
   photo: File.open(Rails.root.join("db/fixtures/users/bison.png")),
   biography: "je ne suis pas très patient et j'en ai marre des stratégie qui dure 107ans/
   bon maintenant j'ai rien contre la stratégie mais de la mesure svp.",
-  punch_line: "Fonce dans le Tas",
+  punch_line: "Fonce dans le tas!",
   language: "fr",
   birthdate: "1989-6-19",
   interest_pve_pvp: "PVE",
@@ -1349,7 +1349,7 @@ user_membership_40 = Membership.new(
 user_membership_40.save!
 
 user_membership_41 = Membership.new(
-  user: fred,
+  user: jeanne,
   group: group_18,
   status: "accepted",
   message: "C'est moi le leader"
@@ -1357,28 +1357,28 @@ user_membership_41 = Membership.new(
 user_membership_41.save!
 
 user_membership_42 = Membership.new(
-  user: pierre,
+  user: edouard,
   group: group_18,
   status: "accepted",
   message: "merci pour l'invit"
 )
 user_membership_42.save!
 
-user_membership_42 = Membership.new(
-  user: john,
-  group: group_14,
-  status: "pendding",
+user_membership_43 = Membership.new(
+  user: claire,
+  group: group_18,
+  status: "accepted",
   message: "accept pls"
 )
-user_membership_42.save!
+user_membership_43.save!
 
-user_membership_42 = Membership.new(
-  user: john,
-  group: group_14,
+user_membership_44 = Membership.new(
+  user: mehdi,
+  group: group_18,
   status: "pendding",
   message: "accept pls"
 )
-user_membership_42.save!
+user_membership_44.save!
 
 
 
