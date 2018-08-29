@@ -12,7 +12,8 @@ puts "Creating default users..."
 pierre = User.create!(
   username: "pagehey",
   photo: File.open(Rails.root.join("db/fixtures/users/pierre.jpg")),
-  biography: "J'aime les jeux d'action et réaliser de grosse performance en e-gaming",
+  biography: "J'aime les jeux d'action et réaliser de grosse performance en e-gaming./
+  si je ne suis pas connecté sous fyb, laisser moi un mp je vous call after.",
   punch_line: "Go Go Go! on les degomme!",
   language: "fr",
   birthdate: "1989-10-6",
@@ -45,7 +46,7 @@ thibault = User.create!(
 )
 fred = User.create!(
   username: "Frodo_dodo",
-  photo: File.open(Rails.root.join("db/fixtures/users/fred.jpg")),
+  photo: File.open(Rails.root.join("db/fixtures/users/fred.png")),
   biography:"J'ai jamais le temps de jouer, c'est pas juste, même en prenant sur /
   mes heures de sommeils. Allez montrez moi ce que vous valez!",
   punch_line: "J'ai hate de jouer!",
@@ -176,7 +177,7 @@ julien = User.create!(
   interest_pve_pvp: "PVE",
   interest_action_strat: "Action",
   interest_gameplay_story: "Story",
-  interest_compet_chill: "Competition",
+  interest_compet_chill: "chill",
   interest_mmo_smallteam: "MMO",
   email: "julien@gmail.com",
   password: "azerty"
@@ -403,6 +404,20 @@ game_ps4_diablo3 = Game.create!(
   genre: "Hack n slash",
   photo: File.open(Rails.root.join("db/fixtures/games/diablo3.jpg"))
 )
+game_pc_fornite = Game.create!(
+  name: "Fornite",
+  platform: "PC",
+  year: "2017",
+  genre: "Survival",
+  photo: File.open(Rails.root.join("db/fixtures/games/fornite.jpg"))
+)
+game_pc_fornitebattleroyale = Game.create!(
+  name: "Fornite Battle Royale",
+  platform: "PC",
+  year: "2017",
+  genre: "FPS",
+  photo: File.open(Rails.root.join("db/fixtures/games/fornite-battle-royale.jpg"))
+)
 
 puts "Creating users / games links ..."
 
@@ -422,8 +437,8 @@ user_game_3 = UserGame.new(
 )
 user_game_3.save!
 user_game_4 = UserGame.new(
-  user: thibault,
-  game: game_pc_forzahorizon
+  user: alicia,
+  game: game_xboxone_forzahorizon
 )
 user_game_4.save!
 user_game_5 = UserGame.new(
@@ -625,7 +640,7 @@ user_game_39.save!
 
 user_game_40 = UserGame.new(
   user: alicia,
-  game: game_pc_forzahorizon
+  game: game_ps4_forzahorizon
 )
 user_game_40.save!
 
@@ -772,24 +787,59 @@ user_game_63 = UserGame.new(
   game: game_pc_guildwars2
 )
 user_game_63.save!
+
 user_game_64 = UserGame.new(
   user: cecile,
   game: game_xboxone_halo5
 )
 user_game_64.save!
+
 user_game_65 = UserGame.new(
   user: cecile,
   game: game_pc_forzahorizon
 )
 user_game_65.save!
 
+user_game_66 = UserGame.new(
+  user: franck,
+  game: game_pc_forzahorizon
+)
+user_game_66.save!
+user_game_67 = UserGame.new(
+  user: julien,
+  game: game_pc_fornite
+)
+user_game_67.save!
+
+user_game_68 = UserGame.new(
+  user: franck,
+  game: game_pc_fornite
+)
+user_game_68.save!
+user_game_69 = UserGame.new(
+  user: pierre,
+  game: game_pc_fornite
+)
+user_game_69.save!
+
+user_game_70 = UserGame.new(
+  user: pierre,
+  game: game_pc_fornitebattleroyale
+)
+user_game_70.save!
+
+user_game_71 = UserGame.new(
+  user: fred,
+  game: game_pc_fornitebattleroyale
+)
+user_game_71.save!
 
 
 puts "Creating groups..."
 
 group_1 = Group.create!(
   game: game_pc_forzahorizon,
-  leader: thibault,
+  leader: franck,
   name: "Course Ultime",
   description: "Toujours plus vite",
   photo: File.open(Rails.root.join("db/fixtures/games/forza.jpg"))
@@ -887,13 +937,33 @@ group_14 = Group.create!(
   photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
 )
 group_15 = Group.create!(
-  game: game_pc_forzahorizon,
+  game: game_xboxone_halo5,
   leader: thibault,
+  name: "Niveau Ultime",
+  description: "Serrez les rangs",
+  photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
+)
+group_16 = Group.create!(
+  game: game_pc_forzahorizon,
+  leader: cecile,
   name: "Course Ultime",
   description: "Toujours plus vite",
   photo: File.open(Rails.root.join("db/fixtures/games/forza.jpg"))
 )
-
+group_17 = Group.create!(
+  game: game_pc_fornite,
+  leader: julien,
+  name: "On dois lvl up nos armes",
+  description: "farm cool svp",
+  photo: File.open(Rails.root.join("db/fixtures/games/fornite.jpg"))
+)
+group_18 = Group.create!(
+  game: game_pc_fornitebattleroyale,
+  leader: fred,
+  name: "On fini champion les gars",
+  description: "restez grouper",
+  photo: File.open(Rails.root.join("db/fixtures/games/fornite-battle-royale.jpg"))
+)
 
 puts "Creating membership...."
 
@@ -947,7 +1017,7 @@ user_membership_7 = Membership.new(
 )
 user_membership_7.save!
 user_membership_8 = Membership.new(
-  user: thibault,
+  user: alicia,
   group: group_1,
   status: "accepted",
   message: "C'est moi le leader"
@@ -974,7 +1044,6 @@ user_membership_11 = Membership.new(
   message: "C'est moi le leader"
 )
 user_membership_11.save!
-
 user_membership_12 = Membership.new(
   user: fred,
   group: group_5,
@@ -982,7 +1051,6 @@ user_membership_12 = Membership.new(
   message: "C'est moi le leader"
 )
 user_membership_12.save!
-
 user_membership_13 = Membership.new(
   user: franck,
   group: group_6,
@@ -990,7 +1058,6 @@ user_membership_13 = Membership.new(
   message: "C'est moi le leader"
 )
 user_membership_13.save!
-
 user_membership_14 = Membership.new(
   user: charlotte,
   group: group_6,
@@ -998,7 +1065,6 @@ user_membership_14 = Membership.new(
   message: "On va se les faire"
 )
 user_membership_14.save!
-
 user_membership_15 = Membership.new(
   user: kevin,
   group: group_6,
@@ -1006,7 +1072,6 @@ user_membership_15 = Membership.new(
   message: "on reste groupe svp"
 )
 user_membership_15.save!
-
 user_membership_16 = Membership.new(
   user: julien,
   group: group_7,
@@ -1014,7 +1079,6 @@ user_membership_16 = Membership.new(
   message: "C'est moi le leader"
 )
 user_membership_16.save!
-
 user_membership_17 = Membership.new(
   user: pierre,
   group: group_7,
@@ -1022,7 +1086,6 @@ user_membership_17 = Membership.new(
   message: "on va tout dechirer"
 )
 user_membership_17.save!
-
 user_membership_18 = Membership.new(
   user: thibault,
   group: group_7,
@@ -1030,7 +1093,6 @@ user_membership_18 = Membership.new(
   message: "On va gagner"
 )
 user_membership_18.save!
-
 user_membership_19 = Membership.new(
   user: jeff,
   group: group_8,
@@ -1038,15 +1100,13 @@ user_membership_19 = Membership.new(
   message: "C'est moi le leader"
 )
 user_membership_19.save!
-
 user_membership_20 = Membership.new(
-  user: thibault,
+  user: john,
   group: group_8,
   status: "accepted",
   message: "ok j'y suis"
 )
 user_membership_20.save!
-
 user_membership_21 = Membership.new(
   user: pierre,
   group: group_8,
@@ -1054,7 +1114,6 @@ user_membership_21 = Membership.new(
   message: "ok j'y suis"
 )
 user_membership_21.save!
-
 user_membership_22 = Membership.new(
   user: alicia,
   group: group_9,
@@ -1062,7 +1121,6 @@ user_membership_22 = Membership.new(
   message: "je vous attends"
 )
 user_membership_22.save!
-
 user_membership_23 = Membership.new(
   user: david,
   group: group_10,
@@ -1070,7 +1128,6 @@ user_membership_23 = Membership.new(
   message: "C'est moi le leader"
 )
 user_membership_23.save!
-
 user_membership_24 = Membership.new(
   user: kim,
   group: group_11,
@@ -1078,7 +1135,6 @@ user_membership_24 = Membership.new(
   message: "C'est moi le leader"
 )
 user_membership_24.save!
-
 user_membership_25 = Membership.new(
   user: pierre,
   group: group_11,
@@ -1086,7 +1142,6 @@ user_membership_25 = Membership.new(
   message: "j'espere aider"
 )
 user_membership_25.save!
-
 user_membership_26 = Membership.new(
   user: david,
   group: group_11,
@@ -1094,7 +1149,6 @@ user_membership_26 = Membership.new(
   message: "essayons"
 )
 user_membership_26.save!
-
 user_membership_27 = Membership.new(
   user: fred,
   group: group_12,
@@ -1102,7 +1156,6 @@ user_membership_27 = Membership.new(
   message: "Je suis le leader"
 )
 user_membership_27.save!
-
 user_membership_28 = Membership.new(
   user: charlotte,
   group: group_13,
@@ -1110,7 +1163,6 @@ user_membership_28 = Membership.new(
   message: "Je suis le leader"
 )
 user_membership_28.save!
-
 user_membership_29 = Membership.new(
   user: thibault,
   group: group_14,
@@ -1118,7 +1170,6 @@ user_membership_29 = Membership.new(
   message: "C'est moi qui lead"
 )
 user_membership_29.save!
-
 user_membership_30 = Membership.new(
   user: greg,
   group: group_11,
@@ -1126,15 +1177,13 @@ user_membership_30 = Membership.new(
   message: "essayons"
 )
 user_membership_30.save!
-
 user_membership_31 = Membership.new(
   user: john,
-  group: group_14,
+  group: group_10,
   status: "accepted",
   message: "Désolé du retard"
 )
 user_membership_31.save!
-
 user_membership_32 = Membership.new(
   user: denton,
   group: group_14,
@@ -1142,22 +1191,95 @@ user_membership_32 = Membership.new(
   message: "Va chier greg!"
 )
 user_membership_32.save!
-
 user_membership_33 = Membership.new(
   user: thibault,
   group: group_15,
   status: "accepted",
-  message: "je vous depasse tous"
+  message: "Une fois de plus, on gère la game ce soir"
 )
 user_membership_33.save!
-
 user_membership_34 = Membership.new(
   user: cecile,
   group: group_15,
   status: "accepted",
-  message: "alez go!"
+  message: "allez go!"
 )
 user_membership_34.save!
+user_membership_35 = Membership.new(
+  user: cecile,
+  group: group_16,
+  status: "accepted",
+  message: "J'ai une nouvelle caisse, matez moi ça!"
+)
+user_membership_35.save!
+
+user_membership_36 = Membership.new(
+  user: franck,
+  group: group_16,
+  status: "accepted",
+  message: "rien ne m'arrete."
+)
+user_membership_36.save!
+
+user_membership_37 = Membership.new(
+  user: julien,
+  group: group_17,
+  status: "accepted",
+  message: "Je suis le leader"
+)
+user_membership_37.save!
+
+user_membership_38 = Membership.new(
+  user: franck,
+  group: group_17,
+  status: "accepted",
+  message: "J'en ai marre de crever, suivez moi svp."
+)
+user_membership_38.save!
+
+user_membership_39 = Membership.new(
+  user: pierre,
+  group: group_17,
+  status: "accepted",
+  message: "toujours pas un bon fusil, serieux aidez moi"
+)
+user_membership_39.save!
+
+user_membership_40 = Membership.new(
+  user: denton,
+  group: group_4,
+  status: "accepted",
+  message: "la prem's game for me"
+)
+user_membership_40.save!
+
+user_membership_41 = Membership.new(
+  user: fred,
+  group: group_18,
+  status: "accepted",
+  message: "C'est moi le leader"
+)
+user_membership_41.save!
+
+user_membership_42 = Membership.new(
+  user: pierre,
+  group: group_18,
+  status: "accepted",
+  message: "merci pour l'invit"
+)
+user_membership_42.save!
+
+user_membership_42 = Membership.new(
+  user: john,
+  group: group_14,
+  status: "pendding",
+  message: "accept pls"
+)
+user_membership_42.save!
+
+
+puts "Creating events...."
+
 
 puts "Creating events...."
 
