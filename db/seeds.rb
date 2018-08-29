@@ -12,7 +12,7 @@ puts "Creating default users..."
 pierre = User.create!(
   username: "pagehey",
   photo: File.open(Rails.root.join("db/fixtures/users/pierre.jpg")),
-  biography: "J'aime les jeux d'acion et realiser de grosse performance en e-gaming",
+  biography: "J'aime les jeux d'action et réaliser de grosse performance en e-gaming",
   punch_line: "Go Go Go! on les degomme!",
   language: "fr",
   birthdate: "1989-10-6",
@@ -27,9 +27,12 @@ pierre = User.create!(
 thibault = User.create!(
   username: "La gachette",
   photo: File.open(Rails.root.join("db/fixtures/users/thibault.jpg")),
-  biography: "Je suis un être etrange mais créatif. J'aime construire, collectionner/
-  et montrer mes chefs d'oeuvre. Validez mes esquisses et je serai votre ami!",
-  punch_line: "Quand c'est beau, c'est thibault.",
+  biography: "Mon premier MMO c'est guildwarsI et je suis toujours preneur d'un bon jeu d'aventure./
+  Si le jeu a un peu de difficulté niveau stratégie pas de problème, je serai des votres./
+  J'aime construire, collectionner les items et montrer mes chefs d'oeuvre./
+  Attention de n'aime pas les grosses guildes où tout le monde s'engueule, je préfère les petites teams./
+  Invitez moi sous fyb et je me présenterai plus, à bientôt in game!",
+  punch_line: "Soyons créatifs les gens!",
   language: "fr",
   birthdate: "1985-6-16",
   interest_pve_pvp: "PVE",
@@ -58,7 +61,7 @@ fred = User.create!(
 )
 guillaume = User.create!(
   username: "Piccolo",
-  photo: File.open(Rails.root.join("db/fixtures/users/guillaume.jpg")),
+  photo: File.open(Rails.root.join("db/fixtures/users/guillaume.png")),
   biography:"Certains crois que je suis proffesseur mais que je suis un tueur in game/
   vous allez voir que c'est moi le meilleur",
   punch_line: "There can be only one!",
@@ -104,8 +107,9 @@ nico = User.create!(
 )
 cecile = User.create!(
   username: "cardgirl",
-  photo: File.open(Rails.root.join("db/fixtures/users/nico.jpg")),
-  biography: "J'aime les series ",
+  photo: File.open(Rails.root.join("db/fixtures/users/cecile.jpg")),
+  biography: "J'aime les series sf, je lis pas mal de manga sauf naruto ^^/
+  Soyez poli in game, je n'aime pas les reloud grossier. coté jeux je suis plutot MMO en ce moment",
   punch_line: "Vers l'infini...",
   language: "fr",
   birthdate: "1981-3-9",
@@ -315,12 +319,12 @@ game_pc_guildwars2 = Game.create!(
   genre: "MMO",
   photo: File.open(Rails.root.join("db/fixtures/games/gw2.jpg"))
 )
-game_pc_summonerswars = Game.create!(
-  name: "Summoners Wars",
-  platform: "PC",
-  year: "2016",
-  genre: "TBS",
-  photo: File.open(Rails.root.join("db/fixtures/games/sws.jpg"))
+game_ps4_forzahorizon= Game.create!(
+  name: "Forza Horizon 3",
+  platform: "PS4",
+  year: "2018",
+  genre: "Racing",
+  photo: File.open(Rails.root.join("db/fixtures/games/forza.jpg"))
 )
 game_xboxone_halo5 = Game.create!(
   name: "Halo 5: Guardians",
@@ -414,12 +418,12 @@ user_game_2 = UserGame.new(
 user_game_2.save!
 user_game_3 = UserGame.new(
   user: fred,
-  game: game_pc_summonerswars
+  game: game_pc_forzahorizon
 )
 user_game_3.save!
 user_game_4 = UserGame.new(
   user: thibault,
-  game: game_pc_summonerswars
+  game: game_pc_forzahorizon
 )
 user_game_4.save!
 user_game_5 = UserGame.new(
@@ -579,7 +583,7 @@ user_game_32.save!
 
 user_game_33 = UserGame.new(
   user: jeff,
-  game: game_pc_summonerswars
+  game: game_pc_forzahorizon
 )
 user_game_33.save!
 
@@ -591,7 +595,7 @@ user_game_34.save!
 
 user_game_35 = UserGame.new(
   user: jeff,
-  game: game_pc_summonerswars
+  game: game_ps4_forzahorizon
 )
 user_game_35.save!
 
@@ -603,7 +607,7 @@ user_game_36.save!
 
 user_game_37 = UserGame.new(
   user: guillaume,
-  game: game_pc_summonerswars
+  game: game_pc_forzahorizon
 )
 user_game_37.save!
 
@@ -621,7 +625,7 @@ user_game_39.save!
 
 user_game_40 = UserGame.new(
   user: alicia,
-  game: game_pc_summonerswars
+  game: game_pc_forzahorizon
 )
 user_game_40.save!
 
@@ -633,7 +637,7 @@ user_game_41.save!
 
 user_game_42 = UserGame.new(
   user: alicia,
-  game: game_pc_summonerswars
+  game: game_pc_forzahorizon
 )
 user_game_42.save!
 
@@ -651,7 +655,7 @@ user_game_44.save!
 
 user_game_45 = UserGame.new(
   user: david,
-  game: game_pc_summonerswars
+  game: game_pc_forzahorizon
 )
 user_game_45.save!
 
@@ -663,7 +667,7 @@ user_game_46.save!
 
 user_game_47 = UserGame.new(
   user: david,
-  game: game_pc_summonerswars
+  game: game_ps4_forzahorizon
 )
 user_game_47.save!
 
@@ -681,7 +685,7 @@ user_game_49.save!
 
 user_game_50 = UserGame.new(
   user: kim,
-  game: game_pc_summonerswars
+  game: game_pc_forzahorizon
 )
 user_game_50.save!
 
@@ -705,7 +709,7 @@ user_game_53.save!
 
 user_game_54 = UserGame.new(
   user: greg,
-  game: game_pc_summonerswars
+  game: game_pc_forzahorizon
 )
 user_game_54.save!
 
@@ -729,7 +733,7 @@ user_game_57.save!
 
 user_game_58 = UserGame.new(
   user: john,
-  game: game_pc_summonerswars
+  game: game_pc_forzahorizon
 )
 user_game_58.save!
 
@@ -753,7 +757,7 @@ user_game_61.save!
 
 user_game_62 = UserGame.new(
   user: denton,
-  game: game_pc_summonerswars
+  game: game_pc_forzahorizon
 )
 user_game_62.save!
 
@@ -763,14 +767,32 @@ user_game_63 = UserGame.new(
 )
 user_game_63.save!
 
+user_game_63 = UserGame.new(
+  user: thibault,
+  game: game_pc_guildwars2
+)
+user_game_63.save!
+user_game_64 = UserGame.new(
+  user: cecile,
+  game: game_xboxone_halo5
+)
+user_game_64.save!
+user_game_65 = UserGame.new(
+  user: cecile,
+  game: game_pc_forzahorizon
+)
+user_game_65.save!
+
+
+
 puts "Creating groups..."
 
 group_1 = Group.create!(
-  game: game_pc_summonerswars,
+  game: game_pc_forzahorizon,
   leader: thibault,
-  name: "Labyrinth-Exploration",
-  description: "Let's kill Tartaros",
-  photo: File.open(Rails.root.join("db/fixtures/games/sws.jpg"))
+  name: "Course Ultime",
+  description: "Toujours plus vite",
+  photo: File.open(Rails.root.join("db/fixtures/games/forza.jpg"))
 )
 group_2 = Group.create!(
   game: game_xboxone_halowars2,
@@ -864,6 +886,14 @@ group_14 = Group.create!(
   description: "Allez les gens, on se reveille",
   photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
 )
+group_15 = Group.create!(
+  game: game_pc_forzahorizon,
+  leader: thibault,
+  name: "Course Ultime",
+  description: "Toujours plus vite",
+  photo: File.open(Rails.root.join("db/fixtures/games/forza.jpg"))
+)
+
 
 puts "Creating membership...."
 
@@ -1112,6 +1142,22 @@ user_membership_32 = Membership.new(
   message: "Va chier greg!"
 )
 user_membership_32.save!
+
+user_membership_33 = Membership.new(
+  user: thibault,
+  group: group_15,
+  status: "accepted",
+  message: "je vous depasse tous"
+)
+user_membership_33.save!
+
+user_membership_34 = Membership.new(
+  user: cecile,
+  group: group_15,
+  status: "accepted",
+  message: "alez go!"
+)
+user_membership_34.save!
 
 puts "Creating events...."
 
