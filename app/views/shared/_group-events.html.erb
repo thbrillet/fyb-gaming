@@ -1,23 +1,5 @@
 <div class="show-group-event">
-  <div class="show-group-tabs">
-    <button class="btn-event-events border-bottom"><div class="tab">
-      <% events = [] %>
-      <% @events.each do |event| %>
-        <% events << event if event.status != "pending" %>
-      <% end %>
-      <%= pluralize events.length, 'Event' %>
-    </div></button>
-    <button class="btn-event-pending"><div class="tab">
-      <% pending = [] %>
-      <% @events.each do |event| %>
-        <% pending << event if event.status == "pending" %>
-      <% end %>
-      <%= pending.length %> Pending
-    </div></button>
-    <button class="btn-event-create"><div class="tab">
-      Create
-    </div></button>
-  </div>
+
 
   <!--LIST EVENTS-->
   <div class="show-group-events">
