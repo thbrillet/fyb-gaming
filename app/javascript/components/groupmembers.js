@@ -4,13 +4,15 @@ function ClickOnButton() {
     btn.addEventListener('click', (event) => {
       console.log('yep')
       let chartDiv = btn.parentElement.parentElement.parentElement.parentElement
-      if(chartDiv.style.bottom == '-65vh') {
-        chartDiv.style.bottom = '0vh';
-        btn.innerHTML = "<span></span>#HIDE_MEMBERS";}
+      if(chartDiv.style.bottom == '-85vh') {
+        chartDiv.style.bottom = '-20vh';
+        btn.innerHTML = "<span></span>#HIDE_MEMBERS";
+        btn.style.top = '-40px';}
       else {
         console.log('else')
-        chartDiv.style.bottom = '-65vh';
-        btn.innerHTML = "<span></span>#SEE_MEMBERS";}
+        chartDiv.style.bottom = '-85vh';
+        btn.innerHTML = "<span></span>#SEE_MEMBERS";
+        btn.style.top = '-180px';}
     });
   });
 };

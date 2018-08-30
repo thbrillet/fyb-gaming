@@ -107,14 +107,14 @@
                   <% event.participations.each do |participation| %>
                     <% participations_in << participation if participation.presence == "yes" %>
                   <% end %>
-                  <%= participations_in.length %>
+                  Players in : <%= participations_in.length %>
                 </div>
                 <div class="event-participations-out">
                   <% participations_out = [] %>
                   <% event.participations.each do |participation| %>
                     <% participations_out << participation if participation.presence == "no" %>
                   <% end %>
-                  <%= participations_out.length %>
+                  Players out : <%= participations_out.length %>
                 </div>
               </div>
             </div>
@@ -161,7 +161,7 @@
             <%= f.input :date, as: :date %>
             <%= f.input :time %>
           </div>
-          <%= f.input :photo %>
+          <%= f.input :photo, label: "Add a picture" %>
           <%= f.input :photo_cache, as: :hidden %>
           <%= f.simple_fields_for :objectives do |o| %>
             <div class="form-objectives-dynamic">
