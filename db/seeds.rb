@@ -1442,7 +1442,7 @@ event_4 = Event.new(
   description: "On essaie de faire du héroïque sans mourir!",
   date: Date.new(2018, 9, 1),
   time: Time.new(2018, 8, 30, 20),
-  photo: File.open(Rails.root.join("db/fixtures/events/MC.jpg"))
+  photo: File.open(Rails.root.join("db/fixtures/events/mc.jpg"))
 )
 event_4.save!
 
@@ -1453,7 +1453,7 @@ event_5 = Event.new(
   description: "On change les équipes à chaque victoire",
   date: Date.new(2018, 9, 3),
   time: Time.new(2018, 8, 30, 20),
-  photo: File.open(Rails.root.join("db/fixtures/events/JOHNSON.jpg"))
+  photo: File.open(Rails.root.join("db/fixtures/events/johnson.jpg"))
 )
 event_5.save!
 
@@ -1464,7 +1464,7 @@ event_6 = Event.new(
   description: "On va travailler un peu le ciblage !",
   date: Date.new(2018, 8, 31),
   time: Time.new(2018, 8, 30, 20),
-  photo: File.open(Rails.root.join("db/fixtures/events/LOBOT.png"))
+  photo: File.open(Rails.root.join("db/fixtures/events/lobot.png"))
 )
 event_6.save!
 
@@ -1475,7 +1475,7 @@ event_7 = Event.new(
   description: "Ouvert à tous ! =)",
   date: Date.new(2018, 8, 30) ,
   time: Time.new(2018, 8, 30, 20),
-  photo: File.open(Rails.root.join("db/fixtures/events/MME.png"))
+  photo: File.open(Rails.root.join("db/fixtures/events/mme.png"))
 )
 event_7.save
 
