@@ -64,6 +64,9 @@
     animation: fadeIn 1s;
     padding: 20px;
   }
+  .profile-header {
+    cursor: pointer;
+  }
 }
 .profile-interests {
   position: sticky;
@@ -82,7 +85,6 @@
   height: 100px;
   background-color: rgba(0, 0, 0, 0.4);
   display: flex;
-  cursor: pointer;
 }
 .profile-tab-header {
   flex: 0 0 50%;

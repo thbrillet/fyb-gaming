@@ -70,4 +70,12 @@
 .form-btn {
   margin: 30px auto;
   display: block;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.35);
+  border: none;
+  padding: 15px 20px;
+  &:hover {
+    background-color: $main-color;
+    color: rgba(255, 255, 255, 0.8);
+  }
 }
