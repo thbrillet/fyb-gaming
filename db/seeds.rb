@@ -1411,7 +1411,7 @@ user_membership_43.save!
 user_membership_44 = Membership.new(
   user: mehdi,
   group: group_18,
-  status: "accepeted",
+  status: "accepted",
   message: "Merci"
 )
 user_membership_44.save!
@@ -1419,7 +1419,7 @@ user_membership_44.save!
 user_membership_44 = Membership.new(
   user: fred,
   group: group_18,
-  status: "pendding",
+  status: "pending",
   message: "Accept pls"
 )
 user_membership_44.save!
