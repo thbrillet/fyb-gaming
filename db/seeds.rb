@@ -45,7 +45,7 @@ thibault = User.create!(
   password: "azerty"
 )
 fred = User.create!(
-  username: "Fredo_do",
+  username: "Frodo_do",
   photo: File.open(Rails.root.join("db/fixtures/users/fred.png")),
   biography:"J'ai jamais le temps de jouer, c'est pas juste, même en prenant sur /
   mes heures de sommeil. Allez, montrez moi ce que vous valez!",
@@ -147,7 +147,7 @@ franck = User.create!(
   interest_pve_pvp: "PVE",
   interest_action_strat: "Strategy",
   interest_gameplay_story: "Gameplay",
-  interest_compet_chill: "Competition",
+  interest_compet_chill: "Chill",
   interest_mmo_smallteam: "MMO",
   email: "franck@gmail.com",
   password: "azerty"
@@ -262,8 +262,8 @@ kim = User.create!(
 denton = User.create!(
   username: "81Denton",
   photo: File.open(Rails.root.join("db/fixtures/users/denton.jpg")),
-  biography: "Moi parlé un pe francé. je like les games d'adventure, vené avec me",
-  punch_line: "jadore la France",
+  biography: "Personne ! Personne ne me traite de mauviette ! Ou bien c'est mawashigeri dans ta face !",
+  punch_line: "Nom de zeus!",
   language: "fr",
   birthdate: "1979-10-4",
   interest_pve_pvp: "PVE",
@@ -1005,10 +1005,10 @@ group_6 = Group.create!(
 )
 group_7 = Group.create!(
   game: game_xboxone_halo5,
-  leader: franck,
+  leader: thibault,
   name: "Les matadors",
-  description: "groupe axé surtout PVE, /
-  grosses soirées coop légendaire et un peu de training en 2 X 2",
+  description: "groupe axé surtout PVE /
+  grosses soirées coop légendaire et un peu de training en 2v2 et swat",
   photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
 )
 group_8 = Group.create!(
@@ -1435,59 +1435,65 @@ user_membership_45.save!
 
 puts "Creating events...."
 
-event_1 = Event.new(
-  group: group_3,
-  status: "pendding",
-  title: "truc",
-  description: "Salut les gars, je peux essayer avec vous?",
-)
-
-event_2 = Event.new(
-  group: group_3,
-  status: "pendding",
-  title: "truc",
-  description: "Comptez sur moi, on va se les faire!",
-)
-
-event_3 = Event.new(
-  group: group_3,
-  status: "pendding",
-  title: "truc",
-  description: "Je suis bon joueur, pls accept!",
-)
-
 event_4 = Event.new(
   group: group_6,
   status: "accepted",
   title: "Coopération du samedi soir",
-  description: "Bienvenu!",
+  description: "On essaie de faire du héroïque sans mourir!",
+  date: Date.new(2018, 9, 1),
+  time: Time.new(2018, 8, 30, 20),
+  photo: File.open(Rails.root.join("db/fixtures/events/MC.jpg"))
 )
+event_4.save!
 
 event_5 = Event.new(
   group: group_6,
   status: "accepted",
   title: "Partie training 2X2",
-  description: "On inverse de role à chaque victoire",
+  description: "On change les équipes à chaque victoire",
+  date: Date.new(2018, 9, 3),
+  time: Time.new(2018, 8, 30, 20),
+  photo: File.open(Rails.root.join("db/fixtures/events/JOHNSON.jpg"))
 )
+event_5.save!
+
 event_6 = Event.new(
   group: group_6,
-  status: "pendding",
+  status: "accepted",
   title: "Session tir de precision",
-  description: "On va travailler un peu le ciblage.!",
+  description: "On va travailler un peu le ciblage !",
+  date: Date.new(2018, 8, 31),
+  time: Time.new(2018, 8, 30, 20),
+  photo: File.open(Rails.root.join("db/fixtures/events/LOBOT.png"))
 )
+event_6.save!
 
 event_7 = Event.new(
   group: group_7,
   status: "accepted",
   title: "Soirée MME & CTF",
-  description: "Ouvert à tous.",
+  description: "Ouvert à tous ! =)",
+  date: Date.new(2018, 8, 30) ,
+  time: Time.new(2018, 8, 30, 20),
+  photo: File.open(Rails.root.join("db/fixtures/events/MME.png"))
 )
-event_8 = Event.new(
-  group: group_7,
-  status: "pendding",
-  title: "Presentation nouveaux joueurs",
-  description: "un peu de role play pour decouvrir de nouveaux talents",
-)
+event_7.save
 
+
+puts "Creating messages ..."
+
+message_1 = Message.new(
+  content: "Hey, j'ai un pote qui veut rejoindre le groupe, je lui ai dit de faire une demande ! Si vous pouvez l'acceptez, il est cool ! ;-)",
+  user: pierre,
+  group: group_7
+  )
+message_1.save!
+
+message_2 = Message.new(
+  content: "YO, j'suis dipso demain soir soir pour faire un peu d'entrainement en SWAT!!",
+  user: julien,
+  group: group_7
+  )
+message_2.save!
 
 puts "Seeds finished!"
