@@ -23,12 +23,6 @@
                 url('<%= cl_image_path event.photo, height: 80, width: 80, crop: :fill%>');"></div>
               <% end %>
               <h6><%= event.title %></h6>
-              <div class="completion">
-                COMPLETION: 33.3% [5/15]
-                <div class="meter">
-                  <span style="width: 25%"></span>
-                </div>
-              </div>
             </div>
 
           <% end %>
@@ -50,7 +44,7 @@
       <div class="req-form">
         <%= simple_form_for @membership, url: group_memberships_path(group) do |f| %>
           <%= f.input :message, :label => false, wrapper_html: {class: "form-inline"} do %>
-            <%= f.input_field :message, :label => false %>
+            <%= f.input_field :message, :label => false, :class => "btn-primary-input" %>
             <%= f.button :submit, "Send request", :class => "btn-primary" %>
           <% end %>
         <% end %>
