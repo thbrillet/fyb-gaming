@@ -13,8 +13,8 @@ pierre = User.create!(
   username: "pagehey",
   photo: File.open(Rails.root.join("db/fixtures/users/pierre.jpg")),
   biography: "J'aime les jeux d'action et réaliser de grosse performance en e-gaming./
-  si je ne suis pas connecté sous fyb, laisser moi un mp je vous call after.",
-  punch_line: "Go Go Go! on les degomme!",
+  si je ne suis pas connecté sous fyb, laissez moi un mp, je vous call after.",
+  punch_line: "Go Go Go! on les dégomme!",
   language: "fr",
   birthdate: "1989-10-6",
   interest_pve_pvp: "PVP",
@@ -29,10 +29,10 @@ thibault = User.create!(
   username: "La gachette",
   photo: File.open(Rails.root.join("db/fixtures/users/thibault.jpg")),
   biography: "Mon premier MMO c'est guildwarsI et je suis toujours preneur d'un bon jeu d'aventure./
-  Si le jeu a un peu de difficulté niveau stratégie pas de problème, je serai des votres./
+  S'il y a de la difficulté niveau stratégie pas de problème, je serai des votres./
   J'aime construire, collectionner les items et montrer mes chefs d'oeuvre./
   Attention de n'aime pas les grosses guildes où tout le monde s'engueule, je préfère les petites teams./
-  Invitez moi sous fyb et je me présenterai plus, à bientôt in game!",
+  Invitez moi sous fyb et je me présenterai plus en détail, à bientôt in game!",
   punch_line: "Soyons créatifs les gens!",
   language: "fr",
   birthdate: "1985-6-16",
@@ -48,7 +48,7 @@ fred = User.create!(
   username: "Frodo_dodo",
   photo: File.open(Rails.root.join("db/fixtures/users/fred.png")),
   biography:"J'ai jamais le temps de jouer, c'est pas juste, même en prenant sur /
-  mes heures de sommeils. Allez montrez moi ce que vous valez!",
+  mes heures de sommeil. Allez montrez moi ce que vous valez!",
   punch_line: "J'ai hate de jouer!",
   language: "fr",
   birthdate: "1979-8-7",
@@ -109,8 +109,8 @@ nico = User.create!(
 cecile = User.create!(
   username: "cardgirl",
   photo: File.open(Rails.root.join("db/fixtures/users/cecile.jpg")),
-  biography: "J'aime les series sf, je lis pas mal de manga sauf naruto ^^/
-  Soyez poli in game, je n'aime pas les reloud grossier. coté jeux je suis plutot MMO en ce moment",
+  biography: "J'aime les séries sf, je lis pas mal de manga sauf naruto ^^/
+  Soyez poli in game, je n'aime pas les relouds grossiers. Coté jeux je suis plutot MMO en ce moment",
   punch_line: "Vers l'infini...",
   language: "fr",
   birthdate: "1981-3-9",
@@ -140,7 +140,7 @@ charlotte = User.create!(
 franck = User.create!(
   username: "swirl",
   photo: File.open(Rails.root.join("db/fixtures/users/swirl.png")),
-  biography: "Je suis la tete pensante des groupes, avec une grosse experience des jeux de strategy.",
+  biography: "Je suis la tête pensante des groupes, avec une grosse experience des jeux de strategie.",
   punch_line: "Don't drop me",
   language: "fr",
   birthdate: "1996-2-25",
@@ -170,7 +170,8 @@ anthony = User.create!(
 julien = User.create!(
   username: "xl-julien",
   photo: File.open(Rails.root.join("db/fixtures/users/xl-julien.jpg")),
-  biography: "Je suis sur de nombreux, mais à la recherche d'une bonne team ou d'une guilde",
+  biography: "Je suis sur de nombreux jeux, check my game list. /
+  J'en ai marre de soloter, je suis à la recherche d'une bonne team ou d'une guilde.",
   punch_line: "I'll be back",
   language: "fr",
   birthdate: "1978-2-15",
@@ -185,7 +186,7 @@ julien = User.create!(
 kevin = User.create!(
   username: "kevin91",
   photo: File.open(Rails.root.join("db/fixtures/users/kevin91.jpg")),
-  biography: "Je suis surtout connecté tard le soir, n'hesitez pas à me grouper ingame",
+  biography: "Je suis surtout connecté tard le soir, n'hésitez pas à me grouper ingame",
   punch_line: "never sleep",
   language: "fr",
   birthdate: "1999-12-25",
@@ -215,7 +216,7 @@ jeff = User.create!(
 alicia = User.create!(
   username: "dready",
   photo: File.open(Rails.root.join("db/fixtures/users/alicia.png")),
-  biography: "J'aime les gens sympas et patients",
+  biography: "J'aime les gens sympas et patients. Pas d'entourloupe avec moi!",
   punch_line: "Je sais écouter moi!",
   language: "fr",
   birthdate: "2003-4-11",
@@ -230,8 +231,8 @@ alicia = User.create!(
  david = User.create!(
   username: "douille",
   photo: File.open(Rails.root.join("db/fixtures/users/david.jpg")),
-  biography: "Je dois avoir participer à tout les mmo qui ont été mis en ligne, y compris ceux/
-  diffusé en corée. Alors vient pas me la raconter.",
+  biography: "Je dois avoir participé à tout les mmo qui ont été mis en ligne, y compris ceux/
+  diffusés en Corée. Alors vient pas me la raconter.",
   punch_line: "Un conseil ou deux?",
   language: "fr",
   birthdate: "1997-11-2",
@@ -246,7 +247,7 @@ alicia = User.create!(
 kim = User.create!(
   username: "kimmy75",
   photo: File.open(Rails.root.join("db/fixtures/users/kim.png")),
-  biography: "Je crois que je plait à tout le monde, je ne sais pas pourquoi",
+  biography: "Je crois que je plais à tout le monde, je ne sais pas pourquoi",
   punch_line: "Un conseil ou deux?",
   language: "fr",
   birthdate: "1984-1-7",
@@ -276,7 +277,7 @@ denton = User.create!(
 greg = User.create!(
   username: "Punchman",
   photo: File.open(Rails.root.join("db/fixtures/users/greg.jpg")),
-  biography: "Je cogne dur et en face il deboite.",
+  biography: "Je cogne dur et en face il déboite.",
   punch_line: "kick them all",
   language: "fr",
   birthdate: "1988-11-23",
@@ -321,7 +322,7 @@ jeanne = User.create!(
 edouard = User.create!(
   username: "o_Vador_o",
   photo: File.open(Rails.root.join("db/fixtures/users/vador.png")),
-  biography: "La galaxie est tombée à mes pieds, je vais troller ta game si tu oses m'inviter ^",
+  biography: "La galaxie est tombée à mes pieds, je vais vous troller la game si ça se passe mal",
   punch_line: "Rejoins l'Empire!",
   language: "fr",
   birthdate: "1981-2-1",
@@ -336,8 +337,8 @@ edouard = User.create!(
 claire = User.create!(
   username: "Eclair-Azur",
   photo: File.open(Rails.root.join("db/fixtures/users/tanya.png")),
-  biography: "j'aime aider les gens en instance de donjon dans des bon MMO/
-  je suis assez douée pour diriger un petit groupe et je suis à fond gameplay",
+  biography: "j'aime aider les gens en instance de donjon dans des bons MMO/
+  je suis assez douée pour diriger des petits groupes et je suis à fond gameplay",
   punch_line: "Suivez moi!",
   language: "fr",
   birthdate: "1983-7-16",
@@ -353,7 +354,7 @@ claire = User.create!(
 mehdi = User.create!(
   username: "El Bourrino",
   photo: File.open(Rails.root.join("db/fixtures/users/bison.png")),
-  biography: "je ne suis pas très patient et j'en ai marre des stratégie qui dure 107ans/
+  biography: "Je ne suis pas très patient et j'en ai marre de parler stratégie 107ans/
   bon maintenant j'ai rien contre la stratégie mais de la mesure svp.",
   punch_line: "Fonce dans le tas!",
   language: "fr",
@@ -904,16 +905,19 @@ user_game_72 = UserGame.new(
   game: game_pc_fornitebattleroyale
 )
 user_game_72.save!
+
 user_game_73 = UserGame.new(
   user: edouard,
   game: game_pc_fornitebattleroyale
 )
 user_game_73.save!
+
 user_game_74 = UserGame.new(
   user: claire,
   game: game_pc_fornitebattleroyale
 )
 user_game_74.save!
+
 user_game_75 = UserGame.new(
   user: mehdi,
   game: game_pc_fornitebattleroyale
@@ -926,7 +930,7 @@ puts "Creating groups..."
 group_1 = Group.create!(
   game: game_pc_forzahorizon,
   leader: franck,
-  name: "Course Ultime",
+  name: "Course Surfer's Paradise)",
   description: "Toujours plus vite",
   photo: File.open(Rails.root.join("db/fixtures/games/forza.jpg"))
 )
@@ -934,20 +938,26 @@ group_2 = Group.create!(
   game: game_xboxone_halowars2,
   leader: pierre,
   name: "Team pvp et training",
-  description: "Hey ! :) On est quelques potes à s'être retrouvés ici, on a prit l'habitude de jouer ensemble mais on recherche d'autres joueurs pour se faire des parties à la cool avec nous ! Pas de prise de tête, on joue et on rigole ;)",
+  description: "Hey ! :) On est quelques potes à s'être retrouvés ici, on a prit/
+   l'habitude de jouer ensemble mais on recherche d'autres joueurs pour se faire/
+    des parties à la cool avec nous ! Pas de prise de tête, on joue et on rigole ;)",
   photo: File.open(Rails.root.join("db/fixtures/games/halowars2.jpg"))
 )
 group_3 = Group.create!(
   game: game_pc_diablo3,
   leader: guillaume,
   name: "Sortie stuff high level",
-  description: "Hey! Ici on farm surtout les failles sup (70-80 environ). l'objectif est de créer une équipe qui puisse farmer rapidement et efficacement, avec si possible des membres dispo relativement souvent (soirs et weekend). L'objectif utlime est de renforcer le stuff pour monter failles 90; voir atteidnre 100 si on est chaud :) Hésitez pas à rejoindre si vous êtes motivés !",
+  description: "Hey! Ici on farm surtout les failles sup (70-80 environ). /
+  l'objectif est de créer une équipe qui puisse farmer rapidement et efficacement,/
+   avec si possible des membres dispo relativement souvent (soirs et weekend)./
+    L'objectif utlime est de renforcer le stuff pour monter failles 90;/
+     voir atteidnre 100 si on est chaud :) Hésitez pas à nous rejoindre si vous êtes motivés !",
   photo: File.open(Rails.root.join("db/fixtures/games/diablo3.jpg"))
 )
 group_4 = Group.create!(
   game: game_pc_guildwars2,
   leader: nico,
-  name: "On explore pepere",
+  name: "On explore pépère",
   description: "Ramassez des pierres les gens pour le hall de guilde svp merci",
   photo: File.open(Rails.root.join("db/fixtures/games/gw2.jpg"))
 )
@@ -955,7 +965,7 @@ group_5 = Group.create!(
   game: game_pc_dontstarve,
   leader: fred,
   name: "On passe l'hiver seulement",
-  description: "camp au nord ouest du carrefour du portail",
+  description: "Camp établi au Nord-ouest du carrefour du portail",
   photo: File.open(Rails.root.join("db/fixtures/games/dst.jpg"))
 )
 game_xboxone_halo5
@@ -970,35 +980,35 @@ group_7 = Group.create!(
   game: game_xboxone_halo5,
   leader: franck,
   name: "On UP ce foutu classement",
-  description: "methode stealth et on trash si on est decouvert",
+  description: "Méthode stealth et on trash si on est découvert",
   photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
 )
 group_8 = Group.create!(
   game: game_xboxone_halo5,
   leader: jeff,
   name: "Je suis in game depuis 5jours",
-  description: "LE PREMIER qui flanche je le degage!",
+  description: "LE PREMIER qui flanche je le dégage!",
   photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
 )
 group_9 = Group.create!(
   game: game_xboxone_halo5,
   leader: alicia,
-  name: "full pvp here",
-  description: "Le groupe est pret, rejoignez moi!",
+  name: "Full pvp here",
+  description: "Le groupe est prêt, rejoignez moi!",
   photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
 )
 group_10 = Group.create!(
   game: game_xboxone_halo5,
   leader: david,
-  name: "juste pour tester",
-  description: "novice accepté",
+  name: "Juste pour tester",
+  description: "Novice accepté",
   photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
 )
 group_11 = Group.create!(
   game: game_xboxone_halo5,
   leader: kim,
-  name: "on fait de notre mieux ici",
-  description: "debutants acceptés",
+  name: "On fait de notre mieux ici",
+  description: "Débutants acceptés",
   photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
 )
 group_12 = Group.create!(
@@ -1019,7 +1029,7 @@ group_14 = Group.create!(
   game: game_xboxone_halo5,
   leader: thibault,
   name: "Combat ultime -> cf event",
-  description: "Allez les gens, on se reveille",
+  description: "Allez les gens, on se réveille",
   photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
 )
 group_15 = Group.create!(
@@ -1032,7 +1042,7 @@ group_15 = Group.create!(
 group_16 = Group.create!(
   game: game_pc_forzahorizon,
   leader: cecile,
-  name: "Course Ultime",
+  name: "Course Ultime Rainforest",
   description: "Toujours plus vite",
   photo: File.open(Rails.root.join("db/fixtures/games/forza.jpg"))
 )
@@ -1040,25 +1050,23 @@ group_17 = Group.create!(
   game: game_pc_fornite,
   leader: julien,
   name: "On dois lvl up nos armes",
-  description: "farm cool svp",
+  description: "Farm cool svp",
   photo: File.open(Rails.root.join("db/fixtures/games/fornite.jpg"))
 )
 group_18 = Group.create!(
   game: game_pc_fornitebattleroyale,
-  leader: fred,
-  name: "On fini champion les gars",
-  description: "restez grouper",
+  leader: claire,
+  name: "On finit champion les gars",
+  description: "Restez groupé bordel",
   photo: File.open(Rails.root.join("db/fixtures/games/fornite-battle-royale.jpg"))
 )
 group_19 = Group.create!(
   game: game_pc_fornitebattleroyale,
   leader: jeanne,
-  name: "On es un bon groupe",
+  name: "On est un bon groupe",
   description: "Suivez les events svp",
   photo: File.open(Rails.root.join("db/fixtures/games/fornite-battle-royale.jpg"))
 )
-
-
 
 puts "Creating membership...."
 
@@ -1101,14 +1109,14 @@ user_membership_6 = Membership.new(
   user: pierre,
   group: group_5,
   status: "accepted",
-  message: "mon sac est plein, je ramene du bois"
+  message: "mon sac est plein, je ramène du bois"
 )
 user_membership_6.save!
 user_membership_7 = Membership.new(
   user: thomas,
   group: group_5,
   status: "accepted",
-  message: "c'est bientot la pleine lune, ou est le gloomer?"
+  message: "c'est bientôt la pleine lune, ou est le gloomer?"
 )
 user_membership_7.save!
 user_membership_8 = Membership.new(
@@ -1164,7 +1172,7 @@ user_membership_15 = Membership.new(
   user: kevin,
   group: group_6,
   status: "accepted",
-  message: "on reste groupe svp"
+  message: "on reste groupé svp"
 )
 user_membership_15.save!
 user_membership_16 = Membership.new(
@@ -1178,7 +1186,7 @@ user_membership_17 = Membership.new(
   user: pierre,
   group: group_7,
   status: "accepted",
-  message: "on va tout dechirer"
+  message: "on va tout déchirer"
 )
 user_membership_17.save!
 user_membership_18 = Membership.new(
@@ -1234,14 +1242,14 @@ user_membership_25 = Membership.new(
   user: pierre,
   group: group_11,
   status: "accepted",
-  message: "j'espere aider"
+  message: "j'espère pouvoir aider"
 )
 user_membership_25.save!
 user_membership_26 = Membership.new(
   user: david,
   group: group_11,
   status: "accepted",
-  message: "essayons"
+  message: "Allez essayons!"
 )
 user_membership_26.save!
 user_membership_27 = Membership.new(
@@ -1269,7 +1277,7 @@ user_membership_30 = Membership.new(
   user: greg,
   group: group_11,
   status: "accepted",
-  message: "essayons"
+  message: "On va tout donner les gens!"
 )
 user_membership_30.save!
 user_membership_31 = Membership.new(
@@ -1312,7 +1320,7 @@ user_membership_36 = Membership.new(
   user: franck,
   group: group_16,
   status: "accepted",
-  message: "rien ne m'arrete."
+  message: "rien ne m'arrêtera"
 )
 user_membership_36.save!
 
@@ -1328,7 +1336,7 @@ user_membership_38 = Membership.new(
   user: franck,
   group: group_17,
   status: "accepted",
-  message: "J'en ai marre de crever, suivez moi svp."
+  message: "J'en ai marre de crever, suivez-moi svp."
 )
 user_membership_38.save!
 
@@ -1336,7 +1344,7 @@ user_membership_39 = Membership.new(
   user: pierre,
   group: group_17,
   status: "accepted",
-  message: "toujours pas un bon fusil, serieux aidez moi"
+  message: "Toujours pas un bon fusil, sérieux aidez moi"
 )
 user_membership_39.save!
 
@@ -1344,13 +1352,13 @@ user_membership_40 = Membership.new(
   user: denton,
   group: group_4,
   status: "accepted",
-  message: "la prem's game for me"
+  message: "Prem's game for me!"
 )
 user_membership_40.save!
 
 user_membership_41 = Membership.new(
   user: jeanne,
-  group: group_18,
+  group: group_19,
   status: "accepted",
   message: "C'est moi le leader"
 )
@@ -1360,7 +1368,7 @@ user_membership_42 = Membership.new(
   user: edouard,
   group: group_18,
   status: "accepted",
-  message: "merci pour l'invit"
+  message: "Merci pour l'invit"
 )
 user_membership_42.save!
 
@@ -1368,7 +1376,7 @@ user_membership_43 = Membership.new(
   user: claire,
   group: group_18,
   status: "accepted",
-  message: "accept pls"
+  message: "C'est moi le leader"
 )
 user_membership_43.save!
 
@@ -1376,11 +1384,17 @@ user_membership_44 = Membership.new(
   user: mehdi,
   group: group_18,
   status: "pendding",
-  message: "accept pls"
+  message: "Accept pls"
 )
 user_membership_44.save!
 
-
+user_membership_44 = Membership.new(
+  user: fred,
+  group: group_18,
+  status: "pendding",
+  message: "Accept pls"
+)
+user_membership_44.save!
 
 puts "Creating events...."
 
@@ -1388,21 +1402,21 @@ event_1 = Event.new(
   group: group_3,
   status: "pendding",
   title: "truc",
-  description: "salut les gars, je suis bon, pls accept!",
+  description: "Salut les gars, je peux essayer avec vous?",
 )
 
 event_2 = Event.new(
   group: group_3,
   status: "pendding",
   title: "truc",
-  description: "salut les gars, je suis bon, pls accept!",
+  description: "Comptez sur moi, on va se les faire!",
 )
 
 event_3 = Event.new(
   group: group_3,
   status: "pendding",
   title: "truc",
-  description: "salut les gars, je suis bon, pls accept!",
+  description: "Je suis bon joueur, pls accept!",
 )
 
 puts "Seeds finished!"
