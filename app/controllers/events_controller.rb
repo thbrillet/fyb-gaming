@@ -14,6 +14,7 @@ class EventsController < ApplicationController
     end
 
     # CREATE OBJECTIVES
+    if params['event']['objectives'] != nil
       params['event']['objectives'].each do |event|
         @new_objective = Objective.new
         @new_objective.name = event['name']
@@ -21,6 +22,7 @@ class EventsController < ApplicationController
         @new_objective.status = 'pending'
         @new_objective.save
       end
+    end
   end
 
   def confirm

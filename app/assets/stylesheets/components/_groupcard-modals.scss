@@ -4,6 +4,13 @@
   position: relative;
   background-position: center !important;
   background-size: cover !important;
+  .req-form{
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
   .group-infos{
     width: 80%;
     position: absolute;
@@ -75,9 +82,11 @@
     height: 100vh;
   }
   .container-link-btns{
+    position: absolute;
+    left: 40px;
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding-bottom: 20px 40px;
   }
   .container-cards{
     display: flex;

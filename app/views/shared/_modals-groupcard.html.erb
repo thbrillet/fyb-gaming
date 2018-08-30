@@ -46,24 +46,23 @@
         <% end %>
       </div>
 
+      <!--REQUEST-->
+      <div class="req-form">
+        <%= simple_form_for @membership, url: group_memberships_path(group) do |f| %>
+          <%= f.input :message, :label => false, wrapper_html: {class: "form-inline"} do %>
+            <%= f.input_field :message, :label => false %>
+            <%= f.button :submit, "Send request", :class => "btn-primary" %>
+          <% end %>
+        <% end %>
+      </div>
+
       <!--MEMBERS-->
-      <div class="banner-pink" style="bottom: -65vh;">
+      <div class="banner-pink" style="bottom: -85vh;">
         <div class="diagonal-pink"></div>
         <div class="bg-pink">
           <div class="container-link-btns">
             <div class="container-link-btn-members">
-              <button type="button" class="link-btn btngroupmembers"><span></span>#SEE_MEMBERS</button>
-            </div>
-            <div class="req-form collapse">
-              <%= simple_form_for @membership, url: group_memberships_path(group) do |f| %>
-                <%= f.input :message, :label => false, wrapper_html: {class: "form-inline"} do %>
-                  <%= f.input_field :message, placeholder: "Say hi ! :)", :label => false %>
-                  <%= f.button :submit, "Apply", :class => "btn-primary" %>
-                <% end %>
-              <% end %>
-            </div>
-            <div class="container-link-btn">
-              <button type="button" class="link-btn btnrequest" data-toggle="collapse" data-target=".req-form"><span></span>#SEND_REQUEST</button>
+              <button type="button" class="link-btn btngroupmembers" style="top: -180px; transition: .5s;"><span></span>#SEE_MEMBERS</button>
             </div>
           </div>
           <div class="container-cards">
