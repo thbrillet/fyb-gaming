@@ -4,7 +4,7 @@
     <%= cl_image_tag @user.photo, width: 150, height: 150, crop: :fit %>
     <h1>#<%= @user.username.upcase %></h1>
     <h2>"<%= @user.punch_line %>"</h2>
-    <p><%= @user.biography %></p>
+    <p><%= @user.biography.truncate(250) %></p>
     <div class="import-div">
       <h4>Link accounts</h4>
       <div data-toggle="modal" data-target=".xbox-import-modal" class="import-btn import-xbox">
