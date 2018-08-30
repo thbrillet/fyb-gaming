@@ -140,8 +140,5 @@
 </div>
 </div>
 
-<% @members.each do |user| %>
-  <%= render "shared/modal-usercard", user: user %>
-<% end %>
 <input id="games_names" type="hidden" data-games='<%= @games_names.to_json %>'>
 <%= javascript_pack_tag 'awesomplete' %>

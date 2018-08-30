@@ -5,22 +5,23 @@
       <div class="main-head">
         <div class="container-title-hp">
           <div class="title-hp">
-            <%= image_tag "logo.png", height: 200 %>
+            <%= image_tag "logo.png", height: 150 %>
             <h1><span style="color: #ea2050;">fyb</span>gaming </h1>
             <h2> <span style="color: #ea2050;"> #TEAM_UP </span>WITH THE PERFECT SQUAD</h2>
             <div class="container-input-hp">
-              <div class="input-hp">
-                <%= form_tag root_path, method: :get do %>
-                  <%= text_field_tag :query,
-                    params[:query],
-                    class: "form-control awesomplete",
-                    placeholder: "What game do you want to play?",
-                    id: 'search',
-                    "data-list" => @games_names.join(', ')
-                  %>
-                <% end %>
-                <div id="results" class="list-group hidden"></div>
-              </div>
+              <%= form_tag root_path, method: :get do %>
+                <div class="search-logo"><i class="fas fa-search"></i></div>
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "awesomplete home-search",
+                  placeholder: "Choose a game",
+                  id: 'search',
+                  "data-list" => @games_names.join(', '),
+                  onfocus: 'this.placeholder = ""',
+                  onblur: "this.placeholder = 'Han .. come back plz ...'"
+                %>
+              <% end %>
+              <div id="results" class="list-group hidden"></div>
             </div>
           </div>
           <div class="discover-hp">
@@ -37,7 +38,7 @@
       <div class="your-groups-hp-container">
         <div class="your-groups-hp-title">
           <a href="#" class="link-btn">#BROWSE</a>
-          <h4 class="animated fadeInRightBig">YOUR GROUPS</h4>
+          <h4 class="match animated fadeInRightBig">YOUR GROUPS</h4>
         </div>
         <div class="your-groups-hp-scroll">
           <div class="relative-scroll">
@@ -80,7 +81,7 @@
       <div class="groups-hp-container">
         <div class="groups-hp-title">
           <a href="#" class="link-btn">#MATCH</a>
-          <h4>WITH NEW GROUPS</h4>
+          <h4 class="match">WITH NEW GROUPS</h4>
         </div>
         <div class="groups-hp-scroll">
           <div class="relative-scroll">
@@ -99,7 +100,7 @@
       <div class="new-games-hp-container">
         <div class="new-games-hp-title">
           <a href="#" class="link-btn">#DISCOVER</a>
-          <h4>NEW GAMES</h4>
+          <h4 class="match">NEW GAMES WITH PERFECT BUDDIES</h4>
         </div>
         <div class="new-games-hp-scroll">
           <div class="relative-scroll">

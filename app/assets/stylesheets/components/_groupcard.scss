@@ -24,21 +24,21 @@
     left: 20px;
     color: white;
     font-size: 30px;
-    font-weight: 300;
   }
   h5{
     position: absolute;
     left: 20px;
     bottom: 80px;
-    color: white;
-    font-size: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 25px;
     font-weight: 400;
     transition: .5s;
   }
   p{
     position: absolute;
     right: 20px;
-    top: 20px;
+    bottom: 20px;
+    margin-bottom: 0;
     color: white;
     font-size: 16px;
     font-weight: 400;

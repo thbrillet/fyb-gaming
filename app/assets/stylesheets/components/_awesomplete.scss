@@ -6,10 +6,42 @@
     position: absolute;
     clip: rect(0, 0, 0, 0);
 }
-
-.awesomplete {
-    display: block;
+.container-input-hp{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  form {
+    border-bottom: 1px solid $main-color;
     position: relative;
+    .search-logo {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 20px;
+      height: 100%;
+      width: 10%;
+      font-size: 25px;
+      line-height: 70px;
+      color: hsla(0, 100%, 100%, 0.8);
+    }
+    ::placeholder {
+      color: hsla(0, 100%, 100%, 0.6);
+    }
+  }
+}
+.awesomplete {
+  border: none;
+  display: block;
+  position: relative;
+  width: 450px;
+  height: 70px;
+  font-size: 20px;
+  font-weight: lighter;
+  background-color: hsla(0, 100%, 0%, 0.5);
+  input {
+    text-align: center;
+    color: hsla(0, 100%, 100%, 0.8);
+  }
 }
 
 .awesomplete > input {
@@ -34,11 +66,12 @@
 
 .awesomplete > ul {
   margin: .2em 0 0;
-  background: hsla(0,0%,100%,.9);
-  background: linear-gradient(to bottom right, white, hsla(0,0%,100%,.8));
+  background: hsla(0,0%,0%,.7);
+  // background: linear-gradient(to bottom right, white, hsla(0,0%,100%,.8));
   border: 1px solid rgba(0,0,0,.3);
   box-shadow: .05em .2em .6em rgba(0,0,0,.2);
   text-shadow: none;
+  color: hsla(0, 100%, 100%, 0.8);
 }
 
 @supports (transform: scale(0)) {
