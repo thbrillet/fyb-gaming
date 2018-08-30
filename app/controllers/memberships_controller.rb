@@ -28,7 +28,7 @@ class MembershipsController < ApplicationController
       new_membership.user_id = current_user.id
 
       new_membership.save
-      redirect_to root_path
+      redirect_to game_path(group.game)
     end
   end
 
