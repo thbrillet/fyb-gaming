@@ -6,6 +6,6 @@ class GamesController < ApplicationController
     @groups              = current_user.groups.where(game: @game).where("memberships.status= 'accepted'")
     @groups_without_user = Group.where(game: @game).where.not(id: @groups.pluck(:id)).matching_with(current_user)
     @other_games_groups  = Group.where.not(game: @game).where.not(id: @groups.pluck(:id)).matching_with(current_user)
-    @users               = User.matching_with(current_user, User.joins(:games).where("games.id=#{@game.id}")).limit(4)
+    @users               = User.matching_with(current_user, User.joins(:games).where("games.id=#{@game.id}")).limit(4).distinct
   end
 end

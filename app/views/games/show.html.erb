@@ -21,7 +21,7 @@
       <div class="your-groups-hp-container">
         <div class="your-groups-hp-title">
           <a href="#" class="link-btn">#BROWSE</a>
-          <h4 class="animated fadeInRightBig">YOUR GROUPS</h4>
+          <h4 class="match animated fadeInRightBig">YOUR GROUPS</h4>
         </div>
         <div class="your-groups-hp-scroll">
           <div class="relative-scroll">
@@ -64,7 +64,7 @@
       <div class="groups-hp-container">
         <div class="groups-hp-title">
           <a href="#" class="link-btn">#MATCH </a>
-          <h4>WITH NEW GROUPS PLAYING <%= @game.name.upcase %></h4>
+          <h4 class="match">WITH NEW GROUPS PLAYING <%= @game.name.upcase %></h4>
         </div>
         <div class="groups-hp-scroll">
           <div class="relative-scroll">
@@ -83,7 +83,7 @@
       <div class="new-games-hp-container">
         <div class="new-games-hp-title">
           <a href="#" class="link-btn">#DISCOVER</a>
-          <h4>NEW GAMES SIMILAR TO <%= @game.name.upcase %></h4>
+          <h4 class="match">NEW GAMES SIMILAR TO <%= @game.name.upcase %></h4>
         </div>
         <div class="new-games-hp-scroll">
           <div class="relative-scroll">
@@ -104,9 +104,6 @@
   </div>
 </div>
 
-<% @users.each do |user| %>
-  <%= render "shared/modal-usercard", user: user %>
-<% end %>
 <% @groups_without_user.each do |group| %>
   <%= render "shared/modals-groupcard", group: group %>
 <% end %>
