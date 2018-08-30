@@ -106,14 +106,15 @@
   .membership_message{
     display: flex;
     width: 50vw;
-    padding: 0 20px;
+    padding: 0 10px;
     #membership_message{
       width: 40vw;
       background: none;
       border: 1px solid white;
       color: white;
       text-align: center;
-      padding: 5px;
+      padding-top: 25px;
+      padding-bottom: -30px;
     }
     input{
       border: none;
