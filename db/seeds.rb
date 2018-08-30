@@ -1427,7 +1427,7 @@ user_membership_44.save!
 user_membership_45 = Membership.new(
   user: thomas,
   group: group_7,
-  status: "pendding",
+  status: "pending",
   message: "Je suis le petit nouveau ^^"
 )
 user_membership_45.save!
