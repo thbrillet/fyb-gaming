@@ -45,10 +45,10 @@ thibault = User.create!(
   password: "azerty"
 )
 fred = User.create!(
-  username: "Frodo_dodo",
+  username: "Fredo_do",
   photo: File.open(Rails.root.join("db/fixtures/users/fred.png")),
   biography:"J'ai jamais le temps de jouer, c'est pas juste, même en prenant sur /
-  mes heures de sommeil. Allez montrez moi ce que vous valez!",
+  mes heures de sommeil. Allez, montrez moi ce que vous valez!",
   punch_line: "J'ai hate de jouer!",
   language: "fr",
   birthdate: "1979-8-7",
@@ -63,7 +63,7 @@ fred = User.create!(
 guillaume = User.create!(
   username: "Piccolo",
   photo: File.open(Rails.root.join("db/fixtures/users/guillaume.png")),
-  biography:"Certains crois que je suis proffesseur mais que je suis un tueur in game/
+  biography:"Certains crois que je suis professeur mais que je suis un tueur in game/
   vous allez voir que c'est moi le meilleur",
   punch_line: "There can be only one!",
   language: "fr",
@@ -365,6 +365,22 @@ mehdi = User.create!(
   interest_compet_chill: "Chill",
   interest_mmo_smallteam: "MMO",
   email: "mehdi@gmail.com",
+  password: "azerty"
+)
+gael = User.create!(
+  username: "Killer29",
+  photo: File.open(Rails.root.join("db/fixtures/users/gael.png")),
+  biography: "Je ne suis pas très patient et j'en ai marre de parler stratégie 107ans/
+  bon maintenant j'ai rien contre la stratégie mais de la mesure svp.",
+  punch_line: "Fonce dans le tas!",
+  language: "fr",
+  birthdate: "1989-6-19",
+  interest_pve_pvp: "PVP",
+  interest_action_strat: "Strategy",
+  interest_gameplay_story: "Gameplay",
+  interest_compet_chill: "Competition",
+  interest_mmo_smallteam: "SmallTeam",
+  email: "gael@gmail.com",
   password: "azerty"
 )
 
@@ -924,6 +940,17 @@ user_game_75 = UserGame.new(
 )
 user_game_75.save!
 
+user_game_76 = UserGame.new(
+  user: gael,
+  game: game_pc_diablo3
+)
+user_game_76.save!
+
+user_game_77 = UserGame.new(
+  user: guillaume,
+  game: game_xboxone_halo5
+)
+user_game_77.save!
 
 puts "Creating groups..."
 
@@ -972,15 +999,16 @@ game_xboxone_halo5
 group_6 = Group.create!(
   game: game_xboxone_halo5,
   leader: anthony,
-  name: "Juste pour trasher tout le monde",
+  name: "games à la cool soir et weekend",
   description: "On reste au bord de la map svp",
   photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
 )
 group_7 = Group.create!(
   game: game_xboxone_halo5,
   leader: franck,
-  name: "On UP ce foutu classement",
-  description: "Méthode stealth et on trash si on est découvert",
+  name: "Les matadors",
+  description: "groupe axé surtout PVE, /
+  grosses soirées coop légendaire et un peu de training en 2 X 2",
   photo: File.open(Rails.root.join("db/fixtures/games/halo5.jpg"))
 )
 group_8 = Group.create!(
@@ -1383,8 +1411,8 @@ user_membership_43.save!
 user_membership_44 = Membership.new(
   user: mehdi,
   group: group_18,
-  status: "pendding",
-  message: "Accept pls"
+  status: "accepeted",
+  message: "Merci"
 )
 user_membership_44.save!
 
@@ -1395,6 +1423,15 @@ user_membership_44 = Membership.new(
   message: "Accept pls"
 )
 user_membership_44.save!
+
+user_membership_45 = Membership.new(
+  user: thomas,
+  group: group_7,
+  status: "pendding",
+  message: "Je suis le petit nouveau ^^"
+)
+user_membership_45.save!
+
 
 puts "Creating events...."
 
@@ -1418,5 +1455,39 @@ event_3 = Event.new(
   title: "truc",
   description: "Je suis bon joueur, pls accept!",
 )
+
+event_4 = Event.new(
+  group: group_6,
+  status: "accepted",
+  title: "Coopération du samedi soir",
+  description: "Bienvenu!",
+)
+
+event_5 = Event.new(
+  group: group_6,
+  status: "accepted",
+  title: "Partie training 2X2",
+  description: "On inverse de role à chaque victoire",
+)
+event_6 = Event.new(
+  group: group_6,
+  status: "pendding",
+  title: "Session tir de precision",
+  description: "On va travailler un peu le ciblage.!",
+)
+
+event_7 = Event.new(
+  group: group_7,
+  status: "accepted",
+  title: "Soirée MME & CTF",
+  description: "Ouvert à tous.",
+)
+event_8 = Event.new(
+  group: group_7,
+  status: "pendding",
+  title: "Presentation nouveaux joueurs",
+  description: "un peu de role play pour decouvrir de nouveaux talents",
+)
+
 
 puts "Seeds finished!"
