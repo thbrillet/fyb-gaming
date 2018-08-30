@@ -130,9 +130,9 @@ charlotte = User.create!(
   language: "fr",
   birthdate: "1998-6-14",
   interest_pve_pvp: "PVP",
-  interest_action_strat: "Action",
+  interest_action_strat: "Strategy",
   interest_gameplay_story: "Gameplay",
-  interest_compet_chill: "Competition",
+  interest_compet_chill: "Chill",
   interest_mmo_smallteam: "SmallTeam",
   email: "charlotte@gmail.com",
   password: "azerty"

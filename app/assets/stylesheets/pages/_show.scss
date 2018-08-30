@@ -60,7 +60,7 @@
   .your-groups-hp-container, .groups-hp-container, .new-games-hp-container{
     background-color: $background-color;
     padding: 40px 0;
-    h4{
+    h4.match{
       margin: 0;
       padding: 0 40px;
       color: white;
@@ -81,6 +81,9 @@
     height: 400px;
     width: 100%;
     margin-top: 40px;
+  }
+  .profile-hp-title {
+    margin-left: 20px;
   }
 
   .profile-hp-container{
