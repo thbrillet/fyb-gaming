@@ -16,6 +16,9 @@ class UsersController < ApplicationController
   def import_xbox_live_profile
     ImportXboxLiveProfileService.new(current_user, params[:gamertag]).call
     redirect_to profile_path
+  rescue OpenURI::HTTPError
+    flash[:alert] = "Issue while contacting Xbox Live servers, please try later!"
+    redirect_to profile_path
   end
 
   private

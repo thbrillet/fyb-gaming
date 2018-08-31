@@ -1,5 +1,11 @@
 <div class="profile-background" style="background: radial-gradient(at top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8) 80%), url(<%= asset_url 'bioshock.jpg' %>)">
 
+  <% if alert %>
+    <div class="alert alert-warning alert-dismissible" id="alert" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%= alert %>
+    </div>
+  <% end %>
   <div class="profile-infos">
     <%= cl_image_tag @user.photo, width: 150, height: 150, crop: :fit %>
     <h1>#<%= @user.username.upcase %></h1>
