@@ -1,0 +1,43 @@
+.sign-in-page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom right, $main-color, #f36a10);
+  animation: fadeIn 1s;
+}
+.sign-in-content{
+  text-align: center;
+  h2{
+    font-size: 80px;
+    color: white;
+    margin-bottom: 100px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  a{
+    color: white;
+    margin: 40px;
+  }
+  .btn{
+    background: none;
+    width: 100%;
+    height: 50px;
+    border: solid 1px white;
+    border-radius: 0;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 40px;
+    transition: .5s;
+    &:hover{
+      background-color: white;
+      color: #f36a10;
+      transition: .5s;
+    }
+  }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
