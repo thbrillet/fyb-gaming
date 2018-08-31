@@ -6,6 +6,7 @@ import { EventEvents } from "../components/events";
 import { EventPending } from "../components/events";
 import { EventCreate } from "../components/events";
 import { profilesTabs } from "../components/profile-tabs";
+import { slideAlert } from "../components/alert";
 
 ClickOnButton();
 ClickOnButtonShow();
@@ -13,3 +14,4 @@ EventEvents();
 EventPending();
 EventCreate();
 profilesTabs();
+slideAlert();
