@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="games-tab hidden">
-      <% @user.games.each do |game| %>
+      <% @user.games.distinct.each do |game| %>
         <%= link_to game_path(game) do %>
           <% if  game.photo.present? %>
             <div class="box-groupcard-profile" style="background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)), url('<%= cl_image_path game.photo %>')">
